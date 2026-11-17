@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Land Consultancy – Study Abroad &amp; Overseas Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="./style.css">
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="./style.css">
+</helmet>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     1. UTILITY TOP BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="topbar-left">
+      <span>
+        <span class="pulse-dot"></span>
+        Aluva · Ernakulam · Kerala
+      </span>
+      <span class="topbar-sep">|</span>
+      <a href="tel:+919074024242">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        +91 9074 024 242
+      </a>
+      <span class="topbar-sep">|</span>
+      <a href="https://wa.me/918590724242" target="_blank" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        WhatsApp: +91 8590 724 242
+      </a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:info@alllandconsultancy.com">info@alllandconsultancy.com</a>
+    </div>
+    <div class="topbar-right">
+      <span style="color:rgba(255,255,255,0.5);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Follow</span>
+      <div class="topbar-soc">
+        <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100094266267256" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/in/all-land-consultancy-32287425b/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     2. STICKY NAVIGATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <img src="./images/all-land-logo.png" alt="All Land Consultancy">
+    </a>
+    <nav aria-label="Main" class="main-nav">
+      <a href="#top" class="nav-link active">Home</a>
+      <a href="#destinations" class="nav-link">Destinations</a>
+      <a href="#gallery" class="nav-gallery-pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+        Gallery
+      </a>
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#courses" class="nav-link">Courses</a>
+      <a href="#process" class="nav-link">Roadmap</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#enquire" class="nav-cta">
+      Book Free Counselling
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     3. HERO SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="top" class="hero">
+  <div class="hero-inner">
+
+    <!-- Left column -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Kerala's Premier Overseas Consultants · Est. 2014
+      </div>
+
+      <h1 class="hero-h1">
+        Every journey<br>
+        starts with<br>
+        <span class="accent-word">one step.</span><br>
+        Yours begins<br>here.
+      </h1>
+
+      <p class="hero-p">
+        Study, work and settle in <strong>Germany, Canada, the UK and New Zealand</strong>.
+        From €0 tuition university admissions to scholarship guidance, visa documentation
+        and post-landing support — one dedicated team in Aluva guides every milestone.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#destinations" class="btn-primary">
+          Explore Destinations
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <a href="#gallery" class="btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+          Life Abroad Gallery
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">4.9 <span class="hero-stat-stars">★★★★★</span></span>
+          <div class="hero-stat-label">401+ Google Reviews</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">2,500+</span>
+          <div class="hero-stat-label">Visas Approved</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">99.2%</span>
+          <div class="hero-stat-label">Visa Success Rate</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">100%</span>
+          <div class="hero-stat-label">Free Counselling</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column: Enquiry Card -->
+    <div>
+      <form id="enquire" class="hero-card">
+        <div class="hero-card-badge">Free Profile Assessment</div>
+        <span class="hero-card-speed">⚡ 24h Callback</span>
+        <h2 class="hero-card-title">Plan your study abroad journey</h2>
+
+        <label class="form-label">Full Name</label>
+        <input type="text" placeholder="e.g. Rahul Menon" class="form-input">
+
+        <label class="form-label">Phone / WhatsApp</label>
+        <input type="tel" placeholder="+91 98765 43210" class="form-input">
+
+        <div class="form-2col">
+          <div>
+            <label class="form-label">Destination</label>
+            <select class="form-select">
+              <option>Germany</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+              <option>New Zealand</option>
+              <option>Undecided / Open</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Study Level</label>
+            <select class="form-select">
+              <option>Master's / MSc</option>
+              <option>Bachelor's</option>
+              <option>PG Diploma</option>
+              <option>BSc Nursing / NHS</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn-form">
+          Get Free Counselling Call
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+        <p class="form-note">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          100% Free · No obligation · Senior advisor calls within 24h
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     4. RIBBON / ANNOUNCEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<a href="#events" class="ribbon">
+  <div class="ribbon-inner">
+    <span class="ribbon-tag">
+      <span class="pulse-dot"></span>
+      Upcoming Seminar
+    </span>
+    <span class="ribbon-title">Study in Germany — Free Seminar &amp; 1:1 Counselling</span>
+    <span class="ribbon-info">Sat, 14 Nov · Aluva office · 10:00 AM – 1:00 PM</span>
+    <span class="ribbon-action">Reserve Free Seat →</span>
+  </div>
+</a>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     5. DESTINATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="destinations" class="destinations">
+  <div class="wrap">
+    <div class="dest-header-row">
+      <div>
+        <p class="sec-tag"><span class="sec-tag-dot"></span> Choose Your Destination</p>
+        <h2 class="sec-h2">Four of the world's best hubs<br>to study, work and settle.</h2>
+        <p class="sec-p">Globally recognised degrees, zero tuition or high scholarship options, and guaranteed post-study work permits.</p>
+      </div>
+      <a href="#enquire" class="dest-cta-link">
+        Not sure? Ask a counsellor
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+
+    <div class="dest-grid">
+      <sc-for list="{{countries}}" as="c" hint-placeholder-count="4">
+        <div class="dest-card">
+          <div class="dest-img-box">
+            <img src="{{c.image}}" alt="Study in {{c.name}}">
+            <span class="dest-flag-chip">{{c.flag}} {{c.code}}</span>
+            <span class="dest-badge">{{c.badge}}</span>
+          </div>
+          <div class="dest-body">
+            <div class="dest-name">Study in {{c.name}}</div>
+            <p class="dest-blurb">{{c.blurb}}</p>
+            <div class="dest-checks">
+              <sc-for list="{{c.highlights}}" as="h" hint-placeholder-count="3">
+                <div class="dest-check-row">
+                  <span class="dest-check-icon">✓</span>
+                  <span>{{h}}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div class="dest-tags">
+              <sc-for list="{{c.tags}}" as="t" hint-placeholder-count="3">
+                <span class="dest-tag">{{t}}</span>
+              </sc-for>
+            </div>
+            <a href="#courses" class="dest-link">
+              Explore Universities &amp; Courses
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     6. GALLERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="gallery" class="gallery-section">
+  <div class="wrap">
+    <div class="gallery-header">
+      <div>
+        <p class="sec-tag" style="color:#4F46E5"><span class="sec-tag-dot"></span> Student Life &amp; Campus Highlights</p>
+        <h2 class="sec-h2 sec-h2-lt">Life Abroad: From Aluva<br>to Global Campuses</h2>
+        <p class="sec-p sec-p-lt">Real moments from our students at premier universities across Germany, Canada, the UK and New Zealand.</p>
+      </div>
+      <div role="group" aria-label="Filter gallery" class="filter-row">
+        <sc-for list="{{galFilters}}" as="f" hint-placeholder-count="5">
+          <button type="button" onClick="{{f.pick}}" class="{{f.cls}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <sc-for list="{{gallery}}" as="g" hint-placeholder-count="8">
+        <div class="gallery-card" onClick="{{g.view}}">
+          <div class="gallery-img-wrap">
+            <img src="{{g.img}}" alt="{{g.title}}">
+            <div class="gallery-grad"></div>
+            <span class="gallery-cat-chip">{{g.catLabel}}</span>
+            <span class="gallery-country-chip">{{g.flag}} {{g.country}}</span>
+            <div class="gallery-loc-bar">
+              <span class="gallery-loc-text">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                {{g.location}}
+              </span>
+              <span class="gallery-enlarge">🔍 View</span>
+            </div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">{{g.title}}</div>
+            <p class="gallery-desc">{{g.desc}}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div class="gallery-footer">
+      <p class="gallery-footer-note">Want to see more visa success photos or campus tours?</p>
+      <div class="gallery-footer-btns">
+        <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener" class="btn-instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          Follow @all_land_consultancy
+        </a>
+        <a href="#enquire" class="btn-primary-lt">Start Your Application Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<sc-if value="{{modalImg}}">
+  <div class="lightbox-backdrop">
+    <div class="lightbox-dialog">
+      <button type="button" onClick="{{closeModal}}" class="lb-close" title="Close">✕</button>
+      <img src="{{modalImg.img}}" alt="{{modalImg.title}}" class="lb-img">
+      <div class="lb-body">
+        <div class="lb-meta">
+          <span class="lb-badge lb-badge-cat">{{modalImg.catLabel}}</span>
+          <span class="lb-badge lb-badge-ctry">{{modalImg.flag}} {{modalImg.country}}</span>
+          <span class="lb-badge lb-badge-loc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            {{modalImg.location}}
+          </span>
+        </div>
+        <h3 class="lb-title">{{modalImg.title}}</h3>
+        <p class="lb-desc">{{modalImg.desc}}</p>
+        <div class="lb-footer">
+          <span class="lb-footer-note">Want to study here? Our team in Aluva is ready.</span>
+          <a href="#enquire" onClick="{{closeModal}}" class="lb-counsel-btn">Talk to Counsellor →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     7. EVENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="events" class="events-section">
+  <div class="wrap">
+    <div class="events-header">
+      <div>
+        <p class="sec-tag"><span class="sec-tag-dot"></span> Upcoming Events &amp; Webinars</p>
+        <h2 class="sec-h2">Meet our experts.<br>Ask every question.</h2>
+        <p class="sec-p">Free seminars, spot admission days, and live webinars — leave with clear timelines, university options, and scholarship details.</p>
+      </div>
+      <div role="group" aria-label="Filter events" class="filter-row">
+        <sc-for list="{{eventFilters}}" as="f" hint-placeholder-count="4">
+          <button type="button" onClick="{{f.pick}}" class="{{f.cls}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <sc-for list="{{events}}" as="e" hint-placeholder-count="6">
+        <article class="event-card">
+          <div class="event-date-block">
+            <span class="ev-month">{{e.mon}}</span>
+            <span class="ev-day">{{e.day}}</span>
+            <span class="ev-dow">{{e.dow}}</span>
+          </div>
+          <div class="event-info">
+            <span class="ev-type">{{e.typeLabel}}</span>
+            <h3 class="ev-title">{{e.title}}</h3>
+            <div class="ev-meta">
+              <span class="ev-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                {{e.time}}
+              </span>
+              <span class="ev-meta-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                {{e.place}}
+              </span>
+            </div>
+            <a href="#enquire" class="ev-action">
+              Register Free Seat
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     8. COURSES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="courses" class="courses-section">
+  <div class="wrap">
+    <div class="courses-header">
+      <div>
+        <p class="sec-tag" style="color:#4F46E5"><span class="sec-tag-dot"></span> Featured Programmes</p>
+        <h2 class="sec-h2 sec-h2-lt">Programmes our students<br>are choosing now.</h2>
+      </div>
+      <div role="group" aria-label="Filter courses" class="filter-row">
+        <sc-for list="{{courseFilters}}" as="f" hint-placeholder-count="5">
+          <button type="button" onClick="{{f.pick}}" class="{{f.cls}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div class="courses-grid">
+      <sc-for list="{{courses}}" as="k" hint-placeholder-count="6">
+        <article class="course-card">
+          <div class="course-card-top">
+            <span class="course-level-tag">{{k.level}}</span>
+            <span class="course-country-chip">
+              <span class="course-code-badge">{{k.code}}</span>
+              {{k.country}}
+            </span>
+          </div>
+          <div class="course-body">
+            <h3 class="course-name">{{k.title}}</h3>
+            <p class="course-note">{{k.note}}</p>
+            <div class="course-specs">
+              <div class="spec-item">
+                <div class="spec-label">Duration</div>
+                <div class="spec-value">{{k.duration}}</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">Intakes</div>
+                <div class="spec-value">{{k.intake}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="course-footer">
+            <a href="#enquire" class="btn-check-elig">Check eligibility</a>
+            <a href="#enquire" class="btn-details">Details</a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+
+    <div class="courses-bottom">
+      <a href="#enquire" class="btn-see-all">
+        View all 400+ courses with counsellor
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     9. PROCESS / ROADMAP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="process" class="process-section">
+  <div class="wrap">
+    <div class="process-top-row">
+      <div>
+        <p class="sec-tag"><span class="sec-tag-dot"></span> Our Proven Roadmap</p>
+        <h2 class="sec-h2">From first question to<br>first day on campus.</h2>
+      </div>
+      <p class="process-side-p">
+        Every country, embassy and university works differently. Our counsellors map out every requirement upfront, then stay with you through application, scholarships, visa and arrival — so you are prepared, confident and informed at every stage.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="6">
+        <div class="process-card">
+          <div class="process-card-top">
+            <span class="process-num">{{s.n}}</span>
+            <div class="process-icon">
+              <img src="{{s.icon}}" alt="{{s.title}}">
+            </div>
+          </div>
+          <h3 class="process-title">{{s.title}}</h3>
+          <p class="process-text">{{s.text}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     10. SERVICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="services" class="services-section">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:52px;">
+      <p class="sec-tag" style="justify-content:center"><span class="sec-tag-dot"></span> Beyond Admission</p>
+      <h2 class="sec-h2" style="text-align:center">Everything you need,<br>under one roof.</h2>
+      <p class="sec-p" style="margin:12px auto 0;text-align:center">From visa documentation and certificate attestations to airline tickets and medical dataflow.</p>
+    </div>
+
+    <div class="services-grid">
+      <sc-for list="{{services}}" as="v" hint-placeholder-count="6">
+        <div class="service-card">
+          <div class="service-img-box">
+            <img src="{{v.image}}" alt="{{v.title}}">
+            <div class="service-img-grad"></div>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">{{v.title}}</h3>
+            <p class="service-desc">{{v.text}}</p>
+            <a href="#enquire" class="service-link">
+              Enquire for this service
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     11. REVIEWS / STUDENT STORIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="reviews" class="reviews-section">
+  <div class="wrap">
+    <div class="reviews-layout">
+
+      <div class="reviews-sidebar">
+        <p class="sec-tag" style="color:#4F46E5"><span class="sec-tag-dot"></span> Student Stories</p>
+        <h2 class="sec-h2 sec-h2-lt" style="margin-bottom:24px;">Trusted by students &amp; families across Kerala.</h2>
+
+        <div class="google-box">
+          <div class="google-num">4.9</div>
+          <div>
+            <div class="google-stars">★★★★★</div>
+            <div class="google-sub">Based on 401 Google Reviews</div>
+            <a href="https://www.google.com/search?q=all-land+consultancy+aluva+reviews" target="_blank" rel="noopener" class="google-link">Read all reviews on Google →</a>
+          </div>
+        </div>
+
+        <div class="verified-box">
+          <div class="verified-title">✓ Verified Consultancy in Aluva</div>
+          <p class="verified-text">Join over 2,500+ successful applicants who achieved their overseas education dreams through All Land Consultancy. Visit our Aluva office for personal face-to-face evaluation.</p>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <sc-for list="{{reviews}}" as="r" hint-placeholder-count="4">
+          <figure class="review-card">
+            <div class="review-card-top">
+              <span class="review-stars">★★★★★</span>
+              <span class="review-verified">{{r.flag}} Verified</span>
+            </div>
+            <p class="review-quote">{{r.text}}</p>
+            <figcaption class="review-footer">
+              <img src="{{r.photo}}" alt="{{r.name}}" class="review-avatar">
+              <div>
+                <div class="review-name">{{r.name}}</div>
+                <div class="review-uni">{{r.uni}}</div>
+                <div class="review-tag">{{r.tag}}</div>
+              </div>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     12. FAQ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="faq" class="faq-section">
+  <div class="wrap">
+    <div class="faq-header">
+      <p class="sec-tag" style="justify-content:center"><span class="sec-tag-dot"></span> Got Questions?</p>
+      <h2 class="sec-h2" style="text-align:center;margin-bottom:12px;">Frequently Asked Questions</h2>
+      <p class="sec-p" style="text-align:center;margin:0 auto;">Clear, honest answers to help you plan your overseas education with confidence.</p>
+    </div>
+
+    <div class="faq-list">
+      <sc-for list="{{faqs}}" as="f" hint-placeholder-count="5">
+        <div class="faq-item {{f.openClass}}">
+          <button type="button" class="faq-btn" onClick="{{f.toggle}}">
+            <span class="faq-q">{{f.q}}</span>
+            <span class="faq-icon">{{f.icon}}</span>
+          </button>
+          <sc-if value="{{f.isOpen}}">
+            <div class="faq-answer">
+              <p class="faq-answer-text">{{f.a}}</p>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     13. CTA BANNER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2 class="cta-title">Your dream destination is one conversation away.</h2>
+    <p class="cta-desc">Walk into our office in Laxmanas Tower, Aluva or talk to our senior counsellors directly on WhatsApp — initial profile evaluation and counselling is 100% free.</p>
+    <div class="cta-btns">
+      <a href="#enquire" class="btn-cta-primary">Book Free Counselling</a>
+      <a href="https://wa.me/918590724242" target="_blank" rel="noopener" class="btn-cta-wa">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     14. FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<footer id="contact" class="site-footer">
+  <div class="wrap footer-top">
+    <div class="footer-grid">
+
+      <div>
+        <img src="./images/all-land-logo.png" alt="All Land Consultancy Logo" class="footer-logo">
+        <p class="footer-tagline">"The future belongs to those who can imagine it, design it and execute it."</p>
+        <div class="footer-soc">
+          <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener" class="footer-soc-link">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=100094266267256" target="_blank" rel="noopener" class="footer-soc-link">Facebook</a>
+          <a href="https://www.linkedin.com/in/all-land-consultancy-32287425b/" target="_blank" rel="noopener" class="footer-soc-link">LinkedIn</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Study Abroad</h3>
+        <div class="footer-links">
+          <a href="#destinations" class="footer-link">Study in Germany (Free Tuition)</a>
+          <a href="#destinations" class="footer-link">Study in Canada (PGWP Pathways)</a>
+          <a href="#destinations" class="footer-link">Study in United Kingdom (1-Yr Masters)</a>
+          <a href="#destinations" class="footer-link">Study in New Zealand (Green List)</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <div class="footer-links">
+          <a href="#gallery"  class="footer-link">📸 Life Abroad Gallery</a>
+          <a href="#events"   class="footer-link">Upcoming Events &amp; Seminars</a>
+          <a href="#courses"  class="footer-link">Featured Courses</a>
+          <a href="#services" class="footer-link">Student Services</a>
+          <a href="#faq"      class="footer-link">Frequently Asked Questions</a>
+          <a href="#reviews"  class="footer-link">Student Reviews</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Visit Our Aluva Office</h3>
+        <address class="footer-address">
+          Laxmanas Tower, 11/56, Pump Junction,<br>
+          Opp. Municipal Office, Periyar Nagar,<br>
+          Aluva, Ernakulam, Kerala 683101
+        </address>
+        <div class="footer-contact">
+          <a href="tel:+919074024242" class="footer-contact-link">+91 9074 024 242</a>
+          <a href="mailto:info@alllandconsultancy.com" class="footer-contact-link">info@alllandconsultancy.com</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 All Land Consultancy. All rights reserved. Registered in Kerala, India.</span>
+    <a href="#top" class="footer-back-top">Back to Top ↑</a>
+  </div>
+</footer>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     15. FLOATING WHATSAPP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<a href="https://wa.me/918590724242" target="_blank" rel="noopener" class="float-wa" title="Chat on WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  WhatsApp Us
+</a>
+
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7800}}'>
+class Component extends DCLogic {
+  pillClass(active) {
+    return 'pill-btn' + (active ? ' active' : '');
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state || {};
+    var ev  = st.ev  || 'all';
+    var co  = st.co  || 'all';
+    var gal = st.gal || 'all';
+    var modalImg = st.modalImg || false;
+    var openFaq  = st.openFaq !== undefined ? st.openFaq : 0;
+
+    var allEvents = [
+      { type: 'seminar', typeLabel: 'Free seminar',   mon: 'NOV', day: '14', dow: 'Sat', title: 'Study in Germany — Free Seminar &amp; 1:1 Counselling',       time: '10:00 AM – 1:00 PM', place: 'All Land office, Aluva' },
+      { type: 'spot',    typeLabel: 'Spot admission',  mon: 'NOV', day: '21', dow: 'Sat', title: 'UK January 2027 Intake — Spot Admission Day',                   time: '10:00 AM – 4:00 PM', place: 'All Land office, Aluva' },
+      { type: 'webinar', typeLabel: 'Webinar',         mon: 'NOV', day: '27', dow: 'Fri', title: 'Canada Study Permit: Documents, Funds &amp; Timelines',          time: '7:30 PM IST',        place: 'Online · Zoom' },
+      { type: 'seminar', typeLabel: 'Education fair',  mon: 'DEC', day: '05', dow: 'Sat', title: 'New Zealand Education Fair — Meet University Delegates',         time: '10:00 AM – 4:00 PM', place: 'Kochi · venue TBA' },
+      { type: 'webinar', typeLabel: 'Webinar',         mon: 'DEC', day: '12', dow: 'Sat', title: 'Scholarships, Education Loans &amp; Blocked Accounts — Live Q&A', time: '6:30 PM IST',        place: 'Online · Zoom' },
+      { type: 'seminar', typeLabel: 'Pre-departure',   mon: 'DEC', day: '19', dow: 'Sat', title: 'Pre-Departure Orientation for January Intake Students',           time: '11:00 AM – 1:00 PM', place: 'All Land office, Aluva' }
+    ];
+    var evOpts = [
+      { id: 'all',    label: 'All events' },
+      { id: 'seminar',label: 'Seminars &amp; Fairs' },
+      { id: 'webinar',label: 'Webinars' },
+      { id: 'spot',   label: 'Spot admissions' }
+    ];
+
+    var allCourses = [
+      { cc:'de', code:'DE', country:'Germany',        level:"Master's",   title:'MSc Data Science &amp; Artificial Intelligence', note:'English-taught programme at a public university — no tuition fees, only a semester contribution.', duration:'2 years',     intake:'Apr · Oct' },
+      { cc:'uk', code:'UK', country:'United Kingdom', level:"Master's",   title:'MBA — International Business Management',         note:'One-year degree with access to the UK Graduate Route for post-study work.',               duration:'1 year',      intake:'Jan · Sep' },
+      { cc:'ca', code:'CA', country:'Canada',         level:'PG Diploma', title:'Healthcare Administration &amp; Leadership',       note:'Career-focused college programme with co-op options and PGWP eligibility.',                duration:'2 years',     intake:'Jan · May · Sep' },
+      { cc:'uk', code:'UK', country:'United Kingdom', level:"Bachelor's", title:'BSc (Hons) Adult Nursing',                        note:'NMC-approved nursing degree with clinical placements in NHS hospitals.',                    duration:'3 years',     intake:'Sep' },
+      { cc:'nz', code:'NZ', country:'New Zealand',    level:"Master's",   title:'Master of Engineering — Civil &amp; Infrastructure',note:'Industry-linked programme with post-study work rights for graduates.',                    duration:'1.5 years',   intake:'Feb · Jul' },
+      { cc:'de', code:'DE', country:'Germany',        level:"Master's",   title:'MSc Mechanical &amp; Automotive Engineering',      note:'Study at the heart of European engineering with strong internship links.',                  duration:'2 years',     intake:'Oct' }
+    ];
+    var coOpts = [
+      { id:'all', label:'All' },
+      { id:'de',  label:'Germany' },
+      { id:'uk',  label:'UK' },
+      { id:'ca',  label:'Canada' },
+      { id:'nz',  label:'New Zealand' }
+    ];
+
+    var allGallery = [
+      { id:1, cat:'campus', catLabel:'Campus Life',         title:'State-of-the-Art German University Campus',          country:'Germany',        flag:'🇩🇪', location:'Munich, Germany',           img:'./images/slider-1.jpg',                desc:'World-renowned technical universities offering modern research laboratories, interactive lecture halls and global academic networks.' },
+      { id:2, cat:'campus', catLabel:'Campus Life',         title:'International Student Campus Cohort',                country:'Canada',         flag:'🇨🇦', location:'Toronto, Canada',           img:'./images/gallery-canada-students.jpg', desc:'Diverse student community collaborating on applied projects with access to paid co-op work terms across Canada.' },
+      { id:3, cat:'uni',    catLabel:'University Tours',    title:'Historic British Campus Quadrangle',                 country:'United Kingdom',  flag:'🇬🇧', location:'London &amp; Coventry, UK',   img:'./images/gallery-uk-university.jpg',   desc:'Centuries-old academic traditions combined with cutting-edge learning environments and rich student life in the UK.' },
+      { id:4, cat:'visa',   catLabel:'Visa Success',        title:'German Student Visa Grant Celebrations',             country:'Kerala',          flag:'🎓', location:'All Land Office, Aluva',     img:'./images/gallery-visa-success.jpg',    desc:'All Land students celebrating their visa approvals alongside their dedicated counsellors before departing abroad.' },
+      { id:5, cat:'uni',    catLabel:'University Tours',    title:'Advanced Automotive &amp; Robotics Facility',        country:'Germany',         flag:'🇩🇪', location:'Stuttgart, Germany',         img:'./images/gallery-germany-tech.jpg',    desc:'Hands-on practical training in world-class German engineering workshops with strong industry tie-ups.' },
+      { id:6, cat:'events', catLabel:'Seminars &amp; Events',title:'Overseas Education Seminar &amp; Spot Assessments', country:'Kerala',          flag:'🏛️', location:'Aluva Seminar Centre',        img:'./images/gallery-global-seminar.jpg',  desc:'Direct face-to-face sessions where students and parents interact with university delegates and receive instant eligibility checks.' },
+      { id:7, cat:'campus', catLabel:'Campus Life',         title:'International Convocation &amp; Graduation',         country:'New Zealand',     flag:'🇳🇿', location:'Auckland, New Zealand',      img:'./images/slider-4.jpg',                desc:'Proud graduates celebrating their degree completion and transitioning smoothly into high-demand Green List careers.' },
+      { id:8, cat:'campus', catLabel:'Campus Life',         title:'Modern European University Digital Library',          country:'Germany',         flag:'🇩🇪', location:'Berlin, Germany',            img:'./images/slider-3.jpg',                desc:'Quiet study pods, vast digital research archives, and high-speed tech infrastructure designed for student excellence.' }
+    ];
+    var galOpts = [
+      { id:'all',    label:'All Photos' },
+      { id:'campus', label:'Campus Life' },
+      { id:'visa',   label:'Visa Success' },
+      { id:'uni',    label:'University Tours' },
+      { id:'events', label:'Seminars &amp; Events' }
+    ];
+
+    var faqList = [
+      { q:'Can Indian students really study in Germany with zero tuition fees?',       a:'Yes! Most public universities in Germany charge €0 tuition fees for both domestic and international students, regardless of nationality. You only pay a small semester contribution of €150 to €350 which covers public transport passes and student services.' },
+      { q:'What are the post-study work rights in Canada, UK, and New Zealand?',       a:'Canada provides up to 3 years of Post-Graduation Work Permit (PGWP). The UK offers a 2-year Graduate Route visa for Master graduates. New Zealand offers up to 3 years of post-study work rights with fast-track Green List residence pathways for in-demand occupations.' },
+      { q:'Is IELTS or TOEFL mandatory for applying to overseas universities?',        a:'Not always. Many universities in the UK and Germany accept a Medium of Instruction (MOI) certificate from your college if your degree was taught in English. However, taking IELTS or PTE often expands your choice of universities and scholarship options.' },
+      { q:'How does All Land Consultancy assist with scholarships and blocked accounts?',a:'Our counsellors in Aluva guide you through government scholarships (like DAAD in Germany, Commonwealth in the UK), university merit grants, education loans with leading banks, and setting up your German blocked account (Fintiba, Expatrio, Coracle).' },
+      { q:'What post-landing support does All Land provide once I reach my destination?',a:'We assist with airport pickup coordination, student accommodation search, local SIM card setup, city registration (Anmeldung in Germany / SIN in Canada), and opening a local student bank account.' }
+    ];
+
+    return {
+      countries: [
+        { code:'DE', name:'Germany',        flag:'🇩🇪', badge:'Zero Tuition Fees',      image:'./images/destination-germany.png',     blurb:'Internationally recognized engineering, IT and business degrees at top public universities with zero tuition fees.',                                                       highlights:['Public Universities: €0 Tuition','18-Month Job Search Visa','Fast PR Pathway in 21–24 Mo'],   tags:['Low / no tuition','Engineering &amp; IT','18-Mo Job Visa'] },
+        { code:'CA', name:'Canada',         flag:'🇨🇦', badge:'Up to 3-Yr PGWP',        image:'./images/destination-canada.png',      blurb:'World-class universities, welcoming multicultural communities, high minimum wages and clear post-study work permit pathways.',                                           highlights:['Up to 3-Year PGWP Work Permit','Spousal Open Work Permit','Express Entry PR Points'],           tags:['Co-op programmes','PG Diplomas','Fast PR Pathway'] },
+        { code:'UK', name:'United Kingdom', flag:'🇬🇧', badge:"1-Year Master's",         image:'./images/destination-uk.png',          blurb:"Prestigious Russell Group and modern institutions. Fast-track 1-year master's with 2-year Graduate Route post-study work visa.",                                      highlights:["1-Year Fast Masters",'2-Year Graduate Visa','NHS Nursing Sponsorships'],                        tags:["1-year Masters",'NHS Nursing','2-Year PSW'] },
+        { code:'NZ', name:'New Zealand',    flag:'🇳🇿', badge:'Green List Fast Track',   image:'./images/destination-newzealand.png',  blurb:'Safe, scenic and progressive study environment with high demand in IT, construction, engineering, healthcare.',                                                      highlights:['Green List Direct to Residence','Up to 3-Year Post-Study Visa','High Quality of Living'],        tags:['Work rights','Healthcare','Green List Residence'] }
+      ],
+      eventFilters: evOpts.map(function(f) {
+        return { label:f.label, cls:self.pillClass(f.id===ev), pick:function(){ self.setState({ev:f.id}); } };
+      }),
+      events: allEvents.filter(function(e){ return ev==='all'||e.type===ev; }),
+      courseFilters: coOpts.map(function(f) {
+        return { label:f.label, cls:self.pillClass(f.id===co), pick:function(){ self.setState({co:f.id}); } };
+      }),
+      courses: allCourses.filter(function(c){ return co==='all'||c.cc===co; }),
+      galFilters: galOpts.map(function(f) {
+        return { label:f.label, cls:self.pillClass(f.id===gal), pick:function(){ self.setState({gal:f.id}); } };
+      }),
+      gallery: allGallery.filter(function(g){ return gal==='all'||g.cat===gal; }).map(function(item){
+        return { ...item, view:function(){ self.setState({modalImg:item}); } };
+      }),
+      modalImg: modalImg,
+      closeModal: function(){ self.setState({modalImg:false}); },
+      steps: [
+        { n:'01', icon:'./images/step-counselling.png', title:'Career Counselling',    text:'1-on-1 profile evaluation, country suitability, budget planning and career mapping.' },
+        { n:'02', icon:'./images/step-application.png', title:'Course &amp; University',text:'Shortlist top ranked universities matching your career aspirations and eligibility.' },
+        { n:'03', icon:'./images/step-scholarship.png', title:'Application &amp; SOP',  text:'Meticulous documentation, compelling SOPs, LOR drafting and application filing.' },
+        { n:'04', icon:'./images/step-visa.png',        title:'Scholarships &amp; Funds',text:'Guidance on merit scholarships, education loans, blocked accounts and financial proof.' },
+        { n:'05', icon:'./images/step-flight.png',      title:'Visa Documentation',    text:'Complete visa dossier compilation, VFS appointment booking and mock interviews.' },
+        { n:'06', icon:'./images/step-settle.png',      title:'Fly &amp; Settle Abroad',text:'Discounted flight bookings, travel insurance, student forex, accommodation &amp; post-landing support.' }
+      ],
+      services: [
+        { title:'Visa Assistance',          image:'./images/service-visa.jpg',      text:'Comprehensive visa documentation, mock interviews, and filing with a 99.2% approval record across Germany, Canada, UK, and New Zealand.' },
+        { title:'Certificate Attestation',  image:'./images/service-1.jpg',         text:'Apostille, HRD, MEA, and embassy attestations so your educational documents are accepted without delay.' },
+        { title:'Flight Ticketing',         image:'./images/service-flights.jpg',   text:'Student flight bookings with extra baggage allowances, flexible date changes, and itinerary assistance.' },
+        { title:'Travel &amp; Health Insurance',image:'./images/service-insurance.jpg', text:'Comprehensive mandatory health and travel cover meeting embassy and university visa regulations.' },
+        { title:'Placement Assistance',     image:'./images/service-placement.jpg', text:'Post-study work permit guidance, CV makeover, and job search coaching for global employment.' },
+        { title:'Dataflow for Healthcare',  image:'./images/service-dataflow.jpg',  text:'Primary source verification support for nurses, doctors, and allied healthcare professionals.' }
+      ],
+      reviews: [
+        { photo:'./images/student-1.jpg', name:'Megha Sunny',    flag:'🇩🇪', uni:'TU Munich · Germany',             tag:'MSc Data Science &amp; AI',         text:'All Land Consultancy made my German student visa process so smooth! From APS certificate guidance and university selection to blocked account setup, their team in Aluva guided me at every step.' },
+        { photo:'./images/student-2.jpg', name:'Jithin P',       flag:'🇬🇧', uni:'Coventry University · UK',         tag:'MBA International Business',        text:'Excellent guidance for my UK student visa! They guided me through CAS letter clearance, mock interviews, and financial documents. I received my visa within 12 days!' },
+        { photo:'./images/student-3.jpg', name:'Aswathy Babu',   flag:'🇨🇦', uni:'Seneca College · Canada',          tag:'Healthcare Administration',         text:'The counsellors in Aluva are genuinely patient and transparent. They explained the PGWP rules clearly and helped me pick the right PG diploma. Highly recommend All Land!' },
+        { photo:'./images/student-4.jpg', name:'Shamin Mathew',  flag:'🇳🇿', uni:'University of Auckland · NZ',      tag:'Master of Civil Engineering',       text:'Deep knowledge of Green List residency in New Zealand. They prepared my SOP and financial file meticulously. Truly the best overseas education consultancy in Kerala.' }
+      ],
+      faqs: faqList.map(function(item, idx){
+        return {
+          q:      item.q,
+          a:      item.a,
+          isOpen: openFaq === idx,
+          openClass: openFaq === idx ? 'open' : '',
+          icon:   openFaq === idx ? '−' : '+',
+          toggle: function(){ self.setState({ openFaq: openFaq===idx ? -1 : idx }); }
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
