@@ -85,14 +85,548 @@
 @endif
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     4b. SERVICES CAROUSEL SLIDER (REFERENCE ALLLANDCONSULTANCY.COM)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="services" class="services-slider-section">
+  <div class="wrap">
+    <div class="services-slider-header">
+      <div class="services-slider-title-col">
+        <p class="sec-tag"><span class="sec-tag-dot"></span> Core Advisory &amp; Value-Added Services</p>
+        <h2 class="sec-h2">Comprehensive Solutions for Every Milestone.</h2>
+        <p class="sec-p">From course counseling and university application processing to certificate attestation, visa mock interviews, airline ticketing, and post-landing settlement — one trusted advisory handles everything.</p>
+      </div>
+
+      <div class="services-slider-controls">
+        <button type="button" class="slider-nav-btn slider-prev-btn" id="srvPrevBtn" aria-label="Previous Services" onclick="slideServices('prev')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+        </button>
+        <button type="button" class="slider-nav-btn slider-next-btn" id="srvNextBtn" aria-label="Next Services" onclick="slideServices('next')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+        <a href="{{ route('services.index') }}" class="services-view-all-pill">View All Services →</a>
+      </div>
+    </div>
+
+    <div class="services-slider-wrapper">
+      <div class="services-slider-track" id="servicesSliderTrack">
+        @foreach($services as $index => $srv)
+          <article class="service-slide-card" data-index="{{ $index }}">
+            <div class="service-slide-media">
+              <img src="{{ asset($srv->image ?: 'images/service-visa.jpg') }}" alt="{{ $srv->title }}" class="service-slide-img" loading="lazy">
+              <span class="service-slide-badge">
+                <span>{{ $srv->icon ?? '✦' }}</span>
+                <span>{{ explode('&', explode('–', explode('—', $srv->title)[0])[0])[0] }}</span>
+              </span>
+            </div>
+            <div class="service-slide-body">
+              <h3 class="service-slide-title">{{ $srv->title }}</h3>
+              <div class="service-slide-divider" aria-hidden="true"></div>
+              <p class="service-slide-desc">{{ Str::limit($srv->excerpt, 130) }}</p>
+              <a href="{{ route('services.show', $srv->slug) }}" class="service-slide-link">
+                <span>Explore Full Details</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </article>
+        @endforeach
+      </div>
+
+      <!-- Pagination Dots -->
+      <div role="tablist" aria-label="Services slider pagination" class="services-slider-dots" id="servicesSliderDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     4c. INSTAGRAM TESTIMONIALS & COMMUNITY SPOTLIGHT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="instagram-testimonials" class="insta-section">
+  <div class="wrap">
+    <div class="insta-header">
+      <div class="insta-header-text">
+        <p class="sec-tag"><span class="sec-tag-dot insta-tag-dot"></span> Real Student Stories on Instagram Reels</p>
+        <h2 class="sec-h2 sec-h2-lt">Life Abroad, Unfiltered.<br>Watch Genuine Student Journeys.</h2>
+        <p class="sec-p sec-p-lt">Watch real visa celebrations, university campus tours, and overseas lifestyle reels shared directly by students guided by All Land Consultancy.</p>
+      </div>
+
+      <div class="insta-header-controls">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-follow-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          <span>Follow @allland_consultancy</span>
+        </a>
+
+        <div class="insta-slider-arrows">
+          <button type="button" class="slider-nav-btn slider-prev-btn" id="instaPrevBtn" aria-label="Previous Instagram Reel" onclick="slideInsta('prev')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+          </button>
+          <button type="button" class="slider-nav-btn slider-next-btn" id="instaNextBtn" aria-label="Next Instagram Reel" onclick="slideInsta('next')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instagram Slider Track -->
+    <div class="insta-slider-wrapper">
+      <div class="insta-slider-track" id="instaSliderTrack">
+        
+        <!-- Reel 1: Germany -->
+        <article class="insta-reel-card" data-index="0">
+          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
+            <video class="insta-reel-video" src="{{ asset('videos/banner-video.mp4') }}" poster="{{ asset('images/student-1.jpg') }}" playsinline loop muted preload="metadata"></video>
+            
+            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </button>
+          </div>
+
+          <!-- Top Bar -->
+          <div class="insta-reel-top-bar">
+            <div class="insta-reel-badge-group">
+              <span class="insta-reel-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
+                <span>Reels</span>
+              </span>
+              <span class="insta-reel-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>48.2K</span>
+              </span>
+            </div>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+          </div>
+
+          <!-- Right Action Stack -->
+          <div class="insta-reel-actions-stack">
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              </button>
+              <span class="insta-reel-action-label" data-base-likes="1428">1.4K</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <span class="insta-reel-action-label">84</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </button>
+              <span class="insta-reel-action-label">Sound</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <span class="insta-reel-action-label">Share</span>
+            </div>
+          </div>
+
+          <!-- Bottom Content Overlay -->
+          <div class="insta-reel-bottom">
+            <div class="insta-reel-author-row">
+              <div class="insta-reel-avatar-ring">
+                <img src="{{ asset('images/student-1.jpg') }}" alt="Anandhu Krishnan" class="insta-reel-avatar" loading="lazy">
+              </div>
+              <div class="insta-reel-author-meta">
+                <div class="insta-reel-handle-row">
+                  <span class="insta-reel-handle">anandhu.munich</span>
+                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
+                </div>
+                <span class="insta-reel-loc">📍 TU Munich • Germany</span>
+              </div>
+            </div>
+
+            <span class="insta-reel-outcome-tag">🇩🇪 €0 Tuition Visa Granted</span>
+
+            <p class="insta-reel-caption">
+              Landing at Munich airport was unreal! Handled everything from APS to zero-tuition admission.
+            </p>
+
+            <div class="insta-reel-audio-ticker">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              <span class="insta-reel-audio-text">Original Audio • All Land Student Success</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reel 2: Canada -->
+        <article class="insta-reel-card" data-index="1">
+          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
+            <video class="insta-reel-video" src="{{ asset('videos/LATEST MIX.mp4') }}" poster="{{ asset('images/student-2.jpg') }}" playsinline loop muted preload="metadata"></video>
+            
+            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </button>
+          </div>
+
+          <!-- Top Bar -->
+          <div class="insta-reel-top-bar">
+            <div class="insta-reel-badge-group">
+              <span class="insta-reel-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
+                <span>Reels</span>
+              </span>
+              <span class="insta-reel-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>62.1K</span>
+              </span>
+            </div>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+          </div>
+
+          <!-- Right Action Stack -->
+          <div class="insta-reel-actions-stack">
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              </button>
+              <span class="insta-reel-action-label" data-base-likes="2185">2.2K</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <span class="insta-reel-action-label">142</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </button>
+              <span class="insta-reel-action-label">Sound</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <span class="insta-reel-action-label">Share</span>
+            </div>
+          </div>
+
+          <!-- Bottom Content Overlay -->
+          <div class="insta-reel-bottom">
+            <div class="insta-reel-author-row">
+              <div class="insta-reel-avatar-ring">
+                <img src="{{ asset('images/student-2.jpg') }}" alt="Sneha George" class="insta-reel-avatar" loading="lazy">
+              </div>
+              <div class="insta-reel-author-meta">
+                <div class="insta-reel-handle-row">
+                  <span class="insta-reel-handle">sneha.in.toronto</span>
+                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
+                </div>
+                <span class="insta-reel-loc">📍 Seneca Polytechnic • Toronto, Canada</span>
+              </div>
+            </div>
+
+            <span class="insta-reel-outcome-tag">🇨🇦 3-Year PGWP Approved</span>
+
+            <p class="insta-reel-caption">
+              From backlogs in Kerala to Canada visa approved in just 3 weeks! Living my dream in Ontario.
+            </p>
+
+            <div class="insta-reel-audio-ticker">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              <span class="insta-reel-audio-text">Original Audio • Student Life in Ontario</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reel 3: UK Nursing -->
+        <article class="insta-reel-card" data-index="2">
+          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
+            <video class="insta-reel-video" src="{{ asset('videos/banner-video.mp4') }}" poster="{{ asset('images/student-3.jpg') }}" playsinline loop muted preload="metadata"></video>
+            
+            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </button>
+          </div>
+
+          <!-- Top Bar -->
+          <div class="insta-reel-top-bar">
+            <div class="insta-reel-badge-group">
+              <span class="insta-reel-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
+                <span>Reels</span>
+              </span>
+              <span class="insta-reel-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>39.7K</span>
+              </span>
+            </div>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+          </div>
+
+          <!-- Right Action Stack -->
+          <div class="insta-reel-actions-stack">
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              </button>
+              <span class="insta-reel-action-label" data-base-likes="1894">1.9K</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <span class="insta-reel-action-label">96</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </button>
+              <span class="insta-reel-action-label">Sound</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <span class="insta-reel-action-label">Share</span>
+            </div>
+          </div>
+
+          <!-- Bottom Content Overlay -->
+          <div class="insta-reel-bottom">
+            <div class="insta-reel-author-row">
+              <div class="insta-reel-avatar-ring">
+                <img src="{{ asset('images/student-3.jpg') }}" alt="Merin Varghese" class="insta-reel-avatar" loading="lazy">
+              </div>
+              <div class="insta-reel-author-meta">
+                <div class="insta-reel-handle-row">
+                  <span class="insta-reel-handle">merin.v_nurse_uk</span>
+                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
+                </div>
+                <span class="insta-reel-loc">📍 Leeds Teaching Hospitals NHS • UK</span>
+              </div>
+            </div>
+
+            <span class="insta-reel-outcome-tag">🇬🇧 Band 5 NHS Sponsorship</span>
+
+            <p class="insta-reel-caption">
+              From staff nurse in Kochi to NHS Leeds. CBT, NMC registration & visa mock interviews coached step-by-step!
+            </p>
+
+            <div class="insta-reel-audio-ticker">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              <span class="insta-reel-audio-text">Original Audio • UK NHS Journey</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reel 4: New Zealand -->
+        <article class="insta-reel-card" data-index="3">
+          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
+            <video class="insta-reel-video" src="{{ asset('videos/LATEST MIX.mp4') }}" poster="{{ asset('images/student-4.jpg') }}" playsinline loop muted preload="metadata"></video>
+            
+            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </button>
+          </div>
+
+          <!-- Top Bar -->
+          <div class="insta-reel-top-bar">
+            <div class="insta-reel-badge-group">
+              <span class="insta-reel-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
+                <span>Reels</span>
+              </span>
+              <span class="insta-reel-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>35.4K</span>
+              </span>
+            </div>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+          </div>
+
+          <!-- Right Action Stack -->
+          <div class="insta-reel-actions-stack">
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              </button>
+              <span class="insta-reel-action-label" data-base-likes="1632">1.6K</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <span class="insta-reel-action-label">77</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </button>
+              <span class="insta-reel-action-label">Sound</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <span class="insta-reel-action-label">Share</span>
+            </div>
+          </div>
+
+          <!-- Bottom Content Overlay -->
+          <div class="insta-reel-bottom">
+            <div class="insta-reel-author-row">
+              <div class="insta-reel-avatar-ring">
+                <img src="{{ asset('images/student-4.jpg') }}" alt="Kevin Thomas" class="insta-reel-avatar" loading="lazy">
+              </div>
+              <div class="insta-reel-author-meta">
+                <div class="insta-reel-handle-row">
+                  <span class="insta-reel-handle">kevin.thomas_nz</span>
+                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
+                </div>
+                <span class="insta-reel-loc">📍 University of Auckland • New Zealand</span>
+              </div>
+            </div>
+
+            <span class="insta-reel-outcome-tag">🇳🇿 Green List Fast-Track PR</span>
+
+            <p class="insta-reel-caption">
+              Master of IT in Auckland with Green List PR pathway mapped upfront. Clean documentation, zero hidden fees!
+            </p>
+
+            <div class="insta-reel-audio-ticker">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              <span class="insta-reel-audio-text">Original Audio • New Zealand Diary</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Reel 5: Visa Success Cohort -->
+        <article class="insta-reel-card" data-index="4">
+          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
+            <video class="insta-reel-video" src="{{ asset('videos/banner-video.mp4') }}" poster="{{ asset('images/gallery-visa-success.jpg') }}" playsinline loop muted preload="metadata"></video>
+            
+            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </button>
+          </div>
+
+          <!-- Top Bar -->
+          <div class="insta-reel-top-bar">
+            <div class="insta-reel-badge-group">
+              <span class="insta-reel-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
+                <span>Reels</span>
+              </span>
+              <span class="insta-reel-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>74.9K</span>
+              </span>
+            </div>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+          </div>
+
+          <!-- Right Action Stack -->
+          <div class="insta-reel-actions-stack">
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+              </button>
+              <span class="insta-reel-action-label" data-base-likes="2540">2.5K</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <span class="insta-reel-action-label">210</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              </button>
+              <span class="insta-reel-action-label">Sound</span>
+            </div>
+            <div class="insta-reel-action-item">
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <span class="insta-reel-action-label">Share</span>
+            </div>
+          </div>
+
+          <!-- Bottom Content Overlay -->
+          <div class="insta-reel-bottom">
+            <div class="insta-reel-author-row">
+              <div class="insta-reel-avatar-ring">
+                <img src="{{ asset('images/gallery-visa-success.jpg') }}" alt="Flying Batch" class="insta-reel-avatar" loading="lazy">
+              </div>
+              <div class="insta-reel-author-meta">
+                <div class="insta-reel-handle-row">
+                  <span class="insta-reel-handle">rahul_abroad_journey</span>
+                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
+                </div>
+                <span class="insta-reel-loc">📍 Frankfurt Airport • Germany</span>
+              </div>
+            </div>
+
+            <span class="insta-reel-outcome-tag">✈️ Winter Intake Flying Batch</span>
+
+            <p class="insta-reel-caption">
+              Pre-departure briefing done, visa stamped, and all 6 of us safely landed! Thank you All Land Aluva team!
+            </p>
+
+            <div class="insta-reel-audio-ticker">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              <span class="insta-reel-audio-text">Original Audio • 2026 Batch Airport Celebration</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pagination Dots -->
+      <div role="tablist" aria-label="Instagram reels slider pagination" class="insta-slider-dots" id="instaSliderDots"></div>
+    </div>
+
+    <!-- Instagram Social Proof Banner -->
+    <div class="insta-bottom-banner">
+      <div class="insta-banner-left">
+        <div class="insta-banner-gradient-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+        </div>
+        <div>
+          <h4 class="insta-banner-title">Join our 12,000+ student community on Instagram</h4>
+          <p class="insta-banner-sub">Daily visa approvals, student lifestyle vlogs, free seminar updates &amp; live Q&amp;As.</p>
+        </div>
+      </div>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="btn-primary insta-banner-cta">
+        <span>Visit Instagram Profile</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      5. DESTINATIONS (DYNAMIC COUNTRY TABS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="destinations" class="destinations">
   <div class="wrap">
     <div class="dest-header-row">
-      <div>
+      <div class="dest-header-text">
         <p class="sec-tag"><span class="sec-tag-dot"></span> Choose Your Destination</p>
-        <h2 class="sec-h2 sec-h2-lt">Four of the world's best hubs<br>to study, work and settle.</h2>
+        <h2 class="sec-h2 sec-h2-lt">The world's premier destinations<br>to study, work and settle.</h2>
         <p class="sec-p sec-p-lt">Globally recognised degrees, zero tuition or high scholarship options, and guaranteed post-study work permits.</p>
       </div>
       <a href="{{ route('contact') }}" class="dest-cta-link">
@@ -106,7 +640,13 @@
       <div role="tablist" aria-label="Study Abroad Destinations" class="dest-tabs-nav" id="countryTabsNav">
         @foreach($countries as $cCode => $country)
           <button type="button" role="tab" class="dest-tab-btn {{ $cCode === $selectedCountry ? 'active' : '' }}" onclick="switchCountry('{{ $cCode }}')" data-code="{{ $cCode }}">
-            <span class="dest-tab-flag">{{ $country['flag'] }}</span>
+            <span class="dest-tab-flag">
+              @if(!empty($country['flag_url']))
+                <img src="{{ $country['flag_url'] }}" alt="{{ $country['name'] }}" class="dest-tab-flag-img" width="18" height="12">
+              @else
+                {{ $country['flag'] }}
+              @endif
+            </span>
             <span class="dest-tab-name">{{ $country['name'] }}</span>
             <span class="dest-tab-chip">{{ $country['tabBadge'] }}</span>
           </button>
@@ -121,7 +661,14 @@
       <div class="dest-showcase-visual">
         <div class="dest-visual-wrap">
           <img src="{{ $country['image'] }}" alt="Study in {{ $country['name'] }}">
-          <span class="dest-hero-flag">{{ $country['flag'] }} {{ $country['name'] }}</span>
+          <span class="dest-hero-flag">
+            @if(!empty($country['flag_url']))
+              <img src="{{ $country['flag_url'] }}" alt="{{ $country['name'] }}" class="dest-tab-flag-img" width="18" height="12">
+            @else
+              {{ $country['flag'] }}
+            @endif
+            {{ $country['name'] }}
+          </span>
           <span class="dest-hero-badge">{{ $country['heroBadge'] }}</span>
         </div>
         <div class="dest-quick-stats">
@@ -166,8 +713,8 @@
         </div>
 
         <div class="dest-action-row">
-          <a href="{{ route('study-abroad', ['country' => $cCode]) }}" class="dest-main-cta">
-            <span>Explore {{ $country['name'] }} Courses &amp; Intakes</span>
+          <a href="{{ route('destinations.show', $country['slug']) }}" class="dest-main-cta">
+            <span>Explore {{ $country['name'] }} Guide &amp; Intakes</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
           <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20am%20interested%20in%20studying%20in%20{{ urlencode($country['name']) }}" target="_blank" rel="noopener" class="dest-sub-cta">
@@ -182,135 +729,6 @@
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     5b. SPOTLIGHT ADMISSIONS & VALUE SHOWCASE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section id="exclusives" class="spotlight-banner-section">
-  <div class="wrap">
-    <div class="spotlight-card">
-      
-      <!-- Top Decorative Accent Border -->
-      <div class="spotlight-top-accent" aria-hidden="true"></div>
-
-      <div class="spotlight-card-inner">
-        <!-- Left Content Area -->
-        <div class="spotlight-main">
-          <div class="spotlight-badge">
-            <span class="spotlight-pulse" aria-hidden="true"></span>
-            <span>Priority 2026 – 2027 Intakes Open</span>
-          </div>
-
-          <h2 class="spotlight-h2">
-            Unlock Your Global Future with
-            <span class="spotlight-gradient-text">Kerala’s Premier Advisory</span>
-          </h2>
-
-          <p class="spotlight-subtext">
-            Admissions open for public universities in <strong>Germany (€0 tuition)</strong>, top Canadian colleges with up to <strong>3-year PGWP</strong>, prestigious <strong>Russell Group UK universities</strong>, and <strong>New Zealand Green List PR</strong> programs.
-          </p>
-
-          <!-- Key Benefit Highlights -->
-          <div class="spotlight-features">
-            <div class="spotlight-feat-item">
-              <span class="spotlight-feat-icon" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </span>
-              <span>€0 Tuition Universities</span>
-            </div>
-            <div class="spotlight-feat-item">
-              <span class="spotlight-feat-icon" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </span>
-              <span>Up to 3-Yr PGWP Canada</span>
-            </div>
-            <div class="spotlight-feat-item">
-              <span class="spotlight-feat-icon" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              </span>
-              <span>100% Free 1:1 Evaluation</span>
-            </div>
-          </div>
-
-          <!-- Dual Call to Action Buttons -->
-          <div class="spotlight-cta-group">
-            <a href="{{ route('contact') }}" class="btn-spotlight-primary">
-              <span>Book Free 1:1 Evaluation</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-            <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20would%20like%20to%20book%20a%20free%201:1%20evaluation" target="_blank" rel="noopener" class="btn-spotlight-whatsapp">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              <span>Direct WhatsApp Helpline</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Side: Admissions & Trust Hub Card -->
-        <div class="spotlight-stats-hub">
-          <div class="hub-header">
-            <div class="hub-header-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-              <span>Admissions &amp; Visa Hub</span>
-            </div>
-            <span class="hub-header-sub">All Land Overseas · Aluva</span>
-          </div>
-
-          <div class="hub-metrics-grid">
-            <!-- Metric 1 -->
-            <div class="hub-metric-card">
-              <div class="hub-metric-top">
-                <span class="hub-metric-val val-blue">99.2%</span>
-                <span class="hub-metric-badge badge-blue">Verified</span>
-              </div>
-              <span class="hub-metric-label">Visa Success Rate</span>
-            </div>
-
-            <!-- Metric 2 -->
-            <div class="hub-metric-card">
-              <div class="hub-metric-top">
-                <span class="hub-metric-val val-orange">2,500+</span>
-                <span class="hub-metric-badge badge-orange">Global</span>
-              </div>
-              <span class="hub-metric-label">Visas Issued</span>
-            </div>
-
-            <!-- Metric 3 -->
-            <div class="hub-metric-card">
-              <div class="hub-metric-top">
-                <span class="hub-metric-val val-sky">€0</span>
-                <span class="hub-metric-badge badge-sky">Germany</span>
-              </div>
-              <span class="hub-metric-label">Tuition-Free Options</span>
-            </div>
-
-            <!-- Metric 4 -->
-            <div class="hub-metric-card">
-              <div class="hub-metric-top">
-                <span class="hub-metric-val val-green">100%</span>
-                <span class="hub-metric-badge badge-green">Free</span>
-              </div>
-              <span class="hub-metric-label">1:1 Assessment</span>
-            </div>
-          </div>
-
-          <!-- Bottom Trust Rating Footer -->
-          <div class="hub-footer">
-            <div class="hub-avatars">
-              <img src="{{ asset('images/student-1.jpg') }}" alt="Student" class="hub-avatar">
-              <img src="{{ asset('images/student-2.jpg') }}" alt="Student" class="hub-avatar">
-              <img src="{{ asset('images/student-3.jpg') }}" alt="Student" class="hub-avatar">
-              <span class="hub-avatar-badge">+2.5k</span>
-            </div>
-            <div class="hub-rating-text">
-              <div class="hub-stars">★★★★★ <span class="hub-score">4.9 / 5.0</span></div>
-              <span class="hub-sub">401+ Verified Google Reviews</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      7. DYNAMIC UPCOMING EVENTS & SEMINARS (FROM MYSQL)
@@ -323,46 +741,87 @@
         <h2 class="sec-h2">Meet our experts.<br>Ask every question.</h2>
         <p class="sec-p">Free seminars, spot admission days, and live webinars — leave with clear timelines, university options, and scholarship details.</p>
       </div>
-      <div role="group" aria-label="Filter events" class="filter-row">
-        <button type="button" class="pill-btn active" onclick="filterEvents('all', this)">All events</button>
-        <button type="button" class="pill-btn" onclick="filterEvents('seminar', this)">Seminars &amp; Fairs</button>
-        <button type="button" class="pill-btn" onclick="filterEvents('webinar', this)">Webinars</button>
-        <button type="button" class="pill-btn" onclick="filterEvents('spot', this)">Spot admissions</button>
+
+      <div class="events-header-actions">
+        <div role="group" aria-label="Filter events" class="filter-row">
+          <button type="button" class="pill-btn active" onclick="filterEvents('all', this)">All events</button>
+          <button type="button" class="pill-btn" onclick="filterEvents('seminar', this)">Seminars &amp; Fairs</button>
+          <button type="button" class="pill-btn" onclick="filterEvents('webinar', this)">Webinars</button>
+          <button type="button" class="pill-btn" onclick="filterEvents('spot', this)">Spot admissions</button>
+        </div>
+
+        <div class="events-slider-controls">
+          <button type="button" class="slider-nav-btn slider-prev-btn" id="evPrevBtn" aria-label="Previous Events" onclick="slideEvents('prev')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+          </button>
+          <button type="button" class="slider-nav-btn slider-next-btn" id="evNextBtn" aria-label="Next Events" onclick="slideEvents('next')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="events-grid" id="eventsGrid">
-      @forelse($events as $e)
-        <article class="event-card event-item" data-type="{{ $e->type }}">
-          <div class="event-date-block">
-            <span class="ev-month">{{ $e->month_name }}</span>
-            <span class="ev-day">{{ $e->day_number }}</span>
-            <span class="ev-dow">{{ $e->day_of_week }}</span>
-          </div>
-          <div class="event-info">
-            <span class="ev-type ev-type-{{ $e->type }}">{{ $e->type_label }}</span>
-            <h3 class="ev-title">{{ $e->title }}</h3>
-            <div class="ev-meta">
-              <span class="ev-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-                {{ $e->formatted_time }}
-              </span>
-              <span class="ev-meta-item">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
-                {{ $e->location }}
-              </span>
+    <div class="events-slider-wrapper">
+      <div class="events-slider-track" id="eventsSliderTrack">
+        @forelse($events as $e)
+          <article class="event-slide-card event-item" data-type="{{ $e->type }}">
+            <div class="event-slide-media">
+              <img src="{{ $e->image_url }}" alt="{{ $e->title }}" class="event-slide-img" loading="lazy">
+              <div class="event-slide-grad" aria-hidden="true"></div>
+              <div class="event-slide-date-badge">
+                <span class="ev-month">{{ $e->month_name }}</span>
+                <span class="ev-day">{{ $e->day_number }}</span>
+                <span class="ev-dow">{{ $e->day_of_week }}</span>
+              </div>
+              <span class="event-slide-type-badge ev-type-{{ $e->type }}">{{ $e->type_label }}</span>
             </div>
-            <a href="{{ route('events.show', $e->slug) }}" class="ev-action">
-              <span>Register Free Seat</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
+            <div class="event-slide-body">
+              <div class="event-ticket-urgency">
+                <span class="event-pulse-dot"></span>
+                <span>Registration Open • Free Entry</span>
+              </div>
+
+              <h3 class="event-slide-title">{{ $e->title }}</h3>
+
+              <div class="event-slide-meta">
+                <span class="event-slide-meta-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                  <span>{{ $e->formatted_time }}</span>
+                </span>
+                <span class="event-slide-meta-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                  <span>{{ $e->location }}</span>
+                </span>
+              </div>
+
+              <!-- Ticket Perforation Divider -->
+              <div class="event-ticket-divider" aria-hidden="true">
+                <span class="ticket-notch ticket-notch-left"></span>
+                <span class="ticket-line"></span>
+                <span class="ticket-notch ticket-notch-right"></span>
+              </div>
+
+              <div class="event-ticket-footer">
+                <div class="event-ticket-stub-info">
+                  <span class="event-stub-label">ADMISSION</span>
+                  <span class="event-stub-code">100% FREE PASS</span>
+                </div>
+                <a href="{{ route('events.show', $e->slug) }}" class="event-ticket-btn">
+                  <span>Claim Free Pass</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        @empty
+          <div class="events-empty-card">
+            <p class="events-empty-text">No events currently scheduled. Check back soon!</p>
           </div>
-        </article>
-      @empty
-        <div class="events-empty-card">
-          <p class="events-empty-text">No events currently scheduled. Check back soon!</p>
-        </div>
-      @endforelse
+        @endforelse
+      </div>
+
+      <!-- Pagination Dots -->
+      <div role="tablist" aria-label="Events slider pagination" class="events-slider-dots" id="eventsSliderDots"></div>
     </div>
     
     <div class="events-footer">
@@ -371,162 +830,42 @@
   </div>
 </section>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     9. PROCESS / ROADMAP
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section id="process" class="process-section">
-  <div class="wrap">
-    <div class="process-top-row">
-      <div>
-        <p class="sec-tag"><span class="sec-tag-dot"></span> Our Proven Roadmap</p>
-        <h2 class="sec-h2">From first question to<br>first day on campus.</h2>
-      </div>
-      <p class="process-side-p">
-        Every country, embassy and university works differently. Our counsellors map out every requirement upfront, then stay with you through application, scholarships, visa and arrival — so you are prepared, confident and informed at every stage.
-      </p>
-    </div>
-
-    <div class="process-grid">
-      <div class="process-card">
-        <div class="process-card-top">
-          <span class="process-num">01</span>
-          <div class="process-icon">
-            <img src="{{ asset('images/step-counselling.png') }}" alt="Career Counselling">
-          </div>
-        </div>
-        <h3 class="process-title">Career Counselling</h3>
-        <p class="process-text">1-on-1 profile evaluation, country suitability, budget planning and career mapping.</p>
-      </div>
-
-      <div class="process-card">
-        <div class="process-card-top">
-          <span class="process-num">02</span>
-          <div class="process-icon">
-            <img src="{{ asset('images/step-application.png') }}" alt="Course Shortlist">
-          </div>
-        </div>
-        <h3 class="process-title">Course &amp; University</h3>
-        <p class="process-text">Shortlist top ranked universities matching your career aspirations and eligibility.</p>
-      </div>
-
-      <div class="process-card">
-        <div class="process-card-top">
-          <span class="process-num">03</span>
-          <div class="process-icon">
-            <img src="{{ asset('images/step-scholarship.png') }}" alt="Application & SOP">
-          </div>
-        </div>
-        <h3 class="process-title">Application &amp; SOP</h3>
-        <p class="process-text">Meticulous documentation, compelling SOPs, LOR drafting and application filing.</p>
-      </div>
-
-      <div class="process-card">
-        <div class="process-card-top">
-          <span class="process-num">04</span>
-          <div class="process-icon">
-            <img src="{{ asset('images/step-visa.png') }}" alt="Scholarships & Funds">
-          </div>
-        </div>
-        <h3 class="process-title">Scholarships &amp; Funds</h3>
-        <p class="process-text">Guidance on merit scholarships, education loans, blocked accounts and financial proof.</p>
-      </div>
-
-      <div class="process-card">
-        <div class="process-card-top">
-          <span class="process-num">05</span>
-          <div class="process-icon">
-            <img src="{{ asset('images/step-flight.png') }}" alt="Visa Documentation">
-          </div>
-        </div>
-        <h3 class="process-title">Visa Documentation</h3>
-        <p class="process-text">Complete visa dossier compilation, VFS appointment booking and mock interviews.</p>
-      </div>
-
-      <div class="process-card">
-        <div class="process-card-top">
-          <span class="process-num">06</span>
-          <div class="process-icon">
-            <img src="{{ asset('images/step-settle.png') }}" alt="Fly & Settle Abroad">
-          </div>
-        </div>
-        <h3 class="process-title">Fly &amp; Settle Abroad</h3>
-        <p class="process-text">Discounted flight bookings, travel insurance, student forex, accommodation &amp; post-landing support.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     10. SERVICES (DYNAMIC FROM MYSQL)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section id="services" class="services-section">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:52px;">
-      <p class="sec-tag" style="justify-content:center"><span class="sec-tag-dot"></span> Beyond Admission</p>
-      <h2 class="sec-h2" style="text-align:center">Everything you need,<br>under one roof.</h2>
-      <p class="sec-p" style="margin:12px auto 0;text-align:center">From visa documentation and certificate attestations to airline tickets, medical dataflow, and nursing Ausbildung.</p>
-    </div>
-
-    <div class="services-grid">
-      @foreach($services as $srv)
-        <div class="service-card">
-          <div class="service-img-box">
-            <img src="{{ asset($srv->image ?: 'images/service-visa.jpg') }}" alt="{{ $srv->title }}">
-            <div class="service-img-grad"></div>
-          </div>
-          <div class="service-body">
-            <h3 class="service-title">{{ $srv->title }}</h3>
-            <p class="service-desc">{{ $srv->excerpt }}</p>
-            <a href="{{ route('services.show', $srv->slug) }}" class="service-link">
-              Explore full service details
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </div>
-      @endforeach
-    </div>
-
-    <div style="text-align:center;margin-top:40px;">
-      <a href="{{ route('services.index') }}" class="btn-primary" style="display:inline-flex;padding:12px 28px;">View All Comprehensive Services →</a>
-    </div>
-  </div>
-</section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      10b. EXCLUSIVE SPOTLIGHT: GERMAN NURSING AUSBILDUNG
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section class="page-section-alt" style="border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;">
+<section class="page-section-alt exclusive-spotlight-section">
   <div class="wrap">
-    <div class="grid-2col" style="align-items:center;">
+    <div class="grid-2col exclusive-spotlight-grid">
       <div>
-        <span class="subpage-badge" style="background:rgba(217,86,26,0.1);color:#D9561A;border-color:rgba(217,86,26,0.3);">Featured Exclusive Program</span>
-        <h2 class="sec-h2" style="color:#1d253a;">German Nursing Ausbildung: <span>Study &amp; Earn €1,000–€1,250/Month</span></h2>
-        <p class="sec-p" style="color:#475569;margin-bottom:20px;">
+        <span class="subpage-badge exclusive-spotlight-badge">Featured Exclusive Program</span>
+        <h2 class="sec-h2 exclusive-spotlight-h2">German Nursing Ausbildung: <span>Study &amp; Earn €1,000–€1,250/Month</span></h2>
+        <p class="sec-p exclusive-spotlight-p">
           A government-accredited 3-year vocational nursing apprenticeship in top German hospitals. <strong>100% tuition-free</strong> with a guaranteed monthly stipend throughout your training, leading to a permanent nursing license and European PR.
         </p>
         
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;">
-          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;">
-            <span style="font-size:11px;font-weight:700;color:#0580C1;text-transform:uppercase;display:block;">Monthly Stipend</span>
-            <span style="font-size:18px;font-weight:800;color:#1d253a;">€1,000 – €1,250</span>
+        <div class="exclusive-spotlight-stats">
+          <div class="exclusive-spotlight-stat-box">
+            <span class="exclusive-spotlight-stat-lbl">Monthly Stipend</span>
+            <span class="exclusive-spotlight-stat-val">€1,000 – €1,250</span>
           </div>
-          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;">
-            <span style="font-size:11px;font-weight:700;color:#0580C1;text-transform:uppercase;display:block;">Tuition Fees</span>
-            <span style="font-size:18px;font-weight:800;color:#D9561A;">€0 (Tuition Free)</span>
+          <div class="exclusive-spotlight-stat-box">
+            <span class="exclusive-spotlight-stat-lbl">Tuition Fees</span>
+            <span class="exclusive-spotlight-stat-val accent-orange">€0 (Tuition Free)</span>
           </div>
-          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;">
-            <span style="font-size:11px;font-weight:700;color:#0580C1;text-transform:uppercase;display:block;">Language Requirement</span>
-            <span style="font-size:18px;font-weight:800;color:#1d253a;">B2 German Level</span>
+          <div class="exclusive-spotlight-stat-box">
+            <span class="exclusive-spotlight-stat-lbl">Language Requirement</span>
+            <span class="exclusive-spotlight-stat-val">B2 German Level</span>
           </div>
-          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px;padding:14px 16px;">
-            <span style="font-size:11px;font-weight:700;color:#0580C1;text-transform:uppercase;display:block;">Career Settlement</span>
-            <span style="font-size:18px;font-weight:800;color:#1d253a;">Direct PR in 3 Yrs</span>
+          <div class="exclusive-spotlight-stat-box">
+            <span class="exclusive-spotlight-stat-lbl">Career Settlement</span>
+            <span class="exclusive-spotlight-stat-val">Direct PR in 3 Yrs</span>
           </div>
         </div>
 
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="{{ route('exclusives') }}" class="btn-primary" style="padding:13px 26px;">Explore Ausbildung Program →</a>
-          <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20am%20interested%20in%20German%20Nursing%20Ausbildung" target="_blank" rel="noopener" class="btn-ghost" style="padding:13px 22px;">Talk to Healthcare Advisor</a>
+        <div class="exclusive-spotlight-btns">
+          <a href="{{ route('exclusives') }}" class="btn-primary">Explore Ausbildung Program →</a>
+          <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20am%20interested%20in%20German%20Nursing%20Ausbildung" target="_blank" rel="noopener" class="btn-ghost">Talk to Healthcare Advisor</a>
         </div>
       </div>
 
@@ -534,67 +873,10 @@
         <img src="{{ asset('images/service-placement.jpg') }}" alt="German Nursing Ausbildung Students">
         <div class="media-frame-badge">
           <div>
-            <div style="font-weight:800;color:#1d253a;font-size:15px;">Aluva &amp; Kannur Enrolments Open</div>
-            <div style="font-size:12.5px;color:#64748b;">German B1/B2 training, hospital interview &amp; visa guidance</div>
+            <div class="exclusive-spotlight-badge-title">Aluva &amp; Kannur Enrolments Open</div>
+            <div class="exclusive-spotlight-badge-sub">German B1/B2 training, hospital interview &amp; visa guidance</div>
           </div>
-          <span style="background:#D9561A;color:#FFFFFF;padding:4px 12px;border-radius:var(--r-full);font-size:11px;font-weight:800;text-transform:uppercase;">Priority Intake</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     10c. VERIFIED STUDENT SUCCESS REVIEWS (4.9 STARS)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section class="page-section">
-  <div class="wrap">
-    <div style="text-align:center;max-width:700px;margin:0 auto 48px;">
-      <p class="sec-tag" style="justify-content:center"><span class="sec-tag-dot"></span> Student Testimonials</p>
-      <h2 class="sec-h2" style="text-align:center;color:#1d253a;">Trusted by 2,500+ students &amp; families across Kerala.</h2>
-      <p class="sec-p" style="text-align:center;color:#64748b;">401+ verified 5-star Google reviews. Real stories from students now studying and working in Germany, Canada, the UK, and New Zealand.</p>
-    </div>
-
-    <div class="grid-3col">
-      <div class="testimonial-card">
-        <div>
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"All Land Consultancy made my dream of studying in Germany a reality with zero tuition fees. From university selection to the APS certificate and blocked account, their Aluva team guided me without a single error. Highly recommended!"</p>
-        </div>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div>
-            <div class="testi-name">Ananthu Krishnan</div>
-            <div class="testi-dest">MSc Automotive Engineering • TU Munich, Germany</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div>
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"I had multiple backlogs in my B.Tech and thought Canada was impossible. All Land's counsellors evaluated my profile honestly and secured my admission to a top college in Ontario with a 3-year PGWP. My visa was approved in just 3 weeks!"</p>
-        </div>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:#D9561A;">S</div>
-          <div>
-            <div class="testi-name">Sneha George</div>
-            <div class="testi-dest">Postgraduate Diploma • Toronto, Canada</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div>
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"As a staff nurse in Kochi, I wanted to move to the UK. All Land guided me step-by-step through CBT, NMC registration, and OSCE. Today I am working as a Band 5 nurse with NHS Trust sponsorship. Thank you All Land!"</p>
-        </div>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background:#1d253a;">M</div>
-          <div>
-            <div class="testi-name">Merin Varghese</div>
-            <div class="testi-dest">Staff Nurse • NHS Trust, United Kingdom</div>
-          </div>
+          <span class="exclusive-spotlight-priority-tag">Priority Intake</span>
         </div>
       </div>
     </div>
@@ -607,12 +889,13 @@
 @if($blogs->count() > 0)
 <section class="page-section-alt">
   <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:20px;">
-      <div>
+    <div class="blog-section-header">
+      <div class="blog-section-title-col">
         <p class="sec-tag"><span class="sec-tag-dot"></span> Knowledge Hub</p>
-        <h2 class="sec-h2" style="margin:0;">Recent Articles &amp; Student Advisories</h2>
+        <h2 class="sec-h2">Recent Articles &amp; Student Advisories</h2>
+        <p class="sec-p">In-depth guides on visa procedures, post-study work rights, living costs, and university admissions.</p>
       </div>
-      <a href="{{ route('blog.index') }}" class="btn-ghost" style="padding:10px 20px;">Browse All Articles →</a>
+      <a href="{{ route('blog.index') }}" class="btn-ghost blog-browse-btn">Browse All Articles →</a>
     </div>
 
     <div class="grid-3col">
@@ -674,27 +957,465 @@
     });
   }
 
-  // Interactive Event Filtering
-  function filterEvents(type, btn) {
-    document.querySelectorAll('.filter-row .pill-btn').forEach(function(b) {
-      b.classList.remove('active');
-    });
-    btn.classList.add('active');
+  // Interactive Event Slider with Auto-Slide & Filtering
+  (function initEventsSlider() {
+    var track = document.getElementById('eventsSliderTrack');
+    var prevBtn = document.getElementById('evPrevBtn');
+    var nextBtn = document.getElementById('evNextBtn');
+    var dotsContainer = document.getElementById('eventsSliderDots');
+    if (!track) return;
 
-    var items = document.querySelectorAll('#eventsGrid .event-item');
-    items.forEach(function(item) {
-      var itemType = item.getAttribute('data-type');
-      if (type === 'all') {
-        item.style.display = '';
-      } else if (type === 'seminar' && (itemType === 'seminar' || itemType === 'fair' || itemType === 'pre-departure')) {
-        item.style.display = '';
-      } else if (itemType === type) {
-        item.style.display = '';
+    var autoSlideTimer = null;
+    var autoSlideDelay = 4500;
+    var isPaused = false;
+
+    function getVisibleCards() {
+      return Array.from(track.querySelectorAll('.event-item')).filter(function(card) {
+        return card.style.display !== 'none';
+      });
+    }
+
+    function renderDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      var visibleCards = getVisibleCards();
+      if (visibleCards.length <= 1) return;
+
+      visibleCards.forEach(function(card, idx) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+        dot.setAttribute('aria-label', 'Go to event ' + (idx + 1));
+        dot.onclick = function() {
+          resetAutoSlide();
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        };
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateSliderState() {
+      var visibleCards = getVisibleCards();
+      var scrollLeft = track.scrollLeft;
+      var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+
+      if (prevBtn) prevBtn.disabled = scrollLeft <= 8 || visibleCards.length === 0;
+      if (nextBtn) nextBtn.disabled = (scrollLeft >= maxScroll && maxScroll > 0) || visibleCards.length === 0;
+
+      if (dotsContainer) {
+        var dots = dotsContainer.querySelectorAll('.slider-dot');
+        var activeIndex = 0;
+        var minDiff = Infinity;
+        visibleCards.forEach(function(card, idx) {
+          var diff = Math.abs(card.offsetLeft - track.offsetLeft - scrollLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            activeIndex = idx;
+          }
+        });
+        if (scrollLeft >= maxScroll - 15 && maxScroll > 0) {
+          activeIndex = visibleCards.length - 1;
+        }
+        dots.forEach(function(d, i) {
+          var isActive = (i === activeIndex);
+          d.classList.toggle('active', isActive);
+          d.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+    }
+
+    window.slideEvents = function(dir) {
+      resetAutoSlide();
+      var visibleCards = getVisibleCards();
+      var step = visibleCards.length > 0 ? visibleCards[0].offsetWidth + 20 : 290;
+      var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+
+      if (dir === 'next') {
+        if (track.scrollLeft >= maxScroll - 15) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        }
       } else {
-        item.style.display = 'none';
+        if (track.scrollLeft <= 15) {
+          track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: -step, behavior: 'smooth' });
+        }
+      }
+    };
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(function() {
+        if (isPaused) return;
+        var visibleCards = getVisibleCards();
+        if (visibleCards.length <= 1) return;
+        var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+        if (track.scrollLeft >= maxScroll - 15) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          var step = visibleCards[0].offsetWidth + 20;
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        }
+      }, autoSlideDelay);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
+    function resetAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    track.addEventListener('mouseenter', function() { isPaused = true; });
+    track.addEventListener('mouseleave', function() { isPaused = false; });
+    track.addEventListener('touchstart', function() { isPaused = true; }, { passive: true });
+    track.addEventListener('touchend', function() {
+      isPaused = false;
+      resetAutoSlide();
+    }, { passive: true });
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        stopAutoSlide();
+      } else {
+        startAutoSlide();
       }
     });
-  }
+
+    window.filterEvents = function(type, btn) {
+      document.querySelectorAll('.events-section .filter-row .pill-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      if (btn) btn.classList.add('active');
+
+      var items = track.querySelectorAll('.event-item');
+      var matchedCount = 0;
+      items.forEach(function(item) {
+        var itemType = item.getAttribute('data-type');
+        var match = (type === 'all') ||
+                    (type === 'seminar' && (itemType === 'seminar' || itemType === 'fair' || itemType === 'pre-departure')) ||
+                    (itemType === type);
+        if (match) {
+          item.style.display = '';
+          matchedCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      var emptyMsg = document.getElementById('eventsEmptyFilter');
+      if (!emptyMsg) {
+        emptyMsg = document.createElement('div');
+        emptyMsg.id = 'eventsEmptyFilter';
+        emptyMsg.className = 'events-empty-card';
+        emptyMsg.innerHTML = '<p class="events-empty-text">No events match the selected category. Try selecting "All events".</p>';
+        emptyMsg.style.display = 'none';
+        track.parentNode.appendChild(emptyMsg);
+      }
+      emptyMsg.style.display = matchedCount === 0 ? 'block' : 'none';
+
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+      renderDots();
+      resetAutoSlide();
+      setTimeout(updateSliderState, 150);
+    };
+
+    track.addEventListener('scroll', updateSliderState, { passive: true });
+    window.addEventListener('resize', function() {
+      updateSliderState();
+    });
+
+    renderDots();
+    updateSliderState();
+    startAutoSlide();
+  })();
+
+  // Interactive Services Carousel Slider
+  (function initServicesSlider() {
+    var track = document.getElementById('servicesSliderTrack');
+    var prevBtn = document.getElementById('srvPrevBtn');
+    var nextBtn = document.getElementById('srvNextBtn');
+    var dotsContainer = document.getElementById('servicesSliderDots');
+    if (!track) return;
+
+    var cards = track.querySelectorAll('.service-slide-card');
+    if (cards.length === 0) return;
+
+    // Create pagination dots
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      cards.forEach(function(card, idx) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+        dot.setAttribute('aria-label', 'Go to service ' + (idx + 1));
+        dot.onclick = function() {
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        };
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateSliderState() {
+      var scrollLeft = track.scrollLeft;
+      var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+      if (prevBtn) prevBtn.disabled = scrollLeft <= 8;
+      if (nextBtn) nextBtn.disabled = scrollLeft >= maxScroll && maxScroll > 0;
+
+      if (dotsContainer) {
+        var dots = dotsContainer.querySelectorAll('.slider-dot');
+        var activeIndex = 0;
+        var minDiff = Infinity;
+        cards.forEach(function(card, idx) {
+          var diff = Math.abs(card.offsetLeft - track.offsetLeft - scrollLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            activeIndex = idx;
+          }
+        });
+        if (scrollLeft >= maxScroll - 15 && maxScroll > 0) {
+          activeIndex = cards.length - 1;
+        }
+        dots.forEach(function(d, i) {
+          var isActive = (i === activeIndex);
+          d.classList.toggle('active', isActive);
+          d.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+    }
+
+    window.slideServices = function(dir) {
+      var card = track.querySelector('.service-slide-card');
+      var step = card ? card.offsetWidth + 24 : 340;
+      track.scrollBy({ left: dir === 'next' ? step : -step, behavior: 'smooth' });
+    };
+
+    track.addEventListener('scroll', updateSliderState, { passive: true });
+    window.addEventListener('resize', updateSliderState);
+    updateSliderState();
+  })();
+
+  // Interactive Instagram Reels Video Slider & Playback
+  (function initInstaReels() {
+    var track = document.getElementById('instaSliderTrack');
+    var prevBtn = document.getElementById('instaPrevBtn');
+    var nextBtn = document.getElementById('instaNextBtn');
+    var dotsContainer = document.getElementById('instaSliderDots');
+    if (!track) return;
+
+    var cards = track.querySelectorAll('.insta-reel-card');
+    if (cards.length === 0) return;
+
+    var autoSlideTimer = null;
+    var autoSlideDelay = 5500;
+    var isHovered = false;
+
+    // Create pagination dots
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      cards.forEach(function(card, idx) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+        dot.setAttribute('aria-label', 'Go to Instagram Reel ' + (idx + 1));
+        dot.onclick = function() {
+          resetAutoSlide();
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        };
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function isAnyVideoPlaying() {
+      var playing = false;
+      cards.forEach(function(c) {
+        var vid = c.querySelector('video');
+        if (vid && !vid.paused && !vid.ended) {
+          playing = true;
+        }
+      });
+      return playing;
+    }
+
+    function updateSliderState() {
+      var scrollLeft = track.scrollLeft;
+      var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+      if (prevBtn) prevBtn.disabled = scrollLeft <= 8;
+      if (nextBtn) nextBtn.disabled = scrollLeft >= maxScroll && maxScroll > 0;
+
+      if (dotsContainer) {
+        var dots = dotsContainer.querySelectorAll('.slider-dot');
+        var activeIndex = 0;
+        var minDiff = Infinity;
+        cards.forEach(function(card, idx) {
+          var diff = Math.abs(card.offsetLeft - track.offsetLeft - scrollLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            activeIndex = idx;
+          }
+        });
+        if (scrollLeft >= maxScroll - 15 && maxScroll > 0) {
+          activeIndex = cards.length - 1;
+        }
+        dots.forEach(function(d, i) {
+          var isActive = (i === activeIndex);
+          d.classList.toggle('active', isActive);
+          d.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+    }
+
+    window.slideInsta = function(dir) {
+      resetAutoSlide();
+      var card = track.querySelector('.insta-reel-card');
+      var step = card ? card.offsetWidth + 24 : 350;
+      var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+
+      if (dir === 'next') {
+        if (track.scrollLeft >= maxScroll - 15) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        }
+      } else {
+        if (track.scrollLeft <= 15) {
+          track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: -step, behavior: 'smooth' });
+        }
+      }
+    };
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(function() {
+        if (isHovered || isAnyVideoPlaying()) return;
+        var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 10);
+        if (track.scrollLeft >= maxScroll - 15) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          var card = track.querySelector('.insta-reel-card');
+          var step = card ? card.offsetWidth + 24 : 350;
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        }
+      }, autoSlideDelay);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
+    function resetAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    // Play/Pause Video Orchestration
+    window.toggleReelPlay = function(targetEl) {
+      var card = targetEl.closest('.insta-reel-card');
+      if (!card) return;
+      var video = card.querySelector('video');
+      if (!video) return;
+
+      if (video.paused) {
+        // Pause all other videos
+        cards.forEach(function(otherCard) {
+          if (otherCard !== card) {
+            var otherVid = otherCard.querySelector('video');
+            if (otherVid && !otherVid.paused) {
+              otherVid.pause();
+            }
+            otherCard.classList.remove('is-playing');
+          }
+        });
+        video.play().then(function() {
+          card.classList.add('is-playing');
+          stopAutoSlide();
+        }).catch(function(err) {
+          console.warn('Playback prevented:', err);
+        });
+      } else {
+        video.pause();
+        card.classList.remove('is-playing');
+        resetAutoSlide();
+      }
+    };
+
+    // Toggle Mute / Sound
+    window.toggleReelMute = function(btn, ev) {
+      if (ev) ev.stopPropagation();
+      var card = btn.closest('.insta-reel-card');
+      if (!card) return;
+      var video = card.querySelector('video');
+      if (!video) return;
+
+      video.muted = !video.muted;
+      if (video.muted) {
+        btn.classList.add('is-muted');
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+      } else {
+        btn.classList.remove('is-muted');
+        btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+      }
+    };
+
+    // Like Button Toggle with Animation & Count update
+    window.toggleReelLike = function(btn, ev) {
+      if (ev) ev.stopPropagation();
+      var isLiked = btn.classList.toggle('liked');
+      var label = btn.parentNode.querySelector('.insta-reel-action-label');
+      if (!label) return;
+      var base = parseInt(label.getAttribute('data-base-likes') || '1000', 10);
+      var currentLikes = isLiked ? (base + 1) : base;
+      if (currentLikes >= 1000) {
+        label.textContent = (currentLikes / 1000).toFixed(1) + 'K';
+      } else {
+        label.textContent = currentLikes;
+      }
+    };
+
+    track.addEventListener('mouseenter', function() { isHovered = true; });
+    track.addEventListener('mouseleave', function() { isHovered = false; });
+    track.addEventListener('touchstart', function() { isHovered = true; }, { passive: true });
+    track.addEventListener('touchend', function() {
+      isHovered = false;
+      resetAutoSlide();
+    }, { passive: true });
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        stopAutoSlide();
+        cards.forEach(function(c) {
+          var v = c.querySelector('video');
+          if (v && !v.paused) v.pause();
+          c.classList.remove('is-playing');
+        });
+      } else {
+        startAutoSlide();
+      }
+    });
+
+    track.addEventListener('scroll', updateSliderState, { passive: true });
+    window.addEventListener('resize', updateSliderState);
+    updateSliderState();
+    startAutoSlide();
+  })();
 </script>
 <style>
   .country-panel.hidden {

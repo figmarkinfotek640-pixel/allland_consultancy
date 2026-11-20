@@ -7,6 +7,7 @@ use App\Models\Service;
 use App\Models\Course;
 use App\Models\Event;
 use App\Models\Blog;
+use App\Models\Destination;
 use App\Models\Inquiry;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -29,154 +30,304 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 2. Seed Services
+        // 2. Seed Services (Matching Official All Land Consultancy Portfolio)
         $services = [
             [
-                'title' => 'Visa Assistance & Mock Interviews',
+                'title' => 'Visa Assistance',
                 'slug' => 'visa-assistance',
                 'icon' => '🛂',
-                'image' => 'images/service-visa.jpg',
-                'excerpt' => 'Comprehensive visa dossier compilation, VFS/embassy appointment booking, financial sponsor documentation, and rigorous mock interview coaching with our 99.2% approval record.',
-                'description' => '<p>Navigating visa requirements is often the most stressful part of the study abroad journey. Our dedicated visa filing team in Aluva takes complete ownership of your documentation pipeline.</p>
-                <h4>What We Cover:</h4>
-                <ul>
-                    <li>German National Visa (Section 16b/16a) documentation & APS verification audit.</li>
-                    <li>Canada Study Permit under SDS and non-SDS streams with robust financial tie-back proof.</li>
-                    <li>UK Student Visa CAS checks, TB screening coordination, and financial viability proof.</li>
-                    <li>New Zealand Student Visa and dependent work visa filing.</li>
-                    <li>Exhaustive 1-on-1 mock interviews simulating actual VFS and embassy officer queries.</li>
-                </ul>',
+                'image' => 'images/serv6.jpg',
+                'excerpt' => 'Visa documentation is a crucial component of international travel. We assist with initial consultation, document verification, application submission, and embassy interview coaching.',
+                'description' => '<p>Visa documentation is a crucial component of the international travel process. A visa is a document issued by a foreign country that allows an individual to enter, stay, or exit the country for a specific period, purpose, or both. The process of obtaining a visa can be complex and time-consuming with different requirements and regulations varying between countries. Visa assistance and documentation services help individuals and organizations navigate the visa application process and ensure that travelers comply with all relevant rules and regulations.</p>
+
+<p>Our visa assistance services provide comprehensive guidance and support to individuals and organizations seeking visas for travel, work, study, or other purposes. These services include helping applicants understand requirements and restrictions associated with different visa categories, assisting with accurate completion of application forms and supporting documents, scheduling appointments with embassies and consulates, and providing structured coaching on how to prepare for visa interviews.</p>
+
+<h3>Overview of Our Visa Documentation Process:</h3>
+<ol>
+  <li><strong>Initial Consultation:</strong> The first step is an initial consultation where we determine the applicant’s travel needs, background, and the exact visa category required.</li>
+  <li><strong>Document Collection:</strong> Once we understand the requirements, we provide an exhaustive, tailored checklist of documents needed for submission.</li>
+  <li><strong>Document Verification:</strong> Our documentation team thoroughly reviews all certificates, financial sponsors, and letters to ensure they meet stringent embassy requirements, suggesting corrections or supplementary filings.</li>
+  <li><strong>Application Submission:</strong> We accurately complete visa applications, compile the official dossier, submit to the appropriate embassy or consulate, and book the biometric and interview appointment.</li>
+  <li><strong>Follow-Up:</strong> We actively track and follow up with the embassy to ensure the application is processed smoothly in a timely manner.</li>
+</ol>
+
+<h3>Visa Categories We Handle:</h3>
+<ul>
+  <li>Student / Study Visa (Germany, Canada, UK, New Zealand, Europe)</li>
+  <li>Employment / Work Visa (UK Skilled Worker, Germany Opportunity Card &amp; Work Visa)</li>
+  <li>Visit &amp; Tourist Visa (Schengen, UK, USA, Canada)</li>
+  <li>Family Reunion &amp; Resident Visa</li>
+  <li>Dependent &amp; Spousal Work Visa</li>
+  <li>Religious Visa</li>
+</ul>',
                 'features' => [
-                    'German National Visa & APS guidance',
-                    'Canada Study Permit & SDS filing',
-                    'UK Student Visa & CAS verification',
-                    'New Zealand Student Visa & pathway support'
+                    'Initial consultation & visa profiling',
+                    'Document collection checklist & review',
+                    'Official embassy application submission',
+                    'Biometric & VFS appointment booking',
+                    '1-on-1 embassy mock interview preparation',
+                    'Continuous tracking & consular follow-up'
                 ],
                 'order' => 1,
                 'is_active' => true,
             ],
             [
-                'title' => 'University Selection & SOP Drafting',
-                'slug' => 'university-selection-sop',
-                'icon' => '🎓',
-                'image' => 'images/dest-germany.jpg',
-                'excerpt' => 'Strategic university matching across Germany, Canada, the UK, and New Zealand based on your GPA, budget, and career goals. Professional drafting and editing of compelling SOPs and LORs.',
-                'description' => '<p>Choosing the right course and university determines your post-graduation career settlement. We filter thousands of courses down to the shortlist that maximizes your acceptance chances and job search success.</p>
-                <h4>Highlights:</h4>
-                <ul>
-                    <li>Deep profiling matching your academic transcripts, backlogs, and budget.</li>
-                    <li>Direct access to public German universities with zero tuition fees.</li>
-                    <li>Bespoke Statement of Purpose (SOP) tailored to each university’s specific research focus.</li>
-                    <li>Letter of Recommendation (LOR) and academic CV formatting per European/North American standards.</li>
-                </ul>',
+                'title' => 'Certificate Attestation',
+                'slug' => 'certificate-attestation',
+                'icon' => '📜',
+                'image' => 'images/serv3.jpg',
+                'excerpt' => 'Authentic document verification through Notary Public, State HRD, MEA Apostille, and Embassies for Hague countries, UAE, Saudi Arabia, Qatar, and Kuwait.',
+                'description' => '<p>Certificate attestation is the process of verifying the authenticity of a document issued in one country so that it can be legally recognized and accepted in another country. This process involves verifying the document with relevant state and national authorities. The purpose of certificate attestation services is to ensure that documents used overseas are genuine and can be trusted. This is essential for immigration, overseas employment, and international higher education.</p>
+
+<p>ALL-LAND CONSULTANCY provides end-to-end certificate attestation services for Hague Convention Apostille countries, United Arab Emirates (UAE), Bahrain, Kuwait, Qatar, Saudi Arabia, Taiwan, Egypt, and Vietnam from various authorized departments:</p>
+<ul>
+  <li>Ministry of External Affairs (MEA) Government of India</li>
+  <li>Human Resources Development (HRD) &amp; State Higher Education Departments</li>
+  <li>Notary Public Verification</li>
+  <li>State Home Ministry &amp; General Administration Department (GAD)</li>
+  <li>Sub-Divisional Magistrate (SDM) Legalization</li>
+  <li>Respective Foreign Embassies and Consulates in India</li>
+</ul>
+
+<h3>Typical Steps in Our Attestation Process:</h3>
+<ol>
+  <li><strong>Notarization:</strong> Initial verification and witnessing by a certified Public Notary.</li>
+  <li><strong>Authentication:</strong> Certification by the designated state government department (State HRD or Home Ministry) where the document originated.</li>
+  <li><strong>MEA Apostille / Legalization:</strong> Central government validation by the Ministry of External Affairs for Hague convention members or standard MEA authentication.</li>
+  <li><strong>Embassy Legalization:</strong> Final consular clearance and embassy seal from the destination nation\'s embassy or consulate.</li>
+</ol>
+
+<p>If you are planning to go abroad, we take care of your certificate attestation formalities at reasonable prices with fast turnaround times in a hassle-free manner.</p>',
                 'features' => [
-                    '400+ partner universities worldwide',
-                    'Customized Statement of Purpose (SOP)',
-                    'Letter of Recommendation (LOR) structuring',
-                    'Application fee waiver possibilities'
+                    'Notary Public verification & witnessing',
+                    'State HRD & Higher Education attestation',
+                    'Ministry of External Affairs (MEA) Apostille',
+                    'Embassy legalization (UAE, Saudi, Qatar, Kuwait)',
+                    'Fast-track handling & secure courier tracking',
+                    'Support for degree, birth, marriage & nursing certificates'
                 ],
                 'order' => 2,
                 'is_active' => true,
             ],
             [
-                'title' => 'Certificate Attestation & Apostille',
-                'slug' => 'certificate-attestation',
-                'icon' => '📜',
-                'image' => 'images/service-1.jpg',
-                'excerpt' => 'End-to-end Notary, State HRD, MEA Apostille, and Embassy legalization for degree certificates, transcripts, marriage certificates, and medical nursing council registrations.',
-                'description' => '<p>Embassy and international university admissions mandate verified certificate attestations. Avoid administrative rejections with our verified, fast-track processing.</p>
-                <h4>Services Included:</h4>
-                <ul>
-                    <li>Kerala Higher Education Department & State HRD attestation.</li>
-                    <li>Ministry of External Affairs (MEA) Apostille sticker authentication.</li>
-                    <li>German Consulate, UAE, Saudi, and European Embassy legalizations.</li>
-                    <li>Nursing Council Registration Certificate verification.</li>
-                </ul>',
+                'title' => 'Air Ticketing',
+                'slug' => 'flight-ticketing',
+                'icon' => '✈️',
+                'image' => 'images/serv1.jpg',
+                'excerpt' => 'Domestic and international flight ticket bookings at competitive low airfares with dedicated pre-flight guidance, web check-in, and student baggage support.',
+                'description' => '<p>A flight ticket is a document issued by an airline that allows passengers to travel by flight from one location to another, whether on domestic or international routes. Our expert travel desk reviews your requirements and confirms suitable flight tickets tailored to your convenience. We offer great discounts on domestic and international flight tickets with leading global carriers.</p>
+
+<p>ALL-LAND CONSULTANCY focuses on providing a smooth, stress-free flight booking experience for students, families, and professionals. You can confirm your airline ticket booking at the lowest airfare by planning your journey with us.</p>
+
+<h3>Our Booking Process:</h3>
+<ol>
+  <li><strong>Search:</strong> Our team collects your travel dates, preferred destination, transit preferences, and luggage requirements to identify optimal flight schedules.</li>
+  <li><strong>Selection:</strong> We present transparent options comparing airfares, layover durations, and baggage allowances so you select the most convenient flight.</li>
+  <li><strong>Confirmation:</strong> Once confirmed, we immediately provide electronic air tickets and verified booking references.</li>
+</ol>
+
+<h3>Pre-Flight Information &amp; Assistance:</h3>
+<p>ALL-LAND CONSULTANCY briefs passengers with all vital travel details, including web check-in procedures, flight status alerts, luggage weight guidelines (special student 40kg–46kg baggage allowances), customs guidelines, and instructions on obtaining boarding passes seamlessly.</p>',
                 'features' => [
-                    'State HRD & Higher Education attestation',
-                    'MEA Apostille authentication for Hague nations',
-                    'Embassy legalizations & translations',
-                    'Expedited courier tracking'
+                    'Domestic & international flight bookings',
+                    'Lowest airfares & special student discounts',
+                    'Extra baggage allowance coordination (40kg+)',
+                    'Flexible cancellation & date change assistance',
+                    'Web check-in & boarding pass guidance',
+                    'Direct non-transit and student transit routes'
                 ],
                 'order' => 3,
                 'is_active' => true,
             ],
             [
-                'title' => 'Flight Ticketing & Student Baggage',
-                'slug' => 'flight-ticketing',
-                'icon' => '✈️',
-                'image' => 'images/service-flights.jpg',
-                'excerpt' => 'Special student fare airline bookings with additional baggage allowance (up to 40kg–46kg), flexible cancellation terms, and verified transit visa itineraries.',
-                'description' => '<p>Flying abroad for studies requires flexible travel arrangements. We partner directly with leading international airlines including Emirates, Qatar Airways, Lufthansa, and Air India to provide verified student allowances.</p>',
+                'title' => 'Placement Assistance',
+                'slug' => 'placement-assistance',
+                'icon' => '💼',
+                'image' => 'images/serv5.jpg',
+                'excerpt' => 'Professional career guidance, resume enhancement, interview preparation, and overseas job placement support across healthcare, caregiving, engineering, and global industries.',
+                'description' => '<p>Placement Assistance is a professional support service designed to help job seekers identify and secure suitable employment opportunities based on their educational qualifications, skills, experience, and career aspirations. Our goal is to bridge the gap between talented candidates and potential employers by providing reliable career guidance and structured job search support.</p>
+
+<p>We assist candidates throughout their job search journey, including resume preparation, CV enhancement, interview preparation, career counselling, job application guidance, and access to relevant employment opportunities. Through our established connections with various companies, recruitment agencies, institutions, and professional networks, we help candidates connect with potential employers and explore suitable career opportunities across different industries.</p>
+
+<p>Our placement assistance service focuses on understanding each candidate\'s profile and preferences to identify opportunities that match their qualifications and professional goals. We also guide candidates on interview techniques, workplace expectations, and essential skills required to improve their employability.</p>
+
+<p>Whether you are a fresher seeking your first job or an experienced professional looking for better career opportunities, our placement assistance services aim to make your job search more organised and effective.</p>
+
+<div class="placement-notice-box">
+  <h4>Please Note:</h4>
+  <p>Placement assistance is not a guarantee of employment. Final selection and recruitment decisions are entirely at the discretion of the respective employers. However, our guidance, professional support, and employer network can help improve your chances of finding suitable employment.</p>
+</div>
+
+<h3>Caregiver Jobs in Israel (For Male &amp; Female Candidates)</h3>
+<p>Israel is a country in the Middle East, known for its advanced healthcare facilities, well-developed medical services and growing demand for elderly care professionals. The country offers employment opportunities for foreign workers in the caregiving sector, particularly for assisting elderly individuals and people with disabilities who require daily personal care and support. With an increasing need for home-based care services, foreign caregivers play an important role in supporting families and ensuring quality care for individuals who need assistance with their everyday lives.</p>
+
+<p>Caregiver jobs in Israel are an excellent opportunity for both male and female candidates from India who are interested in working abroad in the healthcare and personal care sector. These employment opportunities allow candidates to gain international work experience while contributing to the well-being of elderly and dependent individuals. Caregiving is a responsible profession that requires patience, dedication, compassion and a genuine interest in helping others. Candidates with relevant training or previous experience in patient care and elderly assistance may have an added advantage during the selection process.</p>
+
+<h4>Responsibilities of Caregivers in Israel:</h4>
+<p>The responsibilities of caregivers include assisting with bathing, dressing, personal hygiene, mobility, meal preparation, feeding, medication reminders and providing emotional support and companionship. Depending on the care recipient\'s requirements, caregivers may work in private homes and provide live-in care. They may also assist individuals with physical limitations, age-related difficulties and other daily care needs. The nature of work can vary depending on the individual\'s health condition, level of independence and specific care requirements. Both male and female caregivers can explore suitable employment opportunities based on their qualifications and employer requirements.</p>
+
+<h4>Overview of Advantages &amp; Benefits of Caregivers Working in Israel:</h4>
+<ul>
+  <li><strong>Competitive Salary:</strong> Caregivers receive wages according to Israeli employment regulations and their employment contracts. Earnings depend on working arrangements and employer requirements.</li>
+  <li><strong>Accommodation Facilities:</strong> Many live-in caregiver positions provide accommodation at the care recipient\'s residence, subject to employment arrangements.</li>
+  <li><strong>Employment Benefits:</strong> Foreign caregivers are entitled to applicable employment rights, including weekly rest periods, annual leave, sick leave and other statutory benefits.</li>
+  <li><strong>International Work Experience:</strong> Working in Israel provides valuable international exposure in elderly care and personal assistance.</li>
+  <li><strong>Opportunities for Men and Women:</strong> Both male and female candidates can apply, depending on the care recipient\'s requirements and employer preferences.</li>
+  <li><strong>Professional Development:</strong> Caregivers gain practical experience in elderly care, patient assistance and disability support.</li>
+</ul>
+
+<h4>Eligibility Criteria for Caregiver Jobs in Israel:</h4>
+<ul>
+  <li>Male and female candidates can apply.</li>
+  <li>Minimum age: 18 years.</li>
+  <li>Basic educational qualification.</li>
+  <li>Caregiving or elderly care training certificate.</li>
+  <li>Previous caregiving experience is an advantage.</li>
+  <li>Medical fitness certificate.</li>
+  <li>Valid passport.</li>
+  <li>Police Clearance Certificate (PCC).</li>
+  <li>Patience, compassion and good communication skills.</li>
+</ul>
+
+<h3>Other International Placement Pathways</h3>
+<ul>
+  <li><strong>Germany:</strong> Healthcare adaptation courses for BSc/GNM nurses leading to full Urkunde licensing, and skilled vocational placements.</li>
+  <li><strong>United Kingdom:</strong> NHS Trust staff nurse opportunities with CBT, OSCE coaching, and Tier 2 Health and Care Worker visas.</li>
+  <li><strong>Saudi Arabia &amp; Middle East:</strong> Ministry of Health (MOH) and specialized hospital placements for healthcare workers with verified DataFlow credentials.</li>
+</ul>',
                 'features' => [
-                    'Extra student baggage allowances (40kg+)',
-                    'Flexible date change and cancellation policies',
-                    'Non-transit Schengen hassle-free flight paths',
-                    'Group student departure discounts'
+                    'Resume preparation & CV enhancement',
+                    '1-on-1 interview technique coaching',
+                    'Caregiver jobs in Israel (Male & Female)',
+                    'Competitive Israeli wage & live-in accommodation',
+                    'Healthcare placement in Germany, UK & Middle East',
+                    'Established corporate & healthcare employer network'
                 ],
                 'order' => 4,
                 'is_active' => true,
             ],
             [
-                'title' => 'Travel & Overseas Health Insurance',
+                'title' => 'Insurance Service',
                 'slug' => 'travel-health-insurance',
                 'icon' => '🛡️',
-                'image' => 'images/service-insurance.jpg',
-                'excerpt' => 'Embassy-compliant mandatory student health insurance and comprehensive international travel cover covering medical emergencies, lost baggage, and travel interruptions.',
-                'description' => '<p>Every country requires specific health insurance cover before granting a student visa. We configure seamless packages covering both mandatory public/statutory insurance (TK, Barmer, DAK in Germany) and private incoming travel insurance.</p>',
+                'image' => 'images/serv7.jpg',
+                'excerpt' => 'Comprehensive international travel and health insurance protecting against medical emergencies, trip cancellations, lost baggage, and unforeseen overseas expenses.',
+                'description' => '<p>Travel insurance is an essential insurance policy that provides financial protection for travelers and international students against unexpected events and emergencies that may occur during their overseas trip or academic tenure. Travel insurance typically covers a wide variety of potential risks, including trip cancellation or interruptions, medical emergencies, lost or stolen luggage, and other unforeseen overseas circumstances.</p>
+
+<p>Depending on the specific policy, coverage may also include emergency medical evacuation, hospital stays, outpatient care, personal liability, and disruptions related to natural disasters or political unrest.</p>
+
+<h3>Key Benefits of Our Insurance Service:</h3>
+<ul>
+  <li><strong>Comprehensive Medical Protection:</strong> Covers doctor visits, prescription medications, emergency hospitalization, and ICU care.</li>
+  <li><strong>Trip Cancellation &amp; Delay:</strong> Reimburses non-refundable flight and accommodation costs if unforeseen emergencies interrupt your journey.</li>
+  <li><strong>Baggage &amp; Document Loss:</strong> Compensation for lost, delayed, or stolen baggage and emergency passport replacement support.</li>
+  <li><strong>Peace of Mind:</strong> Knowing you are covered in case of an emergency ensures a relaxed, confident travel and study experience.</li>
+</ul>
+
+<p>ALL-LAND CONSULTANCY assists you in comparing and choosing embassy-compliant policies tailored to your age, destination country (such as German statutory health insurance TK/Barmer or Canadian UHIP), and study duration.</p>',
                 'features' => [
-                    'German statutory health cover (TK/Barmer/Coracle)',
-                    'Canadian UHIP and provincial plan coverage',
-                    'Embassy-compliant zero deductible policies',
-                    'Instant digital insurance confirmation certificates'
+                    'International student health insurance',
+                    'Emergency hospitalization & medical evacuation',
+                    'Trip cancellation & delay compensation',
+                    'Lost or delayed baggage reimbursement',
+                    'Schengen & embassy visa compliant certificates',
+                    'Instant digital policy issuance'
                 ],
                 'order' => 5,
                 'is_active' => true,
             ],
             [
-                'title' => 'Healthcare DataFlow & PSV Verification',
-                'slug' => 'healthcare-dataflow',
-                'icon' => '🏥',
-                'image' => 'images/service-dataflow.jpg',
-                'excerpt' => 'Specialized Primary Source Verification (PSV) and Dataflow processing for nurses, doctors, pharmacists, and allied healthcare professionals heading to Europe and the Middle East.',
-                'description' => '<p>DataFlow verification is an essential requirement for healthcare professionals practicing overseas. Our healthcare department handles your credential checks directly with your issuing colleges and state nursing councils.</p>',
+                'title' => 'Application Process',
+                'slug' => 'application-process',
+                'icon' => '🎓',
+                'image' => 'images/serv2.jpg',
+                'excerpt' => 'Step-by-step guidance for overseas university and employment applications, compelling SOP crafting, documentation review, and mock interview coaching.',
+                'description' => '<p>The application process is an essential step towards obtaining any job or enrolling in an overseas university degree program. It is the primary means through which you showcase your academic capabilities, skills, qualifications, and personal suitability for the chosen role or program. A well-structured application can make you stand out from the pool of global applicants and substantially increase your chances of selection.</p>
+
+<p>However, applicants are often unaware of intricate international application procedures and specific documentation formats. ALL-LAND CONSULTANCY assists candidates in preparing and fine-tuning every document required for error-free submission.</p>
+
+<h3>Essential Steps in Our Application Support:</h3>
+<ol>
+  <li><strong>Requirement Research:</strong> Before starting your application, we research the precise entry criteria for your target university or position, including required GPA, work experience, language proficiency, and institutional deadlines.</li>
+  <li><strong>Document Preparation:</strong> We professionally format your resume, CV according to European/North American standards, tailor your Statement of Purpose (SOP), and draft compelling Letters of Recommendation (LOR).</li>
+  <li><strong>Application Form Filing:</strong> We meticulously fill out the application forms and attach all certified supporting documents on your behalf to prevent administrative rejections.</li>
+  <li><strong>Interview Preparation:</strong> After successful submission, we prepare candidates for direct interviews with university admission officers or employers, practicing commonly asked questions and articulate responses.</li>
+</ol>',
                 'features' => [
-                    'Primary Source Verification (PSV) management',
-                    'German Defizitbescheid adaptation support',
-                    'UK NMC portal verification assistance',
-                    'Middle East DHA, HAAD & MOH DataFlow processing'
+                    'Detailed institutional requirement profiling',
+                    'Statement of Purpose (SOP) drafting & editing',
+                    'Academic CV & European format resume creation',
+                    'Error-free application submission on candidate behalf',
+                    'Document attachment & verification checks',
+                    'University & employer interview simulation'
                 ],
                 'order' => 6,
                 'is_active' => true,
             ],
             [
-                'title' => 'German Nursing Ausbildung (Stipend Program)',
-                'slug' => 'german-nursing-ausbildung',
-                'icon' => '🩺',
-                'image' => 'images/service-placement.jpg',
-                'excerpt' => 'A 100% tuition-free 3-year government vocational nursing apprenticeship in German state hospitals with a guaranteed monthly stipend of €1,000–€1,250 and direct PR upon graduation.',
-                'description' => '<p>The German Nursing Ausbildung is one of the most lucrative healthcare pathways in the world. As a student apprentice, you pay <strong>zero tuition</strong> and receive a guaranteed monthly stipend throughout your 3 years of clinical training.</p>',
+                'title' => 'Dataflow Service',
+                'slug' => 'healthcare-dataflow',
+                'icon' => '🏥',
+                'image' => 'images/serv4.jpg',
+                'excerpt' => 'Primary Source Verification (PSV) for healthcare professionals heading to Dubai (DHA), Abu Dhabi (HAAD), UAE (MOH), Saudi Arabia (KSA), Qatar, Oman, and Bahrain.',
+                'description' => '<p>Dataflow assistance for healthcare workers is a specialized process that helps doctors, nurses, pharmacists, and allied healthcare professionals streamline their credential verification and licensing evaluation. The DataFlow process provides an efficient, globally trusted method to verify the authenticity of a healthcare worker\'s education, registration licenses, and employment experience directly from the issuing source.</p>
+
+<p>The DataFlow Group is contracted by prominent healthcare regulatory bodies across the Gulf and Middle East to provide a centralized verification platform. ALL-LAND CONSULTANCY provides complete DataFlow services for:</p>
+<ul>
+  <li>Dubai Health Authority (DHA) — Dubai, UAE</li>
+  <li>Health Authority Abu Dhabi (HAAD / DoH) — Abu Dhabi, UAE</li>
+  <li>Ministry of Health (MOH) — United Arab Emirates</li>
+  <li>Saudi Commission for Health Specialties (SCFHS / KSA) — Saudi Arabia</li>
+  <li>Qatar Council for Healthcare Practitioners (QCHP) — Qatar</li>
+  <li>Oman Medical Specialty Board (OMSB) — Oman</li>
+  <li>National Health Regulatory Authority (NHRA) — Bahrain</li>
+</ul>
+
+<h3>The Dataflow Process:</h3>
+<ol>
+  <li><strong>Document Submission:</strong> Candidates submit their educational degrees, nursing or medical council registration, experience letters, and Good Standing Certificates.</li>
+  <li><strong>Primary Source Verification:</strong> The issuing universities, nursing councils, and hospitals verify authenticity through secure channels.</li>
+  <li><strong>Evaluation:</strong> Credentials are evaluated against regulatory standards.</li>
+  <li><strong>Report Issuance:</strong> A finalized Primary Source Verification (PSV) report is issued to the candidate and regulatory authority.</li>
+</ol>',
                 'features' => [
-                    '€1,000 – €1,250 monthly stipend from Month 1',
-                    '100% tuition-free vocational training',
-                    'Hospital placement contract guaranteed prior to visa',
-                    'Direct European PR eligibility within 3 years'
+                    'Primary Source Verification (PSV) management',
+                    'DHA, HAAD, and UAE MOH verification',
+                    'Saudi Arabia (KSA / SCFHS) processing',
+                    'Qatar, Oman & Bahrain healthcare verification',
+                    'Nursing Council Good Standing Certificate support',
+                    'Dedicated document compilation & tracking'
                 ],
                 'order' => 7,
                 'is_active' => true,
             ],
             [
-                'title' => 'Post-Landing Settlement & Accommodation',
-                'slug' => 'post-landing-accommodation',
+                'title' => 'Pre-Departure & Post-Landing Services',
+                'slug' => 'pre-departure-and-post-landing-service',
                 'icon' => '🏡',
-                'image' => 'images/gallery-student-lounge.jpg',
-                'excerpt' => 'Airport pickup, student dormitory or WG room booking, bank account activation, city registration (Anmeldung/SIN), and local SIM card setup upon your international arrival.',
-                'description' => '<p>Landing in a new country can feel intimidating. Our local student network and on-ground coordinators ensure you are welcomed at the airport and guided through your first 14 days of city registration.</p>',
+                'image' => 'images/serv8.jpg',
+                'excerpt' => 'End-to-end relocation guidance including travel checklists, flight & baggage rules, forex cards, airport pickup, accommodation bookings, and city registration.',
+                'description' => '<p>Pre-departure and post-landing assistance are two essential services that ensure travelers, students, and workers have a smooth, comfortable international transition. Our pre-departure assistance helps you avoid last-minute panic and prepares you with practical knowledge for travel and border customs.</p>
+
+<h3>Pre-Departure Assistance Includes:</h3>
+<ul>
+  <li>Visa and passport validity checks and travel folder preparation.</li>
+  <li>Flight itineraries, transit visa advice, and baggage restriction guidelines.</li>
+  <li>Foreign exchange (Forex) cards, international SIM card setup, and blocked account activation.</li>
+  <li>Travel health insurance verification and emergency medical contacts.</li>
+  <li>Comprehensive cultural orientation and climate preparation for destination countries.</li>
+  <li>Essential packing tips and prohibited items guidelines.</li>
+</ul>
+
+<h3>Post-Landing Assistance:</h3>
+<p>Post-landing assistance ensures your new journey begins flawlessly once you arrive at your destination. We assist with airport pickups, secure student dormitory or shared apartment (WG) check-in, city registration (Anmeldung in Germany / SIN in Canada), local bank account opening, and public transit navigation.</p>',
                 'features' => [
-                    'Airport pickup and accommodation check-in',
-                    'City registration (Anmeldung in Germany / SIN in Canada)',
-                    'Local bank account activation and blocked fund release',
-                    'Part-time job search orientation and CV adaptation'
+                    'Pre-departure luggage & customs orientation',
+                    'Forex card & international SIM card setup',
+                    'Airport pickup & transport coordination',
+                    'Safe accommodation & student dormitory booking',
+                    'City registration (Anmeldung/SIN) assistance',
+                    'Local bank account & blocked fund activation'
                 ],
                 'order' => 8,
                 'is_active' => true,
@@ -322,6 +473,101 @@ class DatabaseSeeder extends Seeder
                 'is_active' => true,
                 'order' => 7,
             ],
+            [
+                'title' => 'Bachelor of Nursing (BSc) — 4-Year English Medium',
+                'slug' => 'bachelor-of-nursing-georgia',
+                'country' => 'Georgia',
+                'country_code' => 'GE',
+                'degree_level' => 'Bachelor\'s Degree',
+                'duration' => '4 Years',
+                'intake' => 'September & February',
+                'tuition_fee' => '€3,500 – €4,200 / Year',
+                'stipend' => 'Clinical hospital rotations included',
+                'language_requirement' => 'English Medium (No Georgian required)',
+                'career_pathway' => 'European ECTS Credit Recognition & Global Healthcare Opportunities',
+                'excerpt' => 'English-medium 4-year Bachelor of Nursing combining rigorous anatomy, patient care, and clinical hospital practice across accredited Georgian teaching hospitals.',
+                'description' => '<p>Several prestigious Georgian universities offer English-medium Bachelor of Nursing programmes, generally lasting four years and comprising theoretical and practical components. Students gain comprehensive knowledge in patient care, anatomy, healthcare practices, clinical nursing and medical ethics.</p>',
+                'image' => 'images/dest-georgia.jpg',
+                'is_featured' => true,
+                'is_active' => true,
+                'order' => 8,
+            ],
+            [
+                'title' => 'MD General Medicine (MBBS Equivalent) — European Framework',
+                'slug' => 'md-general-medicine-georgia',
+                'country' => 'Georgia',
+                'country_code' => 'GE',
+                'degree_level' => 'Undergraduate Medical (MD)',
+                'duration' => '6 Years (360 ECTS)',
+                'intake' => 'September / October',
+                'tuition_fee' => '€4,500 – €5,500 / Year',
+                'stipend' => 'Internship & hospital rotations',
+                'language_requirement' => 'English Medium (IELTS / University interview)',
+                'career_pathway' => 'WHO / NMC Recognised Pathway for Global Licensing',
+                'excerpt' => 'European Higher Education Area compliant 6-year medical degree in English, featuring modern simulation centres and multi-specialty clinical rotations.',
+                'description' => '<p>Georgian medical universities offer world-class General Medicine programmes structured under the European ECTS system. Affordable tuition fees and modern hospital affiliations make Georgia a prime choice for Indian medical aspirants.</p>',
+                'image' => 'images/dest-georgia.jpg',
+                'is_featured' => false,
+                'is_active' => true,
+                'order' => 9,
+            ],
+            [
+                'title' => 'BSc Professional Nursing (BSc in Nursing — 6 Semesters)',
+                'slug' => 'bsc-nursing-austria',
+                'country' => 'Austria',
+                'country_code' => 'AT',
+                'degree_level' => 'Bachelor\'s Degree (BSc)',
+                'duration' => '3 Years (6 Semesters)',
+                'intake' => 'September & March',
+                'tuition_fee' => '~€726 / Semester (Public Universities)',
+                'stipend' => 'Clinical training allowances during internships',
+                'language_requirement' => 'German B1/B2 (for clinical patient communication)',
+                'career_pathway' => 'Full Austrian & EU Registered Nurse License + Red-White-Red Card',
+                'excerpt' => 'Unlike traditional vocational pathways, Austria offers professional nursing education through 3-year Bachelor’s degrees combining theory with practical hospital clinical training.',
+                'description' => '<p>Nursing is one of the most promising fields of study in Austria. Austria offers professional nursing education through Bachelor\'s degree programmes lasting three years (six semesters), combining theoretical education with extensive practical clinical training. Graduates can also pursue Master\'s programmes in Nursing Science and Advanced Nursing Practice.</p>',
+                'image' => 'images/dest-austria.jpg',
+                'is_featured' => true,
+                'is_active' => true,
+                'order' => 10,
+            ],
+            [
+                'title' => 'MSc Software Engineering & Cloud Computing',
+                'slug' => 'msc-software-engineering-austria',
+                'country' => 'Austria',
+                'country_code' => 'AT',
+                'degree_level' => 'Master\'s Degree (MSc)',
+                'duration' => '2 Years',
+                'intake' => 'October (Winter Semester)',
+                'tuition_fee' => '€726 / Semester (State Universities)',
+                'stipend' => 'Part-time student jobs: €1,000–€1,400/mo',
+                'language_requirement' => 'English (IELTS 6.5) / MOI accepted',
+                'career_pathway' => 'Red-White-Red Card 12-Month Job Search Visa & Fast EU Settlement',
+                'excerpt' => 'English-taught Master’s in Computer Science & Cloud Architectures at top Austrian universities in Vienna and Graz with direct Central European tech placements.',
+                'description' => '<p>Study at world-renowned Austrian universities of applied sciences. Benefit from low public tuition fees, a safe living environment, and strong connections to Central Europe’s tech industry.</p>',
+                'image' => 'images/dest-austria.jpg',
+                'is_featured' => false,
+                'is_active' => true,
+                'order' => 11,
+            ],
+            [
+                'title' => 'MBBS / MD General Medicine (5+1 Years English Medium)',
+                'slug' => 'mbbs-general-medicine-tajikistan',
+                'country' => 'Tajikistan',
+                'country_code' => 'TJ',
+                'degree_level' => 'Medical Degree (MBBS / MD)',
+                'duration' => '5 Years + 1 Year Internship (6 Years Total)',
+                'intake' => 'September / October',
+                'tuition_fee' => '₹3,50,000 – ₹4,20,000 / Year',
+                'stipend' => 'Hospital clinical internship included',
+                'language_requirement' => 'English Medium (NEET Qualified for Indian students)',
+                'career_pathway' => 'NMC Compliant Curriculum & NEXT / FMGE Eligibility',
+                'excerpt' => 'Highly affordable English-medium MBBS program with 5 years of academic instruction and 1 year of compulsory hospital internship complying with NMC regulations.',
+                'description' => '<p>Medical universities in Tajikistan offer General Medicine programmes with 5 years of academic study and 1 year of compulsory internship. Students study Anatomy, Physiology, Biochemistry, Pathology, Pharmacology, Medicine, and Surgery with practical clinical training in teaching hospitals. Provides an economical alternative to high Indian private medical college fees.</p>',
+                'image' => 'images/dest-tajikistan.jpg',
+                'is_featured' => true,
+                'is_active' => true,
+                'order' => 12,
+            ],
         ];
 
         foreach ($courses as $c) {
@@ -335,6 +581,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'study-in-germany-free-seminar-aluva',
                 'type' => 'seminar',
                 'type_label' => 'Free Seminar',
+                'image' => 'images/events/event-germany-seminar.jpg',
                 'event_date' => Carbon::now()->addDays(8),
                 'start_time' => '10:00 AM',
                 'end_time' => '1:00 PM',
@@ -350,6 +597,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'uk-intake-spot-admission-day',
                 'type' => 'spot',
                 'type_label' => 'Spot Admission',
+                'image' => 'images/events/event-uk-spot-admission.jpg',
                 'event_date' => Carbon::now()->addDays(15),
                 'start_time' => '10:00 AM',
                 'end_time' => '4:00 PM',
@@ -365,6 +613,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'canada-study-permit-pgwp-webinar',
                 'type' => 'webinar',
                 'type_label' => 'Live Webinar',
+                'image' => 'images/events/event-canada-webinar.jpg',
                 'event_date' => Carbon::now()->addDays(21),
                 'start_time' => '7:30 PM IST',
                 'end_time' => '9:00 PM IST',
@@ -380,6 +629,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'new-zealand-green-list-pr-fair',
                 'type' => 'fair',
                 'type_label' => 'Education Fair',
+                'image' => 'images/events/event-nz-education-fair.jpg',
                 'event_date' => Carbon::now()->addDays(29),
                 'start_time' => '10:00 AM',
                 'end_time' => '4:00 PM',
@@ -395,6 +645,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'scholarships-education-loans-live-qa',
                 'type' => 'webinar',
                 'type_label' => 'Live Webinar',
+                'image' => 'images/events/event-scholarships-webinar.jpg',
                 'event_date' => Carbon::now()->addDays(36),
                 'start_time' => '6:30 PM IST',
                 'end_time' => '8:00 PM IST',
@@ -410,6 +661,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'pre-departure-orientation-aluva',
                 'type' => 'pre-departure',
                 'type_label' => 'Pre-Departure',
+                'image' => 'images/events/event-pre-departure-orientation.jpg',
                 'event_date' => Carbon::now()->addDays(43),
                 'start_time' => '11:00 AM',
                 'end_time' => '1:00 PM',
@@ -562,6 +814,321 @@ class DatabaseSeeder extends Seeder
 
         foreach ($inquiries as $inq) {
             Inquiry::updateOrCreate(['email' => $inq['email']], $inq);
+        }
+
+        // 7. Seed Destinations / Study Abroad Countries
+        $destinations = [
+            [
+                'name' => 'Germany',
+                'slug' => 'germany',
+                'country_code' => 'DE',
+                'flag' => '🇩🇪',
+                'tab_badge' => 'Zero Tuition',
+                'hero_badge' => 'ZERO TUITION FEES',
+                'eyebrow' => 'Europe’s Premier Tech & Engineering Hub',
+                'title' => 'Study in Germany — World-Class Education with €0 Tuition',
+                'image' => 'images/dest-germany.jpg',
+                'banner_image' => 'images/dest-germany.jpg',
+                'blurb' => 'Gain internationally recognized degrees from prestigious TU9 and state universities without paying tuition fees. Germany offers unmatched engineering excellence, high living standards, and clear post-graduation career opportunities across Europe.',
+                'description' => '<p>Germany has emerged as the premier higher education destination for Indian and international students seeking world-class academic rigour without exorbitant tuition debts. With over 400 state-accredited universities offering more than 2,000 English-taught degree programs, international scholars receive identical zero-tuition privileges as domestic German citizens.</p><h3>Why Choose Germany?</h3><ul><li><strong>€0 Tuition at Public Universities:</strong> Save ₹30–₹50 Lakhs compared to universities in the US, UK, or Australia.</li><li><strong>World-Class TU9 & Applied Science Universities:</strong> Renowned worldwide for mechanical engineering, computer science, automotive, mechatronics, and biotechnology.</li><li><strong>18-Month Post-Study Job Seeker Visa:</strong> Ample time to transition from graduate status into a high-paying European engineering or management contract.</li><li><strong>Fast-Track Permanent Residence:</strong> Graduates who work in Germany and contribute to pension insurance can apply for settlement permits (Niederlassungserlaubnis) in as little as 21 to 24 months.</li></ul>',
+                'stats' => [
+                    ['val' => '€0 / Year', 'lbl' => 'Public Tuition'],
+                    ['val' => '18 Months', 'lbl' => 'Job Search Visa'],
+                    ['val' => '21–24 Mo', 'lbl' => 'Fast PR Pathway'],
+                    ['val' => '20 Hrs/Wk', 'lbl' => 'Part-Time Work'],
+                ],
+                'features' => [
+                    ['title' => 'Tuition-Free Higher Education', 'desc' => 'Over 400 state-funded universities offer English-taught Bachelor’s & Master’s programs with zero tuition fees.'],
+                    ['title' => 'Generous 18-Month Job Search Visa', 'desc' => 'Graduates receive 1.5 years to secure employment in Europe’s strongest economy with full work rights.'],
+                    ['title' => 'Fast-Track PR Settlement in 21–24 Months', 'desc' => 'Secure permanent residency in under two years of qualified employment after graduation.'],
+                ],
+                'popular_courses' => ['Automotive & Mechanical', 'Computer Science & AI', 'Renewable Energy', 'Business Analytics', 'Vocational Nursing (Ausbildung)', 'DAAD Scholarships'],
+                'requirements' => 'APS Certificate (mandatory for Indian applicants), minimum 60%-70% in Bachelor\'s, IELTS 6.5 or TOEFL 90 (or MOI where accepted), €11,904 Blocked Account (Sperrkonto) for living expenses.',
+                'living_cost' => '€934 – €1,000 / month (Blocked Account covers accommodation, food, and public transport)',
+                'post_study_work' => '18 Months open Job Search Visa with full work rights, leading to EU Blue Card',
+                'order' => 1,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Georgia',
+                'slug' => 'georgia',
+                'country_code' => 'GE',
+                'flag' => '🇬🇪',
+                'tab_badge' => 'Affordable Degrees',
+                'hero_badge' => 'ENGLISH-MEDIUM NURSING & MEDICINE',
+                'eyebrow' => 'Crossroads of Eastern Europe & Western Asia',
+                'title' => 'Study in Georgia — Affordable Higher Education & English-Medium Degrees',
+                'image' => 'images/dest-georgia.jpg',
+                'banner_image' => 'images/dest-georgia.jpg',
+                'blurb' => 'Georgia is a beautiful country located at the crossroads of Eastern Europe and Western Asia, known for its rich culture, natural beauty, welcoming environment and quality education system. It has become an attractive destination for international students seeking affordable higher education abroad.',
+                'description' => '<p>Georgia is a beautiful country located at the crossroads of Eastern Europe and Western Asia, known for its rich culture, natural beauty, welcoming environment and quality education system. It has become an attractive destination for international students seeking affordable higher education abroad. Georgian universities offer a wide range of academic programmes, including Bachelor\'s, Master\'s and Doctoral degrees in various disciplines. Many universities also provide English-medium programmes, making Georgia a convenient destination for Indian students.</p>
+
+<h3>What is after Plus Two?</h3>
+<p>Every year, lakhs of students face confusion about choosing the right career path, higher education opportunities and future employment prospects. If you are looking for an internationally recognised educational experience at an affordable cost, Georgia can be an excellent option.</p>
+
+<h3>Nursing in Georgia (4-Year Professional Bachelor Degree)</h3>
+<p>If you are planning to pursue a career in nursing, studying Nursing in Georgia offers an opportunity to obtain a professional Bachelor\'s degree through academic learning and practical clinical training. Several Georgian universities offer English-medium Bachelor of Nursing programmes, generally lasting four years and comprising theoretical and practical components. Students gain knowledge in patient care, anatomy, healthcare practices, clinical nursing and medical ethics. Admission requirements and English proficiency criteria vary between universities.</p>
+
+<h3>Diverse Bachelor\'s &amp; Master\'s Degree Programmes</h3>
+<p>Apart from Nursing, Georgia offers various Bachelor\'s degree programmes in fields such as Medicine, Business Administration, Information Technology, Engineering, Pharmacy and other disciplines. Students who have completed their undergraduate education can also pursue Master\'s degree programmes in specialised fields, including healthcare, public health, business management and technology. Master\'s programmes generally take one to two years, depending on the course and university.</p>
+
+<h3>Overview of Key Student Advantages in Georgia</h3>
+<ul>
+  <li><strong>Quality Education:</strong> Georgian universities offer structured academic programmes with theoretical instruction, practical training and modern learning facilities.</li>
+  <li><strong>Affordable Tuition Fees:</strong> Compared with several popular international study destinations, Georgia offers relatively affordable higher education and living expenses.</li>
+  <li><strong>English-Medium Programmes:</strong> Many universities offer courses in English, helping international students pursue higher education without necessarily knowing Georgian.</li>
+  <li><strong>Practical Training:</strong> Nursing students receive clinical exposure and practical training to develop professional healthcare skills.</li>
+  <li><strong>International Exposure:</strong> Students experience a multicultural environment and interact with people from different nationalities and backgrounds.</li>
+  <li><strong>Wide Range of Courses:</strong> Students can choose from Bachelor\'s and Master\'s programmes in Nursing, Medicine, Business, IT, Engineering and other disciplines.</li>
+  <li><strong>European Education Framework:</strong> Georgia follows the European Higher Education Area structure and the ECTS credit system, supporting academic transparency and student mobility.</li>
+</ul>
+
+<h3>Eligibility Criteria</h3>
+<ul>
+  <li>Plus Two or equivalent qualification for Bachelor\'s programmes.</li>
+  <li>Relevant Bachelor\'s degree for Master\'s programmes.</li>
+  <li>Academic transcripts and certificates.</li>
+  <li>Valid passport.</li>
+  <li>English language proficiency as required by the university.</li>
+  <li>Additional entrance examinations or interviews, if applicable.</li>
+</ul>',
+                'stats' => [
+                    ['val' => '€3k–€5k', 'lbl' => 'Annual Tuition'],
+                    ['val' => '4 Years', 'lbl' => 'BSc Nursing'],
+                    ['val' => 'ECTS / EHEA', 'lbl' => 'European Framework'],
+                    ['val' => '100% English', 'lbl' => 'Medium of Instruction'],
+                ],
+                'features' => [
+                    ['title' => 'Quality Education & Modern Facilities', 'desc' => 'Structured academic programmes with theoretical instruction, practical clinical training and modern university facilities.'],
+                    ['title' => 'Affordable Tuition & Living Expenses', 'desc' => 'Compared with several popular international destinations, Georgia offers relatively affordable higher education and living costs.'],
+                    ['title' => 'English-Medium Nursing & Medicine', 'desc' => 'English-medium 4-year Bachelor of Nursing with clinical exposure in patient care, anatomy, and healthcare ethics.'],
+                    ['title' => 'European Higher Education Framework', 'desc' => 'Georgia follows the European Higher Education Area (EHEA) structure and ECTS credit system, supporting international mobility.'],
+                ],
+                'popular_courses' => ['Bachelor of Nursing (4 Yrs)', 'General Medicine (MD/MBBS)', 'Business Administration (BBA)', 'Information Technology & CS', 'Pharmacy & Health Sciences', 'Public Health (Master’s)'],
+                'requirements' => 'Plus Two or equivalent qualification for Bachelor\'s programmes, relevant Bachelor\'s degree for Master\'s, academic transcripts & certificates, valid passport, English language proficiency as required by university.',
+                'living_cost' => '$300 – $450 / month (covers student hostel/apartment accommodation, meals, and local transit)',
+                'post_study_work' => 'European ECTS credit mobility & post-graduation residency pathways across Europe',
+                'order' => 2,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Austria',
+                'slug' => 'austria',
+                'country_code' => 'AT',
+                'flag' => '🇦🇹',
+                'tab_badge' => 'Central Europe Hub',
+                'hero_badge' => 'WORLD-CLASS EU DEGREE',
+                'eyebrow' => 'Heart of Central Europe & High Living Standard',
+                'title' => 'Study in Austria — World-Class Central European Higher Education & Nursing Degrees',
+                'image' => 'images/dest-austria.jpg',
+                'banner_image' => 'images/dest-austria.jpg',
+                'blurb' => 'Studying in Austria is a dream for many international students. Austria is known for its high standard of living, excellent education system, rich cultural heritage and beautiful natural landscapes. It offers world-class public universities, 3-year professional nursing degrees, and European career pathways.',
+                'description' => '<p>Studying in Austria is a dream for many international students. Austria is a beautiful country located in Central Europe, known for its high standard of living, excellent education system, rich cultural heritage and beautiful natural landscapes. It is recognised as an attractive destination for international students seeking quality higher education in Europe. Austria offers a wide range of educational institutions, including public universities, universities of applied sciences and private universities, providing various programmes at Bachelor\'s, Master\'s and doctoral levels.</p>
+
+<p>Austria has become an increasingly attractive destination for international students seeking quality higher education in Europe. With a wide range of academic programmes, internationally recognised qualifications and opportunities for practical learning, the country offers excellent options for students planning to pursue their Bachelor\'s or Master\'s degrees abroad. Its affordable education system, safe living environment and access to European career opportunities make Austria a preferred destination for students looking to build a successful international career.</p>
+
+<h3>Academic Opportunities Across Diverse Disciplines</h3>
+<p>If you are planning to pursue a Bachelor\'s or Master\'s degree in Austria, the country offers various opportunities across different academic disciplines. Students who have completed Plus Two can apply for suitable Bachelor\'s programmes, subject to university admission requirements and recognition of their academic qualifications. Students who have already completed a relevant Bachelor\'s degree can explore Master\'s programmes in their respective fields. Courses are available in different disciplines, including nursing, healthcare, engineering, business management, information technology and social sciences. Depending on the programme, students can choose between English and German-taught courses.</p>
+
+<h3>Professional Nursing Degree in Austria (3 Years / 6 Semesters)</h3>
+<p>Nursing is one of the promising fields of study in Austria. Unlike Germany\'s traditional nursing Ausbildung pathway, Austria offers professional nursing education through Bachelor\'s degree programmes, generally lasting three years (six semesters). These programmes combine theoretical education with practical clinical training. Students who have completed a relevant Bachelor\'s degree in nursing can also explore Master\'s programmes such as Nursing Science, Advanced Nursing Practice and Nursing Management. German language proficiency is particularly important for clinical training and patient communication.</p>
+
+<h3>Overview of Key Advantages in Austria</h3>
+<ul>
+  <li><strong>High-Quality Education:</strong> Austria offers internationally recognised higher education through well-established universities and universities of applied sciences.</li>
+  <li><strong>Career Opportunities:</strong> Students can explore career opportunities in healthcare, engineering, business, IT and other professional sectors.</li>
+  <li><strong>Practical Training:</strong> Many programmes include internships, laboratory sessions and practical industry exposure.</li>
+  <li><strong>Multicultural Environment:</strong> Students experience a diverse international community and European lifestyle.</li>
+  <li><strong>Affordable Education:</strong> Public university tuition fees are comparatively affordable (~€726 per semester for non-EU students), although fees vary depending on nationality and institution.</li>
+  <li><strong>International Exposure:</strong> Studying in Austria provides opportunities to develop language skills, professional knowledge and cross-cultural experience.</li>
+</ul>
+
+<h3>Eligibility Criteria</h3>
+<ul>
+  <li>Plus Two or equivalent qualification for Bachelor\'s programmes.</li>
+  <li>Relevant Bachelor\'s degree for Master\'s programmes.</li>
+  <li>Academic transcripts, school leaving certificates, and valid passport.</li>
+  <li>German language proficiency (B1/B2) for clinical nursing programmes or English proficiency for English-taught degrees.</li>
+  <li>Additional entrance examinations or interviews, if applicable.</li>
+</ul>',
+                'stats' => [
+                    ['val' => '~€726/Sem', 'lbl' => 'Public Univ Tuition'],
+                    ['val' => '3 Years', 'lbl' => 'BSc Nursing (6 Sem)'],
+                    ['val' => 'Top 5', 'lbl' => 'Global Living Index'],
+                    ['val' => 'Red-White-Red', 'lbl' => 'Post-Study Card'],
+                ],
+                'features' => [
+                    ['title' => 'High-Quality European Education', 'desc' => 'Internationally recognised higher education through well-established public universities and universities of applied sciences.'],
+                    ['title' => 'Professional Nursing Degree (3 Yrs / 6 Semesters)', 'desc' => 'Unlike traditional vocational pathways, Austria offers professional nursing education through 3-year Bachelor’s degrees combining theory with clinical training.'],
+                    ['title' => 'Practical Training & Industry Exposure', 'desc' => 'Internships, laboratory sessions and practical industry exposure across healthcare, engineering, IT, and business.'],
+                    ['title' => 'Affordable Education & Safe Living', 'desc' => 'Public university tuition fees are comparatively affordable (~€726/semester) with a very high safety index and European career access.'],
+                ],
+                'popular_courses' => ['BSc Professional Nursing (3 Yrs)', 'Advanced Nursing Practice & Mgmt', 'Software Engineering & IT', 'Mechanical & Industrial Eng', 'International Business Administration', 'Biotechnology & Life Sciences'],
+                'requirements' => 'Plus Two with required subjects for Bachelor\'s programmes (with recognition/nostrification), relevant Bachelor\'s degree for Master\'s, German language proficiency (B1/B2 for nursing clinicals) or English proficiency for English-taught degrees.',
+                'living_cost' => '€850 – €1,050 / month (covers student housing/WG, student transit ticket, food, and Austrian public health insurance)',
+                'post_study_work' => '12 Months Red-White-Red Card job seeker visa transitioning directly into Austrian EU settlement',
+                'order' => 3,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'UK',
+                'slug' => 'united-kingdom',
+                'country_code' => 'UK',
+                'flag' => '🇬🇧',
+                'tab_badge' => '1-Yr Master’s',
+                'hero_badge' => '1-YEAR FAST MASTERS',
+                'eyebrow' => 'Venerable Russell Group Academic Heritage',
+                'title' => 'Study in the UK — 1-Year Fast Master’s & 2-Year Graduate Visa',
+                'image' => 'images/dest-uk.jpg',
+                'banner_image' => 'images/dest-uk.jpg',
+                'blurb' => 'Home to historic Russell Group institutions and innovative modern universities. Complete your Master’s degree in just 12 months, saving a full year of living expenses while qualifying for a 2-year post-study Graduate Route work visa.',
+                'description' => '<p>With 4 of the world\'s top 10 universities and centuries of academic prestige, the United Kingdom offers unparalleled global recognition. UK degrees are designed for speed and career acceleration: intensive 1-year Master’s courses allow students to graduate and enter the workforce 12 months faster than in other nations, saving tens of thousands of pounds in living expenses.</p><h3>Why Choose the UK?</h3><ul><li><strong>1-Year Intensive Master’s:</strong> Complete your postgraduate education in 12 months, drastically reducing tuition fees and living accommodation outlays.</li><li><strong>2-Year Graduate Route Post-Study Visa:</strong> Work or seek employment in the UK without needing company visa sponsorship during the two-year period.</li><li><strong>Lucrative NHS & STEM Opportunities:</strong> High demand across NHS healthcare trusts, financial technology, aerospace, and software engineering.</li><li><strong>Scholarships Up to £10,000+:</strong> Generous merit and commonwealth scholarships available across leading Russell Group institutions.</li></ul>',
+                'stats' => [
+                    ['val' => '1 Year', 'lbl' => 'Fast-Track Master’s'],
+                    ['val' => '2 Years', 'lbl' => 'Graduate Visa (PSW)'],
+                    ['val' => 'NHS Direct', 'lbl' => 'Healthcare Sponsorships'],
+                    ['val' => '20 Hrs/Wk', 'lbl' => 'Term-Time Work'],
+                ],
+                'features' => [
+                    ['title' => 'Time & Cost-Efficient 1-Year Master’s', 'desc' => 'Graduate a full year earlier than in the US or Australia, cutting tuition and living expenses in half.'],
+                    ['title' => '2-Year Post-Study Graduate Route Visa', 'desc' => 'Work full-time across London and the UK without requiring company sponsorship during the initial 2 years.'],
+                    ['title' => 'NHS Healthcare & STEM Direct Sponsorships', 'desc' => 'Exceptional recruitment channels and tier-2 sponsorship for nurses, allied health workers, and engineers.'],
+                ],
+                'popular_courses' => ['1-Year MSc & MBA', 'NHS Nursing & Healthcare', 'Fintech & Investment Banking', 'Cybersecurity & Cloud', 'Law & Commercial Mgmt', 'Artificial Intelligence'],
+                'requirements' => 'Minimum 55%-65% in Bachelor\'s, IELTS 6.0–6.5 (or waiver based on 70%+ in Class 12 English), CAS letter from university, 28-day maintenance funds.',
+                'living_cost' => '£9,207 (£1,023/mo outside London) or £12,006 (£1,334/mo inside London)',
+                'post_study_work' => '2-Year Graduate Route visa (3 years for PhD graduates)',
+                'order' => 4,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Tajikistan',
+                'slug' => 'tajikistan',
+                'country_code' => 'TJ',
+                'flag' => '🇹🇯',
+                'tab_badge' => 'Affordable MBBS',
+                'hero_badge' => 'ENGLISH-MEDIUM 5+1 MBBS',
+                'eyebrow' => 'Central Asia’s Affordable Medical Hub',
+                'title' => 'Study in Tajikistan — Affordable English-Medium MBBS (5+1 Years)',
+                'image' => 'images/dest-tajikistan.jpg',
+                'banner_image' => 'images/dest-tajikistan.jpg',
+                'blurb' => 'Studying in Tajikistan is becoming an attractive option for international students, particularly those aspiring to pursue medical education abroad. Tajikistan offers public and medical universities providing affordable MBBS (General Medicine 5+1 years) in English with clinical hospital exposure.',
+                'description' => '<p>Studying in Tajikistan is becoming an attractive option for many international students, particularly those aspiring to pursue medical education abroad. Tajikistan is a country located in Central Asia, known for its beautiful mountainous landscapes, cultural heritage and developing educational sector. It offers various higher educational institutions, including public universities and medical universities, providing opportunities for international students to pursue higher education in different academic fields. Among these, MBBS (Bachelor of Medicine and Bachelor of Surgery) is one of the most popular choices among Indian students.</p>
+
+<p>Tajikistan has emerged as a destination for Indian students looking for affordable international medical education. Its medical universities offer opportunities to study medicine in English, along with practical clinical exposure in healthcare institutions. The availability of international student programmes, comparatively affordable living expenses and a multicultural learning environment makes Tajikistan an option worth considering for students planning to pursue their medical careers abroad.</p>
+
+<h3>General Medicine (MBBS) Course Structure: 5 Years + 1 Year Internship</h3>
+<p>If you are planning to pursue MBBS abroad, Tajikistan can be one of the options to explore. Medical universities in Tajikistan offer General Medicine programmes, with a typical course structure of five years of academic education followed by one year of compulsory internship, subject to the university and applicable regulations. Students study subjects such as Anatomy, Physiology, Biochemistry, Pathology, Pharmacology, Medicine and Surgery, along with practical clinical training.</p>
+
+<h3>MBBS in Tajikistan Compared with India</h3>
+<p>In India, the MBBS programme generally consists of 4.5 years of academic education followed by one year of compulsory internship, making it a total of 5.5 years. In Tajikistan, the commonly followed structure is approximately five years of academic study and one year of internship, making it around six years. While the academic structure and admission procedures differ, both pathways aim to prepare students for professional medical careers. Indian students planning to return to India must ensure that their chosen foreign medical qualification meets the requirements specified by the National Medical Commission (NMC), including the total course duration, medium of instruction and internship criteria.</p>
+
+<h3>Affordable Fee Structure vs Indian Private Colleges</h3>
+<p>One of the major advantages of studying MBBS in Tajikistan is its comparatively affordable fee structure. In India, tuition fees at some of the highest-priced private and deemed medical colleges can reach approximately ₹26 lakh per year, excluding additional expenses. Tajikistan offers a more economical alternative for medical education, making it an attractive option for Indian students.</p>
+
+<h3>Overview of Key Advantages in Tajikistan</h3>
+<ul>
+  <li><strong>Affordable Education:</strong> Tajikistan offers comparatively affordable medical education and living expenses compared with several other international destinations.</li>
+  <li><strong>English-Medium Education:</strong> Selected medical universities offer English-medium programmes for international students.</li>
+  <li><strong>Clinical Training:</strong> Students receive practical exposure through clinical training and hospital-based learning.</li>
+  <li><strong>International Exposure:</strong> Students interact with peers from different countries and experience a multicultural academic environment.</li>
+  <li><strong>Recognised Qualifications:</strong> Students should verify the university\'s eligibility under applicable medical education and licensing requirements before admission.</li>
+  <li><strong>Career Opportunities:</strong> Graduates can explore further licensing and medical practice opportunities, subject to the regulations of the country where they intend to work.</li>
+</ul>
+
+<h3>Eligibility Criteria</h3>
+<ul>
+  <li>Completed 10+2 (Plus Two Science) with Physics, Chemistry, Biology and English with minimum 50% aggregate.</li>
+  <li>Qualified NEET-UG score as mandated by the National Medical Commission (NMC) for Indian students.</li>
+  <li>Minimum age of 17 years as of 31st December of the admission year.</li>
+  <li>Valid Indian Passport with minimum 18 months validity.</li>
+  <li>Medical fitness certificate and negative HIV / infectious disease report.</li>
+</ul>',
+                'stats' => [
+                    ['val' => '5 + 1 Yrs', 'lbl' => 'MBBS + Internship'],
+                    ['val' => '₹3.5L–₹4.5L', 'lbl' => 'Tuition / Year'],
+                    ['val' => 'NMC Aligned', 'lbl' => 'Indian Medical Board'],
+                    ['val' => '100% English', 'lbl' => 'Medium of Instruction'],
+                ],
+                'features' => [
+                    ['title' => 'Affordable Medical Education', 'desc' => 'Tajikistan offers comparatively affordable medical education and living expenses compared with several other international destinations.'],
+                    ['title' => 'English-Medium Education', 'desc' => 'Selected medical universities offer English-medium programmes for international students with clinical hospital exposure.'],
+                    ['title' => 'Clinical Hospital Training', 'desc' => 'Students receive practical exposure through clinical training and hospital-based learning across major disciplines.'],
+                    ['title' => 'Recognised Global Qualifications', 'desc' => 'Curriculum aligned with WHO, NMC guidelines, and international licensing examination prerequisites.'],
+                ],
+                'popular_courses' => ['MBBS / MD (General Medicine - 5+1 Yrs)', 'Dental Surgery (BDS)', 'Pharmacy (B.Pharm)', 'Pediatric Medicine', 'Public Health & Epidemiology'],
+                'requirements' => 'Completed Plus Two (Science) with 50%+ in Physics, Chemistry, Biology; qualified NEET-UG as mandated by NMC; valid passport; medical fitness certificate.',
+                'living_cost' => '$150 – $250 / month (covers government hostel accommodation, Indian mess food, and local transit)',
+                'post_study_work' => '1-Year compulsory hospital clinical internship, eligible to sit for NEXT/FMGE and international licensing exams (PLAB, USMLE)',
+                'order' => 5,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Canada',
+                'slug' => 'canada',
+                'country_code' => 'CA',
+                'flag' => '🇨🇦',
+                'tab_badge' => '3-Yr PGWP',
+                'hero_badge' => 'UP TO 3-YR PGWP',
+                'eyebrow' => 'Top Global Immigration & Career Pathways',
+                'title' => 'Study in Canada — Renowned Universities & Clear PR Pathways',
+                'image' => 'images/dest-canada.jpg',
+                'banner_image' => 'images/dest-canada.jpg',
+                'blurb' => 'World-renowned for top-ranking research universities, safe multicultural communities, and progressive post-study work regulations. International graduates can gain up to a 3-year Open Work Permit (PGWP) and leverage Canadian education for permanent residency.',
+                'description' => '<p>Canada stands as one of the world\'s most welcoming nations for international students. Combining cutting-edge education at U15 research universities and renowned colleges with transparent, points-based permanent residency pathways, Canada provides a direct route from student life to permanent settlement.</p><h3>Why Study in Canada?</h3><ul><li><strong>Up to 3-Year Post-Graduation Work Permit (PGWP):</strong> Gain unrestricted Canadian work experience upon completing a 2-year degree or diploma program.</li><li><strong>Paid Co-op & Internship Integrations:</strong> Alternate between academic terms and full-time paid Canadian work placements directly tied to your field of study.</li><li><strong>Spousal Open Work Visa:</strong> Eligible graduate students can bring spouses on full-time open work permits, allowing both partners to earn in Canada.</li><li><strong>Express Entry & Provincial Nominee Program (PNP) Advantage:</strong> Canadian educational credentials grant substantial CRS points toward Canadian Permanent Residence.</li></ul>',
+                'stats' => [
+                    ['val' => 'Up to 3 Yrs', 'lbl' => 'PGWP Work Permit'],
+                    ['val' => 'Open Work', 'lbl' => 'Spousal Work Rights'],
+                    ['val' => 'Bonus CRS', 'lbl' => 'Express Entry & PNP'],
+                    ['val' => '20 Hrs/Wk', 'lbl' => 'Off-Campus Work'],
+                ],
+                'features' => [
+                    ['title' => 'Post-Graduation Work Permit (PGWP)', 'desc' => 'Qualify for up to 3 years of open, unrestricted Canadian work experience upon graduation.'],
+                    ['title' => 'Paid Co-op & Internship Terms', 'desc' => 'Gain Canadian industry work experience while earning a competitive student wage during your studies.'],
+                    ['title' => 'Spousal Open Work Permit & Direct PR', 'desc' => 'Your spouse can work full-time in Canada, while your degree grants significant CRS bonus points for permanent residency.'],
+                ],
+                'popular_courses' => ['Software Engineering', 'Healthcare & Practical Nursing', 'Project Management', 'Supply Chain & Logistics', 'Data Analytics & Cloud', 'Business Administration'],
+                'requirements' => 'Provincial Attestation Letter (PAL), minimum 55%-65% in previous qualification, IELTS 6.0-6.5 overall (SDS route), GIC of CAD $20,635 for living cost proof.',
+                'living_cost' => 'CAD $1,500 – $1,800 / month (covers accommodation, transit, groceries, and utilities)',
+                'post_study_work' => 'Up to 3 Years Post-Graduation Work Permit (PGWP)',
+                'order' => 6,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'New Zealand',
+                'slug' => 'new-zealand',
+                'country_code' => 'NZ',
+                'flag' => '🇳🇿',
+                'tab_badge' => 'Green List PR',
+                'hero_badge' => 'GREEN LIST FAST TRACK',
+                'eyebrow' => 'Unmatched Living Standard & Fast-Track PR',
+                'title' => 'Study in New Zealand — Scenic Living & Green List Residence',
+                'image' => 'images/dest-nz.jpg',
+                'banner_image' => 'images/dest-nz.jpg',
+                'blurb' => 'Combine top 3% world-ranked universities with an unmatched quality of life. New Zealand’s Green List immigration framework fast-tracks direct permanent residency for in-demand roles in IT, construction, engineering, and healthcare.',
+                'description' => '<p>Ranked consistently among the world\'s most peaceful and corruption-free countries, New Zealand offers a welcoming, forward-thinking educational environment. All eight of New Zealand\'s state universities rank in the top 3% globally (QS World Rankings), and its innovative Green List immigration framework provides clear, guaranteed fast-track residence pathways for international graduates.</p><h3>Why Choose New Zealand?</h3><ul><li><strong>Green List Direct-to-Residence Pathway:</strong> Fast-track permanent residency for graduates in engineering, construction, IT, nursing, and medicine.</li><li><strong>Up to 3-Year Post-Study Open Work Visa:</strong> Unrestricted employment rights across Auckland, Christchurch, Wellington, and beyond.</li><li><strong>Unsurpassed Safety & Quality of Life:</strong> Top-tier global safety index, pristine natural environment, and warm multicultural campus communities.</li><li><strong>Family & Partner Benefits:</strong> Eligible post-graduate students can bring spouses on full work visas, while dependent children study tuition-free as domestic students.</li></ul>',
+                'stats' => [
+                    ['val' => 'Green List', 'lbl' => 'Direct to Residence'],
+                    ['val' => 'Up to 3 Yrs', 'lbl' => 'Post-Study Work Visa'],
+                    ['val' => 'Top 10', 'lbl' => 'Global Quality of Life'],
+                    ['val' => 'NZ$23.15/Hr', 'lbl' => 'High Min Wage'],
+                ],
+                'features' => [
+                    ['title' => 'Green List Fast-Track Permanent Residence', 'desc' => 'Graduates in eligible Tier 1 and Tier 2 high-demand occupations can apply directly for NZ residence upon job offer.'],
+                    ['title' => 'Up to 3-Year Open Post-Study Work Visa', 'desc' => 'Enjoy unrestricted employment rights across Auckland, Wellington, and Christchurch after completing your degree.'],
+                    ['title' => 'Safe, Progressive & Welcoming Nation', 'desc' => 'Ranked among the safest countries in the world with high minimum wages, pristine nature, and family work rights.'],
+                ],
+                'popular_courses' => ['Civil & Structural Eng.', 'Cloud & Software Dev', 'Nursing & Public Health', 'Hospitality & Tourism', 'Agri-Technology & Environmental Science'],
+                'requirements' => 'Minimum 55%-65% in previous qualification, IELTS 6.0–6.5, Offer of Place from NZQA-approved institution, NZ$20,000/year living cost proof via FTS.',
+                'living_cost' => 'NZ$1,600 – NZ$1,900 / month (covers accommodation, meals, transport, and utilities)',
+                'post_study_work' => 'Up to 3 Years Post-Study Work Visa (PSWV)',
+                'order' => 7,
+                'is_active' => true,
+            ],
+        ];
+
+        foreach ($destinations as $dest) {
+            Destination::updateOrCreate(['slug' => $dest['slug']], $dest);
         }
     }
 }

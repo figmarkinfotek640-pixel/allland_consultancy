@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="{{ asset('style.css') }}">
+  <link rel="stylesheet" href="{{ asset('style.css') }}?v={{ file_exists(public_path('style.css')) ? filemtime(public_path('style.css')) : time() }}">
   @yield('styles')
 </head>
 <body id="top">
@@ -25,7 +25,10 @@
 
   @include('partials.footer')
 
-  <script src="{{ asset('site-scripts.js') }}"></script>
+  <script>
+    window.__NAV_DESTINATIONS__ = @json($navDestinations ?? []);
+  </script>
+  <script src="{{ asset('site-scripts.js') }}?v={{ file_exists(public_path('site-scripts.js')) ? filemtime(public_path('site-scripts.js')) : time() }}"></script>
   @yield('scripts')
 </body>
 </html>

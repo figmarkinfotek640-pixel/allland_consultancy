@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        \Illuminate\Support\Facades\View::composer(['partials.header', 'layouts.app', 'partials.footer', 'home'], function ($view) {
+            try {
+                $navDestinations = \App\Models\Destination::active()->get(['id', 'name', 'slug', 'country_code', 'flag']);
+            } catch (\Throwable $e) {
+                $navDestinations = collect();
+            }
+            $view->with('navDestinations', $navDestinations);
+        });
     }
 }

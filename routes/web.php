@@ -5,11 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\DestinationController as AdminDestinationController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
@@ -28,6 +30,8 @@ Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('servic
 
 // Study Abroad & Courses
 Route::get('/study-abroad', [CourseController::class, 'index'])->name('study-abroad');
+Route::get('/study-abroad/{slug}', [DestinationController::class, 'show'])->name('destinations.show');
+Route::get('/destinations/{slug}', fn($slug) => redirect()->route('destinations.show', $slug));
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 
@@ -65,6 +69,9 @@ Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admi
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+
+    // Destinations CRUD
+    Route::resource('destinations', AdminDestinationController::class);
 
     // Services CRUD
     Route::resource('services', AdminServiceController::class);

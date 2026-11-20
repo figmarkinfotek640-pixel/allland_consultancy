@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Course;
 use App\Models\Event;
 use App\Models\Blog;
+use App\Models\Destination;
 use App\Models\Inquiry;
 
 class AlllandAppTest extends TestCase
@@ -40,10 +41,19 @@ class AlllandAppTest extends TestCase
         $response = $this->get('/services');
         $response->assertStatus(200);
         $response->assertSee('Visa Assistance');
+        $response->assertSee('Placement Assistance');
 
         $responseDetail = $this->get('/services/visa-assistance');
         $responseDetail->assertStatus(200);
         $responseDetail->assertSee('Visa Assistance');
+
+        // Test Placement Assistance detail page with Israel Caregiver content
+        $responsePlacement = $this->get('/services/placement-assistance');
+        $responsePlacement->assertStatus(200);
+        $responsePlacement->assertSee('Placement Assistance');
+        $responsePlacement->assertSee('Caregiver Jobs in Israel');
+        $responsePlacement->assertSee('Competitive Salary');
+        $responsePlacement->assertSee('Police Clearance Certificate');
     }
 
     public function test_courses_index_and_detail(): void
@@ -197,6 +207,48 @@ class AlllandAppTest extends TestCase
         $blog = Blog::where('slug', 'test-visa-advice-article')->first();
         $this->actingAs($this->adminUser)->delete("/admin/blogs/{$blog->id}");
         $this->assertDatabaseMissing('blogs', ['slug' => 'test-visa-advice-article']);
+    }
+
+    public function test_destinations_detail_pages_load(): void
+    {
+        $countries = ['germany', 'georgia', 'austria', 'united-kingdom', 'uk', 'tajikistan', 'canada', 'new-zealand'];
+        foreach ($countries as $slug) {
+            $response = $this->get("/study-abroad/{$slug}");
+            $response->assertStatus(200);
+            $response->assertSee('Key Advantages');
+            $response->assertSee('Admission &');
+        }
+
+        // Specific checks for new destinations
+        $this->get('/study-abroad/georgia')->assertSee('Nursing');
+        $this->get('/study-abroad/austria')->assertSee('Nursing');
+        $this->get('/study-abroad/tajikistan')->assertSee('MBBS');
+    }
+
+    public function test_admin_can_create_and_delete_destination(): void
+    {
+        $destData = [
+            'name' => 'Ireland Test',
+            'slug' => 'ireland-test',
+            'country_code' => 'IE',
+            'flag' => '🇮🇪',
+            'tab_badge' => '2-Yr PSW',
+            'hero_badge' => '2-YEAR POST STUDY WORK',
+            'eyebrow' => 'European Tech Capital',
+            'title' => 'Study in Ireland — Silicon Valley of Europe',
+            'blurb' => 'Test overview for Ireland.',
+            'description' => '<p>Test guide for Ireland higher education.</p>',
+            'order' => 10,
+            'is_active' => '1',
+        ];
+
+        $response = $this->actingAs($this->adminUser)->post('/admin/destinations', $destData);
+        $response->assertRedirect('/admin/destinations');
+        $this->assertDatabaseHas('destinations', ['slug' => 'ireland-test']);
+
+        $dest = Destination::where('slug', 'ireland-test')->first();
+        $this->actingAs($this->adminUser)->delete("/admin/destinations/{$dest->id}");
+        $this->assertDatabaseMissing('destinations', ['slug' => 'ireland-test']);
     }
 }
 

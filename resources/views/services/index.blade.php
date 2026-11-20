@@ -27,31 +27,31 @@
 <!-- SERVICES GRID -->
 <section class="page-section">
   <div class="wrap">
-    <div style="text-align:center;max-width:720px;margin:0 auto 48px;">
-      <p class="sec-tag" style="justify-content:center"><span class="sec-tag-dot"></span> Complete Service Portfolio</p>
-      <h2 class="sec-h2" style="text-align:center">Dedicated guidance for students &amp; professionals.</h2>
-      <p class="sec-p" style="text-align:center">Every milestone of your international study or career move is executed by our in-house specialists in Aluva with zero paperwork confusion.</p>
+    <div class="sec-heading-center">
+      <p class="sec-tag sec-tag-center"><span class="sec-tag-dot"></span> Complete Service Portfolio</p>
+      <h2 class="sec-h2 sec-h2-center">Dedicated guidance for students &amp; professionals.</h2>
+      <p class="sec-p sec-p-center">Every milestone of your international study or career move is executed by our in-house specialists in Aluva with zero paperwork confusion.</p>
     </div>
 
     <div class="grid-3col">
       @forelse($services as $srv)
-        <div class="card-white" style="display:flex;flex-direction:column;">
+        <div class="card-white service-index-card">
           <div class="card-icon-wrap">{{ $srv->icon ?: '🛂' }}</div>
           <h3 class="card-title">{{ $srv->title }}</h3>
-          <p class="card-desc" style="margin-bottom:16px;">{{ $srv->excerpt }}</p>
+          <p class="card-desc service-index-desc">{{ $srv->excerpt }}</p>
           
           @if(!empty($srv->features) && is_array($srv->features))
-            <ul style="font-size:12.5px;color:#334155;line-height:1.6;padding-left:18px;margin:0 0 20px;">
+            <ul class="service-index-features">
               @foreach($srv->features as $f)
                 <li>{{ $f }}</li>
               @endforeach
             </ul>
           @endif
 
-          <a href="{{ route('services.show', $srv->slug) }}" class="blog-card-link" style="margin-top:auto;">Explore Details &amp; Guidance →</a>
+          <a href="{{ route('services.show', $srv->slug) }}" class="blog-card-link service-index-link">Explore Details &amp; Guidance →</a>
         </div>
       @empty
-        <p style="grid-column:1/-1;text-align:center;color:#64748b;">No services added yet.</p>
+        <p class="service-index-empty">No services added yet.</p>
       @endforelse
     </div>
   </div>

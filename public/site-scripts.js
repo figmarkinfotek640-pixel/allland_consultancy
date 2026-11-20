@@ -42,18 +42,71 @@ document.addEventListener('DOMContentLoaded', function () {
       panel.className = 'mobile-drawer-panel';
       panel.setAttribute('aria-label', 'Mobile Navigation');
 
+      var destChildren = [];
+      if (window.__NAV_DESTINATIONS__ && window.__NAV_DESTINATIONS__.length > 0) {
+        window.__NAV_DESTINATIONS__.forEach(function (d) {
+          destChildren.push({
+            name: (d.flag ? d.flag + ' ' : '') + d.name,
+            href: '/study-abroad/' + d.slug
+          });
+        });
+        destChildren.push({ name: 'All Destinations & Courses →', href: '/study-abroad' });
+      } else {
+        destChildren = [
+          { name: '🇩🇪 Germany', href: '/study-abroad/germany' },
+          { name: '🇬🇪 Georgia', href: '/study-abroad/georgia' },
+          { name: '🇦🇹 Austria', href: '/study-abroad/austria' },
+          { name: '🇬🇧 UK', href: '/study-abroad/united-kingdom' },
+          { name: '🇹🇯 Tajikistan', href: '/study-abroad/tajikistan' },
+          { name: '🇨🇦 Canada', href: '/study-abroad/canada' },
+          { name: '🇳🇿 New Zealand', href: '/study-abroad/new-zealand' },
+          { name: 'All Destinations & Courses →', href: '/study-abroad' }
+        ];
+      }
+
       var navItems = [
         { name: 'Home', href: '/' },
-        { name: 'About Us', href: '/about' },
         { name: 'Services', href: '/services' },
-        { name: 'Study Abroad', href: '/study-abroad' },
-        { name: 'Exclusives', href: '/exclusives' },
+        {
+          name: 'Study Abroad',
+          isGroup: true,
+          children: destChildren
+        },
         { name: 'Events', href: '/events' },
-        { name: 'Blog', href: '/blog' },
+        {
+          name: 'Pages',
+          isGroup: true,
+          children: [
+            { name: 'Blog', href: '/blog' },
+            { name: 'About Us', href: '/about' },
+            { name: 'Exclusives', href: '/exclusives' }
+          ]
+        },
         { name: 'Contact Us', href: '/contact' }
       ];
 
       var linksHtml = navItems.map(function (item) {
+        if (item.isGroup) {
+          var isGroupActive = item.children.some(function (child) {
+            return currentPath.indexOf(child.href) === 0;
+          });
+          var sublinksHtml = item.children.map(function (child) {
+            var isChildActive = currentPath.indexOf(child.href) === 0;
+            return '<a href="' + child.href + '" class="mob-nav-sublink' + (isChildActive ? ' active' : '') + '">' + child.name + '</a>';
+          }).join('');
+
+          return [
+            '<div class="mob-nav-group' + (isGroupActive ? ' open' : '') + '">',
+            '  <button type="button" class="mob-nav-group-trigger' + (isGroupActive ? ' active' : '') + '">',
+            '    <span>' + item.name + '</span>',
+            '    <svg class="mob-nav-group-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
+            '  </button>',
+            '  <div class="mob-nav-sublinks">',
+            sublinksHtml,
+            '  </div>',
+            '</div>'
+          ].join('');
+        }
         var isActive = (item.href === '/' && (currentPath === '/' || currentPath === '')) || (item.href !== '/' && currentPath.indexOf(item.href) === 0);
         return '<a href="' + item.href + '" class="mob-nav-link' + (isActive ? ' active' : '') + '">' + item.name + '</a>';
       }).join('');
@@ -82,6 +135,17 @@ document.addEventListener('DOMContentLoaded', function () {
         '  </a>',
         '</div>'
       ].join('');
+
+      // Add click listener for mobile accordion groups
+      var groupTriggers = panel.querySelectorAll('.mob-nav-group-trigger');
+      groupTriggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          var group = trigger.closest('.mob-nav-group');
+          if (group) {
+            group.classList.toggle('open');
+          }
+        });
+      });
 
       document.body.appendChild(panel);
     }
@@ -114,6 +178,55 @@ document.addEventListener('DOMContentLoaded', function () {
     if (drawerCloseBtn) {
       drawerCloseBtn.addEventListener('click', closeDrawer);
     }
+  }
+
+  // 1b. DESKTOP NAVBAR DROPDOWNS
+  function initNavDropdowns() {
+    var dropdowns = document.querySelectorAll('.nav-item-dropdown');
+    dropdowns.forEach(function (dd) {
+      var trigger = dd.querySelector('.nav-dropdown-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = dd.classList.contains('open');
+        dropdowns.forEach(function (other) {
+          if (other !== dd) {
+            other.classList.remove('open');
+            var otherTrigger = other.querySelector('.nav-dropdown-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        dd.classList.toggle('open', !isOpen);
+        trigger.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      dropdowns.forEach(function (dd) {
+        if (!dd.contains(e.target)) {
+          dd.classList.remove('open');
+          var trigger = dd.querySelector('.nav-dropdown-trigger');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        dropdowns.forEach(function (dd) {
+          if (dd.classList.contains('open')) {
+            dd.classList.remove('open');
+            var trigger = dd.querySelector('.nav-dropdown-trigger');
+            if (trigger) {
+              trigger.setAttribute('aria-expanded', 'false');
+              trigger.focus();
+            }
+          }
+        });
+      }
+    });
   }
 
   // 2. STICKY NAVBAR SCROLL STATE
@@ -197,9 +310,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 5. BOOTSTRAP ALL
+  // 5. DESTINATION INTERACTIVE TABS
+  function initDestinationTabs() {
+    var tabBtns = document.querySelectorAll('.dest-tab-btn');
+    if (!tabBtns.length) return;
+
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = this.getAttribute('data-tab');
+        if (!targetId) return;
+
+        var parentSuite = this.closest('.dest-tabs-suite');
+        if (!parentSuite) return;
+
+        // Toggle buttons
+        parentSuite.querySelectorAll('.dest-tab-btn').forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+
+        // Toggle panels
+        parentSuite.querySelectorAll('.dest-tab-pane').forEach(function (pane) {
+          pane.classList.remove('active');
+        });
+        var targetPane = parentSuite.querySelector('#' + targetId);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // 6. BOOTSTRAP ALL
   initMobileNav();
+  initNavDropdowns();
   initStickyHeader();
   initScrollReveal();
   initAccordions();
+  initDestinationTabs();
 });

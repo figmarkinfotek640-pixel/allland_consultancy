@@ -16,6 +16,7 @@ class Event extends Model
         'slug',
         'type',
         'type_label',
+        'image',
         'event_date',
         'start_time',
         'end_time',
@@ -79,6 +80,36 @@ class Event extends Model
             return "{$this->start_time} – {$this->end_time}";
         }
         return $this->start_time;
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if (!empty($this->image)) {
+            return asset($this->image);
+        }
+
+        $titleLower = strtolower($this->title);
+        $typeLower = strtolower($this->type);
+
+        if (str_contains($titleLower, 'germany')) {
+            return asset('images/events/event-germany-seminar.jpg');
+        } elseif (str_contains($titleLower, 'uk') || str_contains($titleLower, 'london') || str_contains($titleLower, 'september intake')) {
+            return asset('images/events/event-uk-spot-admission.jpg');
+        } elseif (str_contains($titleLower, 'canada') || str_contains($titleLower, 'pgwp')) {
+            return asset('images/events/event-canada-webinar.jpg');
+        } elseif (str_contains($titleLower, 'new zealand') || str_contains($titleLower, 'green list')) {
+            return asset('images/events/event-nz-education-fair.jpg');
+        } elseif (str_contains($titleLower, 'scholarship') || str_contains($titleLower, 'loan') || str_contains($titleLower, 'blocked')) {
+            return asset('images/events/event-scholarships-webinar.jpg');
+        } elseif (str_contains($titleLower, 'departure') || str_contains($titleLower, 'flying')) {
+            return asset('images/events/event-pre-departure-orientation.jpg');
+        } elseif ($typeLower === 'webinar') {
+            return asset('images/events/event-canada-webinar.jpg');
+        } elseif ($typeLower === 'spot') {
+            return asset('images/events/event-uk-spot-admission.jpg');
+        }
+
+        return asset('images/events/event-germany-seminar.jpg');
     }
 }
 

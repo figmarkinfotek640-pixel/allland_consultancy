@@ -16,11 +16,20 @@
       <div>
         <h3 class="footer-col-title">Study Abroad</h3>
         <div class="footer-links">
-          <a href="{{ route('study-abroad', ['country' => 'DE']) }}" class="footer-link">Study in Germany (Free Tuition)</a>
-          <a href="{{ route('study-abroad', ['country' => 'CA']) }}" class="footer-link">Study in Canada (PGWP Pathways)</a>
-          <a href="{{ route('study-abroad', ['country' => 'UK']) }}" class="footer-link">Study in United Kingdom (1-Yr Masters)</a>
-          <a href="{{ route('study-abroad', ['country' => 'NZ']) }}" class="footer-link">Study in New Zealand (Green List)</a>
-          <a href="{{ route('exclusives') }}" class="footer-link">German Nursing Ausbildung</a>
+          @if(isset($navDestinations) && $navDestinations->isNotEmpty())
+            @foreach($navDestinations as $dest)
+              <a href="{{ route('destinations.show', $dest->slug) }}" class="footer-link">Study in {{ $dest->name }}</a>
+            @endforeach
+            <a href="{{ route('exclusives') }}" class="footer-link">German Nursing Ausbildung</a>
+          @else
+            <a href="{{ route('destinations.show', 'germany') }}" class="footer-link">Study in Germany</a>
+            <a href="{{ route('destinations.show', 'georgia') }}" class="footer-link">Study in Georgia</a>
+            <a href="{{ route('destinations.show', 'austria') }}" class="footer-link">Study in Austria</a>
+            <a href="{{ route('destinations.show', 'united-kingdom') }}" class="footer-link">Study in UK</a>
+            <a href="{{ route('destinations.show', 'tajikistan') }}" class="footer-link">Study in Tajikistan</a>
+            <a href="{{ route('destinations.show', 'canada') }}" class="footer-link">Study in Canada</a>
+            <a href="{{ route('destinations.show', 'new-zealand') }}" class="footer-link">Study in New Zealand</a>
+          @endif
         </div>
       </div>
 

@@ -310,6 +310,9 @@
       <a href="{{ route('admin.services.index') }}" class="admin-nav-item {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
         <span>🛂</span> Services
       </a>
+      <a href="{{ route('admin.destinations.index') }}" class="admin-nav-item {{ request()->routeIs('admin.destinations.*') ? 'active' : '' }}">
+        <span>🌍</span> Destinations
+      </a>
       <a href="{{ route('admin.courses.index') }}" class="admin-nav-item {{ request()->routeIs('admin.courses.*') ? 'active' : '' }}">
         <span>🎓</span> Courses &amp; Programs
       </a>
