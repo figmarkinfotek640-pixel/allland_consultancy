@@ -5445,9 +5445,9 @@ address {
 /* ── 20. Floating WhatsApp ─────────────────────────────────── */
 .float-wa {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 200;
+  bottom: 64px;
+  right: 28px;
+  z-index: 9999;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -5455,16 +5455,17 @@ address {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: var(--r-full);
-  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
   transition: all var(--trans-base);
 }
 
 .float-wa:hover {
   background: #22C55E;
+  color: #FFFFFF;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.65);
 }
 
 /* ── 21. Responsive Media Queries ──────────────────────────── */
@@ -7509,8 +7510,9 @@ address {
 }
 
 .float-wa:hover {
-  transform: scale(1.08) translateY(-4px);
+  transform: scale(1.06) translateY(-4px);
   background: #1ebc57;
+  color: #FFFFFF;
 }
 
 /* Enhanced Interactive Hover Effects on Cards */
@@ -9368,6 +9370,12 @@ body {
 }
 
 @media (max-width: 640px) {
+  .float-wa {
+    bottom: 56px;
+    right: 20px;
+    padding: 10px 18px;
+    font-size: 13px;
+  }
   .dest-features-grid {
     grid-template-columns: 1fr;
     gap: 14px;
