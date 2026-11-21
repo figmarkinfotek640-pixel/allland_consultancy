@@ -10705,3 +10705,433 @@ body {
     font-size: 17.5px;
   }
 }
+
+
+/* ==========================================================================
+   ABOUT US PAGE STYLES (OG Content & Authentic Layout)
+   ========================================================================== */
+
+/* Quote / Vision Section */
+.about-quote-section {
+  padding: 44px 0 20px;
+  background: #f8fafc;
+}
+
+.about-quote-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #0580C1;
+  border-radius: 16px;
+  padding: 32px 36px;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.about-quote-icon {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 38px;
+  line-height: 1;
+  color: #e2e8f0;
+  user-select: none;
+}
+
+.about-quote-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.about-quote-author {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0580C1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* About Narrative & Showcase Layout */
+.about-story-section {
+  padding: 64px 0;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.about-narrative-lead {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.about-narrative-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.about-speciality-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 100%);
+  border: 1px solid #bae6fd;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0369a1;
+  margin-bottom: 28px;
+}
+
+.about-speciality-pill .pill-dot {
+  width: 8px;
+  height: 8px;
+  background: #0284c7;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25);
+}
+
+.about-stats-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.about-stat-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 20px;
+  flex: 1;
+  min-width: 150px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.about-stat-card .stat-val {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0580C1;
+  display: block;
+  line-height: 1.2;
+}
+
+.about-stat-card.stat-orange .stat-val {
+  color: #D9561A;
+}
+
+.about-stat-card.stat-dark .stat-val {
+  color: #1e293b;
+}
+
+.about-stat-card .stat-lbl {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 4px;
+  display: block;
+}
+
+/* About Media Column & Frame */
+.about-media-col {
+  position: relative;
+}
+
+.about-graphic-frame {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.about-graphic-frame img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+.about-graphic-badge {
+  margin-top: 20px;
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.about-graphic-badge-text .badge-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.about-graphic-badge-text .badge-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Services / Core Pillars Section */
+.about-services-section {
+  padding: 68px 0;
+  background: #f8fafc;
+}
+
+.about-services-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.about-pillar-icon {
+  width: 48px;
+  height: 48px;
+  background: #f0f9ff;
+  color: #0284c7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+  border: 1px solid #e0f2fe;
+}
+
+.about-pillar-card:nth-child(2n) .about-pillar-icon {
+  background: #fff7ed;
+  color: #ea580c;
+  border-color: #ffedd5;
+}
+
+.about-pillar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.about-pillar-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Verified Google Reviews Section */
+.about-reviews-section {
+  padding: 72px 0;
+  background: #ffffff;
+}
+
+.about-reviews-header-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.about-google-score-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.about-google-score-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.about-google-stars {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.about-google-review-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.about-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-review-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.about-review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.about-review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0580C1, #0284c7);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-user-meta .user-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-user-meta .verified-icon {
+  color: #0284c7;
+  font-size: 13px;
+}
+
+.about-user-meta .review-source {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.about-review-stars {
+  color: #f59e0b;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.about-review-body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Responsive queries */
+@media (max-width: 992px) {
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-quote-box {
+    padding: 24px 20px;
+  }
+  .about-quote-text {
+    font-size: 1.1rem;
+  }
+  .about-graphic-frame {
+    padding: 16px;
+  }
+  .about-stats-row {
+    flex-direction: column;
+  }
+}
