@@ -77,7 +77,10 @@
             <div class="dest-features-grid">
               @foreach($destination->features as $idx => $feat)
                 <div class="dest-feature-card">
-                  <div class="dest-feature-icon-badge">0{{ $idx + 1 }}</div>
+                  <div class="dest-feature-card-header">
+                    <span class="dest-feature-num">0{{ $idx + 1 }}</span>
+                    <span class="dest-feature-badge-icon">✓</span>
+                  </div>
                   <h3 class="dest-feature-title">{{ $feat['title'] ?? '' }}</h3>
                   <p class="dest-feature-desc">{{ $feat['desc'] ?? '' }}</p>
                 </div>
