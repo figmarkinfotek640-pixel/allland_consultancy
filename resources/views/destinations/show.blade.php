@@ -32,47 +32,10 @@
             <span class="dest-flag-fallback">{{ $destination->flag }}</span>
           @endif
         </span>
-        <span>{{ $destination->title ?: 'Study in ' . $destination->name }}</span>
+        <span>Study in {{ $destination->name }}</span>
       </h1>
       
-      <p class="subpage-subtitle">{{ $destination->blurb }}</p>
-      
-      <div class="dest-hero-actions">
-        <a href="#dest-enquire" class="btn-primary">Book Free 1:1 Counselling</a>
-        <a href="#dest-courses" class="btn-ghost dest-hero-btn-ghost">View Available Programs</a>
-      </div>
-
-      <!-- Quick Fast Facts Header Strip -->
-      <div class="dest-hero-stats-strip">
-        <div class="dest-hero-stat-card">
-          <span class="dest-hero-stat-icon">🎓</span>
-          <div class="dest-hero-stat-info">
-            <span class="dest-hero-stat-val">{{ Str::limit($destination->post_study_work ?: 'Up to 3 Yrs', 28) }}</span>
-            <span class="dest-hero-stat-lbl">Post-Study Work</span>
-          </div>
-        </div>
-        <div class="dest-hero-stat-card">
-          <span class="dest-hero-stat-icon">💶</span>
-          <div class="dest-hero-stat-info">
-            <span class="dest-hero-stat-val">{{ Str::limit($destination->living_cost ?: 'Moderate', 28) }}</span>
-            <span class="dest-hero-stat-lbl">Est. Living Expenses</span>
-          </div>
-        </div>
-        <div class="dest-hero-stat-card">
-          <span class="dest-hero-stat-icon">⏰</span>
-          <div class="dest-hero-stat-info">
-            <span class="dest-hero-stat-val">20 Hrs / Wk</span>
-            <span class="dest-hero-stat-lbl">Part-Time Work Rights</span>
-          </div>
-        </div>
-        <div class="dest-hero-stat-card">
-          <span class="dest-hero-stat-icon">🌟</span>
-          <div class="dest-hero-stat-info">
-            <span class="dest-hero-stat-val">{{ Str::limit($destination->tab_badge ?: 'Permanent Residency', 24) }}</span>
-            <span class="dest-hero-stat-lbl">Immigration Advantage</span>
-          </div>
-        </div>
-      </div>
+      <p class="subpage-subtitle">{{ Str::limit($destination->blurb, 130) ?: 'Explore accredited universities, degree programs, and career pathways in ' . $destination->name . '.' }}</p>
     </div>
   </div>
 </section>
