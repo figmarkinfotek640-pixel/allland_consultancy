@@ -185,151 +185,167 @@
         <p class="sec-p">Real experiences from students and professionals who achieved their international goals with All Land Consultancy.</p>
       </div>
 
-      <div class="about-google-score-box">
-        <div class="about-google-score-num">4.9</div>
-        <div>
-          <div class="about-google-stars">★★★★★</div>
-          <div class="about-google-review-count">Based on 401+ Google Reviews</div>
+      <div class="about-reviews-header-right">
+        <div class="about-google-score-box">
+          <div class="about-google-score-num">4.9</div>
+          <div>
+            <div class="about-google-stars">★★★★★</div>
+            <div class="about-google-review-count">Based on 401+ Google Reviews</div>
+          </div>
+        </div>
+
+        <div class="about-reviews-controls">
+          <button type="button" class="about-slider-nav-btn" id="aboutRevPrevBtn" aria-label="Previous Reviews" onclick="slideAboutReviews('prev')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+          </button>
+          <button type="button" class="about-slider-nav-btn" id="aboutRevNextBtn" aria-label="Next Reviews" onclick="slideAboutReviews('next')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
         </div>
       </div>
     </div>
 
-    <div class="about-reviews-grid">
-      <!-- Review 1 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">A</div>
-            <div class="about-user-meta">
-              <span class="user-name">Aswathy Babu <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+    <div class="about-reviews-slider-wrapper" id="aboutReviewsWrapper">
+      <div class="about-reviews-slider-track" id="aboutReviewsTrack">
+        <!-- Review 1 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">A</div>
+              <div class="about-user-meta">
+                <span class="user-name">Aswathy Babu <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“I had a great experience with All Land Consultancy. The staff were very professional and helpful throughout the process. Highly recommended for overseas education.”</p>
-      </article>
+          <p class="about-review-body">“I had a great experience with All Land Consultancy. The staff were very professional and helpful throughout the process. Highly recommended for overseas education.”</p>
+        </article>
 
-      <!-- Review 2 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">J</div>
-            <div class="about-user-meta">
-              <span class="user-name">JITHIN P <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 2 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">J</div>
+              <div class="about-user-meta">
+                <span class="user-name">JITHIN P <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Best consultancy in Aluva. They provided excellent guidance for my UK student visa. The process was smooth and they were always available to clear my doubts.”</p>
-      </article>
+          <p class="about-review-body">“Best consultancy in Aluva. They provided excellent guidance for my UK student visa. The process was smooth and they were always available to clear my doubts.”</p>
+        </article>
 
-      <!-- Review 3 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">S</div>
-            <div class="about-user-meta">
-              <span class="user-name">Shamin <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 3 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">S</div>
+              <div class="about-user-meta">
+                <span class="user-name">Shamin <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Highly recommended for Germany placement. They have deep knowledge about the process and helped me at every stage of my application journey.”</p>
-      </article>
+          <p class="about-review-body">“Highly recommended for Germany placement. They have deep knowledge about the process and helped me at every stage of my application journey.”</p>
+        </article>
 
-      <!-- Review 4 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">A</div>
-            <div class="about-user-meta">
-              <span class="user-name">Anandu <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 4 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">A</div>
+              <div class="about-user-meta">
+                <span class="user-name">Anandu <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Professional and reliable service. They handled my documentation with great care and ensured everything was submitted on time.”</p>
-      </article>
+          <p class="about-review-body">“Professional and reliable service. They handled my documentation with great care and ensured everything was submitted on time.”</p>
+        </article>
 
-      <!-- Review 5 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">R</div>
-            <div class="about-user-meta">
-              <span class="user-name">Riya <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 5 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">R</div>
+              <div class="about-user-meta">
+                <span class="user-name">Riya <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Great support for visa documentation. Thank you team All Land for making my dream of studying abroad a reality!”</p>
-      </article>
+          <p class="about-review-body">“Great support for visa documentation. Thank you team All Land for making my dream of studying abroad a reality!”</p>
+        </article>
 
-      <!-- Review 6 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">S</div>
-            <div class="about-user-meta">
-              <span class="user-name">Sinto Varghese <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 6 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">S</div>
+              <div class="about-user-meta">
+                <span class="user-name">Sinto Varghese <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Good service. I am happy with the guidance I received for my overseas career planning. Highly recommended.”</p>
-      </article>
+          <p class="about-review-body">“Good service. I am happy with the guidance I received for my overseas career planning. Highly recommended.”</p>
+        </article>
 
-      <!-- Review 7 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">J</div>
-            <div class="about-user-meta">
-              <span class="user-name">Jeena George <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 7 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">J</div>
+              <div class="about-user-meta">
+                <span class="user-name">Jeena George <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“I had an excellent experience with All Land Consultancy. The team was incredibly supportive and knowledgeable, guiding me through every step.”</p>
-      </article>
+          <p class="about-review-body">“I had an excellent experience with All Land Consultancy. The team was incredibly supportive and knowledgeable, guiding me through every step.”</p>
+        </article>
 
-      <!-- Review 8 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">M</div>
-            <div class="about-user-meta">
-              <span class="user-name">Megha Sunny <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 8 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">M</div>
+              <div class="about-user-meta">
+                <span class="user-name">Megha Sunny <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Really a great experience. They helped me to get my German Student Visa more easier. Thank you All Land!”</p>
-      </article>
+          <p class="about-review-body">“Really a great experience. They helped me to get my German Student Visa more easier. Thank you All Land!”</p>
+        </article>
 
-      <!-- Review 9 -->
-      <article class="about-review-card">
-        <div class="about-review-header">
-          <div class="about-review-user">
-            <div class="about-user-avatar">R</div>
-            <div class="about-user-meta">
-              <span class="user-name">Rahul <span class="verified-icon" title="Verified Review">✓</span></span>
-              <span class="review-source">Google Review</span>
+        <!-- Review 9 -->
+        <article class="about-review-card">
+          <div class="about-review-header">
+            <div class="about-review-user">
+              <div class="about-user-avatar">R</div>
+              <div class="about-user-meta">
+                <span class="user-name">Rahul <span class="verified-icon" title="Verified Review">✓</span></span>
+                <span class="review-source">Google Review</span>
+              </div>
             </div>
+            <div class="about-review-stars">★★★★★</div>
           </div>
-          <div class="about-review-stars">★★★★★</div>
-        </div>
-        <p class="about-review-body">“Good experience overall. The staff was helpful and the process was well-explained. Satisfied with the service.”</p>
-      </article>
+          <p class="about-review-body">“Good experience overall. The staff was helpful and the process was well-explained. Satisfied with the service.”</p>
+        </article>
+      </div>
     </div>
+
+    <!-- Pagination Dots -->
+    <div class="about-reviews-slider-dots" id="aboutReviewsDots" role="tablist" aria-label="Reviews slider pagination"></div>
   </div>
 </section>
 
@@ -348,5 +364,134 @@
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var track = document.getElementById('aboutReviewsTrack');
+  var prevBtn = document.getElementById('aboutRevPrevBtn');
+  var nextBtn = document.getElementById('aboutRevNextBtn');
+  var dotsContainer = document.getElementById('aboutReviewsDots');
+  var wrapper = document.getElementById('aboutReviewsWrapper');
+  if (!track) return;
+
+  var cards = track.querySelectorAll('.about-review-card');
+  if (!cards.length) return;
+
+  function getCardsPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
+  }
+
+  function getPageCount() {
+    var perView = getCardsPerView();
+    return Math.max(1, cards.length - perView + 1);
+  }
+
+  function renderDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    var pageCount = getPageCount();
+    for (var i = 0; i < pageCount; i++) {
+      (function(idx) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'about-slider-dot' + (idx === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to review ' + (idx + 1));
+        dot.addEventListener('click', function () {
+          goToIndex(idx);
+        });
+        dotsContainer.appendChild(dot);
+      })(i);
+    }
+  }
+
+  function getStepWidth() {
+    var card = cards[0];
+    if (!card) return 320;
+    return card.offsetWidth + 24;
+  }
+
+  function updateSliderState() {
+    var scrollLeft = track.scrollLeft;
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    var step = getStepWidth();
+    var activeIdx = Math.round(scrollLeft / step);
+
+    if (prevBtn) {
+      prevBtn.disabled = scrollLeft <= 4;
+    }
+    if (nextBtn) {
+      nextBtn.disabled = scrollLeft >= maxScroll - 4;
+    }
+
+    if (dotsContainer) {
+      var dots = dotsContainer.querySelectorAll('.about-slider-dot');
+      dots.forEach(function (dot, idx) {
+        if (idx === activeIdx) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  function goToIndex(idx) {
+    var step = getStepWidth();
+    track.scrollTo({
+      left: idx * step,
+      behavior: 'smooth'
+    });
+  }
+
+  window.slideAboutReviews = function (dir) {
+    var step = getStepWidth();
+    var currentScroll = track.scrollLeft;
+    var target = dir === 'next' ? currentScroll + step : currentScroll - step;
+    track.scrollTo({
+      left: target,
+      behavior: 'smooth'
+    });
+  };
+
+  var autoTimer = null;
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoTimer = setInterval(function () {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 10) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        window.slideAboutReviews('next');
+      }
+    }, 5000);
+  }
+
+  function stopAutoPlay() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', stopAutoPlay);
+    wrapper.addEventListener('mouseleave', startAutoPlay);
+    wrapper.addEventListener('touchstart', stopAutoPlay, { passive: true });
+    wrapper.addEventListener('touchend', startAutoPlay, { passive: true });
+  }
+
+  track.addEventListener('scroll', updateSliderState, { passive: true });
+  window.addEventListener('resize', function () {
+    renderDots();
+    updateSliderState();
+  });
+
+  renderDots();
+  updateSliderState();
+  startAutoPlay();
+});
+</script>
 
 @endsection
