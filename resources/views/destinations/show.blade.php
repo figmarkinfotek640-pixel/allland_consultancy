@@ -6,7 +6,7 @@
 @section('content')
 
 <!-- SUBPAGE HERO BANNER -->
-<section class="subpage-hero dest-hero-section">
+<section class="subpage-hero">
   <img src="{{ $destination->banner_image_url }}" alt="Study in {{ $destination->name }}" class="subpage-hero-bg">
   <div class="subpage-hero-overlay"></div>
   <div class="wrap">
@@ -19,12 +19,10 @@
           <span class="subpage-breadcrumb-sep">/</span>
           <span>{{ $destination->name }}</span>
         </div>
-        @if($destination->hero_badge)
-          <div class="subpage-badge dest-badge-pulse">{{ $destination->hero_badge }}</div>
-        @endif
+        <div class="subpage-badge">{{ $destination->hero_badge ?: 'Study Abroad' }}</div>
       </div>
       
-      <h1 class="subpage-title dest-hero-title">
+      <h1 class="subpage-title">
         <span class="dest-hero-flag-badge">
           @if($destination->flag_url)
             <img src="{{ $destination->flag_url }}" alt="{{ $destination->name }}" class="dest-flag-img">
@@ -35,7 +33,7 @@
         <span>Study in {{ $destination->name }}</span>
       </h1>
       
-      <p class="subpage-subtitle">{{ Str::limit($destination->blurb, 130) ?: 'Explore accredited universities, degree programs, and career pathways in ' . $destination->name . '.' }}</p>
+      <p class="subpage-subtitle">{{ $destination->blurb }}</p>
     </div>
   </div>
 </section>
