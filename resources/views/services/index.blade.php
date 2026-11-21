@@ -39,13 +39,13 @@
           <div class="service-card-media">
             <img src="{{ asset($srv->image ?: 'images/serv1.jpg') }}" alt="{{ $srv->title }}" class="service-card-img" loading="lazy">
             <div class="service-card-overlay"></div>
-            <span class="service-card-badge" aria-hidden="true">
-              <span class="service-card-badge-icon">{{ $srv->icon ?: '✦' }}</span>
-            </span>
           </div>
 
           <div class="service-card-body">
-            <h3 class="service-card-title">{{ $srv->title }}</h3>
+            <h3 class="service-card-title">
+              <span class="service-card-title-icon" aria-hidden="true">{{ $srv->icon ?: '✦' }}</span>
+              <span>{{ $srv->title }}</span>
+            </h3>
             <p class="service-card-desc">{{ $srv->excerpt }}</p>
             
             @if(!empty($srv->features) && is_array($srv->features))

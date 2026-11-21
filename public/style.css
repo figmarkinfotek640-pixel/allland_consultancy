@@ -10621,6 +10621,9 @@ body {
 }
 
 .service-card-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 19px;
   font-weight: 800;
   color: #1D253A;
@@ -10629,8 +10632,30 @@ body {
   transition: color 0.25s ease;
 }
 
+.service-card-title-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #F0F9FF;
+  border: 1px solid #E0F2FE;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
 .service-index-card:hover .service-card-title {
   color: #0580C1;
+}
+
+.service-index-card:hover .service-card-title-icon {
+  background: #E0F2FE;
+  border-color: #BAE6FD;
+  transform: scale(1.08);
 }
 
 .service-card-desc {
