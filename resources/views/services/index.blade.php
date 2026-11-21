@@ -35,21 +35,36 @@
 
     <div class="grid-3col">
       @forelse($services as $srv)
-        <div class="card-white service-index-card">
-          <div class="card-icon-wrap">{{ $srv->icon ?: '🛂' }}</div>
-          <h3 class="card-title">{{ $srv->title }}</h3>
-          <p class="card-desc service-index-desc">{{ $srv->excerpt }}</p>
-          
-          @if(!empty($srv->features) && is_array($srv->features))
-            <ul class="service-index-features">
-              @foreach($srv->features as $f)
-                <li>{{ $f }}</li>
-              @endforeach
-            </ul>
-          @endif
+        <article class="service-index-card">
+          <div class="service-card-media">
+            <img src="{{ asset($srv->image ?: 'images/serv1.jpg') }}" alt="{{ $srv->title }}" class="service-card-img" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <span class="service-card-badge" aria-hidden="true">
+              <span class="service-card-badge-icon">{{ $srv->icon ?: '✦' }}</span>
+            </span>
+          </div>
 
-          <a href="{{ route('services.show', $srv->slug) }}" class="blog-card-link service-index-link">Explore Details &amp; Guidance →</a>
-        </div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">{{ $srv->title }}</h3>
+            <p class="service-card-desc">{{ $srv->excerpt }}</p>
+            
+            @if(!empty($srv->features) && is_array($srv->features))
+              <ul class="service-card-features">
+                @foreach(array_slice($srv->features, 0, 3) as $f)
+                  <li class="service-card-feature-item">
+                    <svg class="service-feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>{{ $f }}</span>
+                  </li>
+                @endforeach
+              </ul>
+            @endif
+
+            <a href="{{ route('services.show', $srv->slug) }}" class="service-card-link">
+              <span>Explore Details &amp; Guidance</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </article>
       @empty
         <p class="service-index-empty">No services added yet.</p>
       @endforelse
