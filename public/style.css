@@ -3349,33 +3349,372 @@ address {
   box-shadow: 0 2px 12px rgba(220, 39, 67, 0.4);
 }
 
-.events-grid {
+/* ── EVENTS SECTION & CARDS ARCHITECTURE ───────────────────────── */
+.events-strip-section {
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 24px 0;
+}
+
+.events-value-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
-.event-card {
-  background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-  border-radius: 18px;
-  padding: 24px 22px;
+.events-value-item {
   display: flex;
   align-items: flex-start;
+  gap: 14px;
+}
+
+.events-value-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.events-value-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 3px;
+}
+
+.events-value-desc {
+  font-size: 12px;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Index Page Specific Layout Classes */
+.events-index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
   gap: 18px;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  min-height: 100%;
+}
+
+.events-index-h2 {
+  margin: 0;
+  color: #0F172A;
+}
+
+.events-filter-row {
+  margin: 0;
+}
+
+.events-pagination {
+  margin-top: 40px;
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Modern Photographic Event Card */
+.event-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(17, 23, 38, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
 }
 
 .event-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px);
   border-color: #0580C1;
-  box-shadow: 0 14px 34px rgba(5, 128, 193, 0.12);
+  box-shadow: 0 20px 45px -10px rgba(17, 23, 38, 0.12), 0 0 0 1.5px rgba(5, 128, 193, 0.35);
 }
 
-/* Compact Calendar Date Block - strictly self-align flex-start to prevent stretching */
+/* Event Card Media Banner */
+.event-card-media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #0F172A;
+}
+
+.event-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-card:hover .event-card-img {
+  transform: scale(1.08);
+}
+
+.event-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Hanging Physical Calendar Date Stamp */
+.event-date-stamp {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+  min-width: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.event-date-stamp .ev-month {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: #D9561A;
+  padding: 4px 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.event-date-stamp .ev-day {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0F172A;
+  line-height: 1.1;
+  padding: 5px 6px 2px;
+}
+
+.event-date-stamp .ev-dow {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  line-height: 1.1;
+}
+
+/* Badges Top Right */
+.event-card-badges {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  z-index: 2;
+}
+
+.event-type-badge {
+  padding: 4px 11px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.event-mode-badge {
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 9.5px;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.85);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Card Body */
+.event-card-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.event-card-urgency {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.event-card-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.38;
+  margin: 0 0 12px;
+}
+
+.event-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.event-card:hover .event-card-title a {
+  color: #0580C1;
+}
+
+.event-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.event-card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.event-card-meta-item svg {
+  color: #0580C1;
+  flex-shrink: 0;
+}
+
+.event-card-desc {
+  font-size: 13px;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+/* Perforated Divider */
+.event-card-divider {
+  position: relative;
+  height: 16px;
+  margin: 0 -22px 14px;
+  display: flex;
+  align-items: center;
+}
+
+.event-card-divider .ticket-line {
+  width: 100%;
+  border-top: 1.5px dashed #E2E8F0;
+}
+
+.event-card-divider .ticket-notch {
+  width: 14px;
+  height: 14px;
+  background: #F8FAFC;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.event-card-divider .ticket-notch-left {
+  left: -7px;
+  box-shadow: inset -2px 0 3px rgba(15, 23, 42, 0.06);
+}
+
+.event-card-divider .ticket-notch-right {
+  right: -7px;
+  box-shadow: inset 2px 0 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Card Footer */
+.event-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.event-card-fee {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card-fee-label {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.event-card-fee-val {
+  font-size: 12px;
+  font-weight: 800;
+  color: #059669;
+  letter-spacing: 0.04em;
+}
+
+.event-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: #0580C1;
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(5, 128, 193, 0.24);
+}
+
+.event-card-btn:hover {
+  background: #D9561A;
+  box-shadow: 0 6px 16px rgba(217, 86, 26, 0.35);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.event-card-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.event-card-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Backwards Compatibility Elements */
 .event-date-block {
   text-align: center;
   flex-shrink: 0;
@@ -3416,7 +3755,6 @@ address {
   line-height: 1.1;
 }
 
-/* Event Content Column with flex-column layout so CTA pins evenly to bottom */
 .event-info {
   flex: 1;
   min-width: 0;
@@ -3425,7 +3763,6 @@ address {
   align-self: stretch;
 }
 
-/* Category Badges with Accessible High-Contrast Colors */
 .ev-type {
   display: inline-flex;
   align-items: center;
@@ -3503,7 +3840,6 @@ address {
   line-height: 1.55;
 }
 
-/* Event Action CTA - anchored to bottom with a subtle dashed divider */
 .ev-action {
   margin-top: auto;
   padding-top: 14px;
@@ -3557,7 +3893,6 @@ address {
   padding: 10px 22px;
 }
 
-/* Footer Section CTA */
 .events-footer {
   text-align: center;
   margin-top: 36px;
@@ -3570,27 +3905,274 @@ address {
   padding: 13px 30px;
 }
 
-/* Index Page Specific Layout Classes */
-.events-index-header {
+/* ── EVENT DETAIL PAGE ARCHITECTURE (ZERO INLINE STYLES) ───────── */
+.event-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.event-detail-main {
+  min-width: 0;
+}
+
+.event-detail-media {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  background: #0F172A;
+  max-height: 400px;
+}
+
+.event-detail-img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.event-detail-keycard {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
   display: flex;
-  justify-content: space-between;
+  gap: 24px;
   align-items: center;
-  margin-bottom: 40px;
   flex-wrap: wrap;
-  gap: 18px;
 }
 
-.events-index-h2 {
+.event-detail-date-box {
+  background: #FFFFFF;
+  border: 2px solid #0580C1;
+  border-radius: 14px;
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 76px;
+  box-shadow: 0 4px 12px rgba(5, 128, 193, 0.08);
+}
+
+.event-detail-date-month {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0580C1;
+  text-transform: uppercase;
+}
+
+.event-detail-date-day {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1D253A;
+  line-height: 1;
+  margin: 3px 0;
+}
+
+.event-detail-date-dow {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.event-detail-keyinfo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.event-detail-time {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #1D253A;
+  margin-bottom: 4px;
+}
+
+.event-detail-venue {
+  font-size: 14px;
+  color: #64748B;
+  margin-bottom: 6px;
+}
+
+.event-detail-seats {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #0580C1;
+  font-weight: 700;
+}
+
+.event-detail-prose {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 36px;
+}
+
+.event-detail-prose h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 24px;
+  color: #1D253A;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.event-detail-prose h4 {
+  font-size: 18px;
+  color: #1D253A;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.event-detail-prose ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-detail-prose li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #334155;
+  line-height: 1.55;
+}
+
+.event-detail-check-icon {
+  color: #0580C1;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.event-detail-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Event Detail Reservation Sidebar Card */
+.event-reserve-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 96px;
+}
+
+.event-reserve-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0580C1;
+  background: #E0F2FE;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.event-reserve-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px;
+  color: #1D253A;
+  margin: 0 0 8px;
+}
+
+.event-reserve-subtitle {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.event-form-group {
+  margin-bottom: 15px;
+}
+
+.event-form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1D253A;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.event-form-input,
+.event-form-select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  font-size: 13.5px;
+  box-sizing: border-box;
+  color: #1D253A;
+  background: #FFFFFF;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-form-input:focus,
+.event-form-select:focus {
+  border-color: #0580C1;
+  box-shadow: 0 0 0 3px rgba(5, 128, 193, 0.15);
+  outline: none;
+}
+
+.event-form-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.event-trust-points {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #F1F5F9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: #64748B;
+}
+
+.event-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.event-trust-item svg {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+/* Related Events in Show Page */
+.event-related-section {
+  margin-top: 60px;
+  padding-top: 48px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.event-related-title {
+  font-size: 22px;
+  font-weight: 800;
   color: #0F172A;
-}
-
-.events-filter-row {
-  margin: 0;
-}
-
-.events-pagination {
-  margin-top: 40px;
+  margin: 0 0 28px;
 }
 
 /* Responsive Media Queries for Events across All Breakpoints */
@@ -3607,6 +4189,17 @@ address {
   .events-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+  .events-value-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .event-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .event-reserve-card {
+    position: static;
   }
   .events-slider-track .event-card,
   .event-slide-card {
@@ -3670,12 +4263,24 @@ address {
 @media (max-width: 640px) {
   .events-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
   }
-  .event-card {
+  .events-value-strip {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .event-card-media {
+    height: 180px;
+  }
+  .event-card-body {
+    padding: 18px 18px 20px;
+  }
+  .event-detail-keycard {
     padding: 18px 16px;
     gap: 16px;
-    border-radius: 16px;
+  }
+  .event-reserve-card {
+    padding: 24px 20px;
   }
   .events-view-all {
     width: 100%;

@@ -6,7 +6,7 @@
 
 <!-- SUBPAGE HERO BANNER -->
 <section class="subpage-hero">
-  <img src="{{ asset('images/banner-blog.jpg') }}" alt="{{ $event->title }}" class="subpage-hero-bg">
+  <img src="{{ $event->image_url }}" alt="{{ $event->title }}" class="subpage-hero-bg">
   <div class="subpage-hero-overlay"></div>
   <div class="wrap">
     <div class="subpage-hero-content">
@@ -26,85 +26,190 @@
   </div>
 </section>
 
-<!-- EVENT DETAIL & BOOKING FORM -->
+<!-- EVENT DETAIL & BOOKING SECTION -->
 <section class="page-section">
   <div class="wrap">
-    <div class="grid-2col" style="grid-template-columns: 2fr 1fr; gap: 48px; align-items: start;">
-      <div>
-        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:18px;padding:24px 28px;margin-bottom:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-          <div style="background:#FFFFFF;border:2px solid #0580C1;border-radius:14px;padding:12px 20px;text-align:center;min-width:70px;">
-            <div style="font-size:12px;font-weight:800;color:#0580C1;text-transform:uppercase;">{{ $event->month_name }}</div>
-            <div style="font-size:28px;font-weight:800;color:#1d253a;line-height:1;">{{ $event->day_number }}</div>
-            <div style="font-size:12px;color:#64748b;font-weight:600;">{{ $event->day_of_week }}</div>
+    <div class="event-detail-grid">
+      
+      <!-- Main Content Column -->
+      <div class="event-detail-main">
+        
+        <!-- Featured Image Showcase -->
+        <div class="event-detail-media">
+          <img src="{{ $event->image_url }}" alt="{{ $event->title }}" class="event-detail-img">
+        </div>
+
+        <!-- Date & Venue Highlight Card -->
+        <div class="event-detail-keycard">
+          <div class="event-detail-date-box">
+            <div class="event-detail-date-month">{{ $event->month_name }}</div>
+            <div class="event-detail-date-day">{{ $event->day_number }}</div>
+            <div class="event-detail-date-dow">{{ $event->day_of_week }}</div>
           </div>
-          <div>
-            <div style="font-size:15px;font-weight:800;color:#1d253a;margin-bottom:4px;">Timing: {{ $event->formatted_time }}</div>
-            <div style="font-size:14px;color:#64748b;">Venue: <strong>{{ $event->location }}</strong> ({{ ucfirst($event->mode) }})</div>
-            <div style="font-size:12px;color:#0580C1;margin-top:4px;font-weight:700;">{{ $event->seats_available }} seats remaining</div>
+          <div class="event-detail-keyinfo">
+            <div class="event-detail-time">Timing: {{ $event->formatted_time }}</div>
+            <div class="event-detail-venue">Venue: <strong>{{ $event->location }}</strong> ({{ ucfirst($event->mode) }})</div>
+            <div class="event-detail-seats">
+              <span class="event-pulse-dot"></span>
+              <span>{{ $event->seats_available }} seats remaining · Free Complimentary Pass</span>
+            </div>
           </div>
         </div>
 
-        <div style="font-size:15.5px;line-height:1.75;color:#334155;margin-bottom:36px;">
-          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:24px;color:#1d253a;margin-top:0;margin-bottom:14px;">About This Session</h3>
+        <!-- Narrative & Agenda -->
+        <div class="event-detail-prose">
+          <h3>About This Session</h3>
           <p>{{ $event->description ?: 'Join our senior international education specialists for an interactive counselling and spot admissions evaluation session. Bring your academic transcripts and marklists for instant course matching.' }}</p>
           
-          <h4 style="font-size:18px;color:#1d253a;margin-top:24px;margin-bottom:12px;">What You Will Learn:</h4>
+          <h4>What You Will Learn &amp; Experience:</h4>
           <ul>
-            <li>Intakes and admission cut-offs for top universities.</li>
-            <li>Cost breakdown, scholarships, and collateral-free loan assistance.</li>
-            <li>Visa interview simulation and documentation prerequisites.</li>
-            <li>Direct 1-on-1 Q&amp;A with registered foreign admissions mentors.</li>
+            <li>
+              <svg class="event-detail-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Intakes and direct admission cut-offs for top universities across Germany, UK, Canada, Austria &amp; New Zealand.</span>
+            </li>
+            <li>
+              <svg class="event-detail-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Tuition breakdown, scholarship eligibility, and collateral-free education loan assistance.</span>
+            </li>
+            <li>
+              <svg class="event-detail-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Embassy visa interview preparation, blocked account setup, and checklist validation.</span>
+            </li>
+            <li>
+              <svg class="event-detail-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Direct 1-on-1 evaluation with certified European and overseas educational counsellors.</span>
+            </li>
           </ul>
         </div>
 
-        <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20want%20to%20attend%20{{ urlencode($event->title) }}" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;padding:12px 26px;">
+        <!-- Action Links -->
+        <div class="event-detail-actions">
+          <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20want%20to%20attend%20{{ urlencode($event->title) }}" target="_blank" rel="noopener" class="btn-primary">
             Reserve on WhatsApp
           </a>
-          <a href="{{ route('events.index') }}" class="btn-ghost" style="padding:12px 24px;">Browse Other Dates</a>
+          <a href="{{ route('events.index') }}" class="btn-ghost">
+            ← Browse Other Dates
+          </a>
         </div>
       </div>
 
       <!-- Reservation Sidebar -->
       <aside>
-        <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);position:sticky;top:90px;">
-          <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1d253a;margin-top:0;margin-bottom:8px;">Reserve Free Seat</h3>
-          <p style="font-size:13px;color:#64748b;margin-bottom:20px;">Seats are limited to ensure personalized attention.</p>
+        <div class="event-reserve-card">
+          <span class="event-reserve-badge">Instant Pass</span>
+          <h3 class="event-reserve-title">Reserve Free Seat</h3>
+          <p class="event-reserve-subtitle">Seats are limited to ensure personalized 1-on-1 evaluation for each student.</p>
 
           <form action="{{ route('contact.submit') }}" method="POST">
             @csrf
             <input type="hidden" name="service_interest" value="Event: {{ $event->title }}">
 
-            <div style="margin-bottom:14px;">
-              <label style="display:block;font-size:12px;font-weight:700;color:#1d253a;text-transform:uppercase;margin-bottom:6px;">Full Name *</label>
-              <input type="text" name="name" required placeholder="e.g. Arun Kumar" style="width:100%;padding:11px 14px;border:1px solid #CBD5E1;border-radius:10px;font-size:13.5px;box-sizing:border-box;">
+            <div class="event-form-group">
+              <label class="event-form-label">Full Name *</label>
+              <input type="text" name="name" required placeholder="e.g. Arun Kumar" class="event-form-input">
             </div>
 
-            <div style="margin-bottom:14px;">
-              <label style="display:block;font-size:12px;font-weight:700;color:#1d253a;text-transform:uppercase;margin-bottom:6px;">WhatsApp / Phone *</label>
-              <input type="text" name="phone" required placeholder="+91 98765 43210" style="width:100%;padding:11px 14px;border:1px solid #CBD5E1;border-radius:10px;font-size:13.5px;box-sizing:border-box;">
+            <div class="event-form-group">
+              <label class="event-form-label">WhatsApp / Phone *</label>
+              <input type="text" name="phone" required placeholder="+91 98765 43210" class="event-form-input">
             </div>
 
-            <div style="margin-bottom:14px;">
-              <label style="display:block;font-size:12px;font-weight:700;color:#1d253a;text-transform:uppercase;margin-bottom:6px;">Email Address *</label>
-              <input type="email" name="email" required placeholder="name@email.com" style="width:100%;padding:11px 14px;border:1px solid #CBD5E1;border-radius:10px;font-size:13.5px;box-sizing:border-box;">
+            <div class="event-form-group">
+              <label class="event-form-label">Email Address *</label>
+              <input type="email" name="email" required placeholder="name@email.com" class="event-form-input">
             </div>
 
-            <div style="margin-bottom:18px;">
-              <label style="display:block;font-size:12px;font-weight:700;color:#1d253a;text-transform:uppercase;margin-bottom:6px;">Country of Interest</label>
-              <select name="destination" style="width:100%;padding:11px 14px;border:1px solid #CBD5E1;border-radius:10px;font-size:13.5px;box-sizing:border-box;background:#FFFFFF;">
+            <div class="event-form-group">
+              <label class="event-form-label">Country of Interest</label>
+              <select name="destination" class="event-form-select">
                 <option value="Germany">Germany (€0 Tuition)</option>
                 <option value="Canada">Canada (PGWP)</option>
                 <option value="UK">United Kingdom</option>
                 <option value="New Zealand">New Zealand</option>
+                <option value="Austria">Austria</option>
+                <option value="Georgia">Georgia (MBBS)</option>
               </select>
             </div>
 
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:12px;">Confirm Registration</button>
+            <button type="submit" class="btn-primary event-form-submit">Confirm Registration</button>
           </form>
+
+          <div class="event-trust-points">
+            <div class="event-trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Free Attendee Entry · Zero Hidden Costs</span>
+            </div>
+            <div class="event-trust-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Instant Confirmation via WhatsApp / SMS</span>
+            </div>
+          </div>
         </div>
       </aside>
+
     </div>
+
+    <!-- Related Upcoming Events -->
+    @if(isset($upcomingEvents) && $upcomingEvents->count() > 0)
+      <div class="event-related-section">
+        <h3 class="event-related-title">Other Upcoming Events &amp; Seminars</h3>
+        <div class="events-grid">
+          @foreach($upcomingEvents as $e)
+            <article class="event-card">
+              <div class="event-card-media">
+                <img src="{{ $e->image_url }}" alt="{{ $e->title }}" class="event-card-img" loading="lazy">
+                <div class="event-card-overlay"></div>
+                
+                <div class="event-date-stamp">
+                  <span class="ev-month">{{ $e->month_name }}</span>
+                  <span class="ev-day">{{ $e->day_number }}</span>
+                  <span class="ev-dow">{{ $e->day_of_week }}</span>
+                </div>
+
+                <div class="event-card-badges">
+                  <span class="event-type-badge ev-type-{{ $e->type }}">{{ $e->type_label }}</span>
+                  <span class="event-mode-badge">{{ $e->mode === 'online' ? 'Live Online' : 'In-Person (Aluva)' }}</span>
+                </div>
+              </div>
+
+              <div class="event-card-body">
+                <div class="event-card-urgency">
+                  <span class="event-pulse-dot"></span>
+                  <span>{{ $e->seats_available }} Seats Left</span>
+                </div>
+
+                <h3 class="event-card-title">
+                  <a href="{{ route('events.show', $e->slug) }}">{{ $e->title }}</a>
+                </h3>
+
+                <div class="event-card-meta">
+                  <div class="event-card-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                    <span>{{ $e->formatted_time }}</span>
+                  </div>
+                  <div class="event-card-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                    <span>{{ $e->location }}</span>
+                  </div>
+                </div>
+
+                <div class="event-card-footer">
+                  <div class="event-card-fee">
+                    <span class="event-card-fee-label">Entry</span>
+                    <span class="event-card-fee-val">FREE PASS</span>
+                  </div>
+                  <a href="{{ route('events.show', $e->slug) }}" class="event-card-btn">
+                    <span>Reserve Free Seat</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          @endforeach
+        </div>
+      </div>
+    @endif
+
   </div>
 </section>
 
