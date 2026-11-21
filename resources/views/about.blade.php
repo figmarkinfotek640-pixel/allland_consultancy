@@ -37,7 +37,7 @@
 </section>
 
 <!-- 3. WHO WE ARE & AUTHENTIC AGENCY NARRATIVE -->
-<section class="about-story-section">
+<section class="page-section about-story-section">
   <div class="wrap">
     <div class="about-story-grid">
       <!-- Left Narrative Column -->
@@ -100,7 +100,7 @@
 </section>
 
 <!-- 4. CORE SERVICES & EXPERTISE (From OG Site Scope) -->
-<section class="about-services-section">
+<section class="page-section-alt about-services-section">
   <div class="wrap">
     <div class="about-services-header">
       <span class="sec-tag"><span class="sec-tag-dot"></span> Comprehensive Capabilities</span>
@@ -176,7 +176,7 @@
 </section>
 
 <!-- 5. VERIFIED GOOGLE REVIEWS SECTION (4.9★ / 401 REVIEWS) -->
-<section class="about-reviews-section">
+<section class="page-section about-reviews-section">
   <div class="wrap">
     <div class="about-reviews-header-wrap">
       <div>
