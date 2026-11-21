@@ -183,21 +183,6 @@
             </div>
           </div>
         </div>
-
-        <!-- In-Demand Disciplines Tags Block -->
-        @if(!empty($destination->popular_courses) && is_array($destination->popular_courses))
-          <div class="dest-tags-block">
-            <div class="dest-tags-header">
-              <span class="dest-tags-icon">🔥</span>
-              <h3 class="dest-tags-title">Popular Fields of Study in {{ $destination->name }}</h3>
-            </div>
-            <div class="dest-tags-row">
-              @foreach($destination->popular_courses as $tag)
-                <span class="dest-tag-pill">{{ $tag }}</span>
-              @endforeach
-            </div>
-          </div>
-        @endif
       </div>
 
       <!-- Right Column (Sticky balanced widgets) -->
@@ -329,16 +314,6 @@
                 </div>
               </a>
             @endforeach
-          </div>
-        </div>
-
-        <!-- Counsellor Helpline Banner -->
-        <div class="dest-sidebar-card dest-advisor-card">
-          <div class="dest-advisor-badge">CERTIFIED COUNSELLOR</div>
-          <h4 class="dest-advisor-heading">Need Personalized Guidance?</h4>
-          <p class="dest-advisor-desc">Speak directly with our senior study abroad consultants in Aluva, Kochi. We evaluate your profile, GPA, and financial budget for free.</p>
-          <div class="dest-advisor-actions">
-            <a href="tel:+918590724242" class="dest-advisor-btn">Call +91 8590 724 242</a>
           </div>
         </div>
       </aside>
