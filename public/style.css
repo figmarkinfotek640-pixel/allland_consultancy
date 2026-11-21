@@ -5798,21 +5798,26 @@ address {
 .cta-banner-bg {
   position: absolute;
   inset: 0;
-  background-image: url('./images/banner-about.jpg');
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
   pointer-events: none;
+  background: var(--ink);
 }
 
 .cta-banner-bg .banner-bg-img {
-  opacity: 0.82;
-  filter: saturate(1.2) contrast(1.05) brightness(0.95);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.28;
+  filter: saturate(1.15) brightness(0.95);
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cta-banner:hover .cta-banner-bg,
 .cta-banner:hover .banner-bg-img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .cta-banner-overlay {
