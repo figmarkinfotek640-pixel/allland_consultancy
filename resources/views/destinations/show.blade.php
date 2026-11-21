@@ -402,39 +402,4 @@
   </div>
 </section>
 
-<!-- FULL-WIDTH UPCOMING EVENTS & WEBINARS -->
-@if($events->isNotEmpty())
-  <section class="dest-events-fullwidth-section">
-    <div class="wrap">
-      <div class="dest-events-fullwidth-header">
-        <div>
-          <span class="sec-tag"><span class="sec-tag-dot"></span> Direct Interaction</span>
-          <h2 class="sec-h2">Upcoming {{ $destination->name }} Events &amp; Webinars</h2>
-          <p class="sec-p">Attend free spot admission days, embassy visa webinars, and 1:1 counselling sessions.</p>
-        </div>
-        <a href="{{ route('events.index') }}" class="dest-view-all-programs-btn">
-          View All Events Calendar →
-        </a>
-      </div>
-
-      <div class="dest-events-cards-grid">
-        @foreach($events as $ev)
-          <div class="dest-event-card">
-            <div class="dest-event-date">
-              <span class="ev-month">{{ $ev->month_name }}</span>
-              <span class="ev-day">{{ $ev->day_number }}</span>
-            </div>
-            <div class="dest-event-info">
-              <span class="dest-event-type-tag">{{ $ev->type_label }}</span>
-              <h4 class="dest-event-title"><a href="{{ route('events.show', $ev->slug) }}">{{ $ev->title }}</a></h4>
-              <span class="dest-event-location">📍 {{ $ev->location }}</span>
-            </div>
-            <a href="{{ route('events.show', $ev->slug) }}" class="dest-event-action-btn">Claim Pass →</a>
-          </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-@endif
-
 @endsection
