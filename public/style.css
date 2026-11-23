@@ -10921,26 +10921,60 @@ body {
 .about-graphic-badge {
   margin-top: 20px;
   width: 100%;
+  box-sizing: border-box;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 16px;
+}
+
+.about-graphic-badge-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .about-graphic-badge-text .badge-title {
   font-size: 0.92rem;
   font-weight: 800;
   color: #0f172a;
+  line-height: 1.35;
 }
 
 .about-graphic-badge-text .badge-sub {
   font-size: 0.8rem;
   color: #64748b;
   margin-top: 2px;
+  line-height: 1.35;
+}
+
+.about-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 9px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #D9561A 0%, #ba4511 100%);
+  border-radius: var(--r-full);
+  box-shadow: 0 4px 14px rgba(217, 86, 26, 0.32);
+  text-decoration: none;
+  line-height: 1.2;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-badge-btn:hover {
+  background: linear-gradient(135deg, #f06928 0%, #D9561A 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(217, 86, 26, 0.42);
+  color: #ffffff;
 }
 
 /* Services / Core Pillars Section */
@@ -11274,9 +11308,15 @@ body {
 
 /* Responsive queries */
 @media (max-width: 992px) {
+  .about-story-section {
+    padding: 60px 0;
+  }
   .about-story-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .about-services-section {
+    padding: 60px 0;
   }
   .about-services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -11284,19 +11324,85 @@ body {
   .about-review-card {
     flex: 0 0 calc((100% - 24px) / 2);
     max-width: calc((100% - 24px) / 2);
-    min-width: 280px;
+    min-width: 0;
   }
 }
 
 @media (max-width: 640px) {
+  .about-story-section {
+    padding: 44px 0;
+  }
+  .about-speciality-pill {
+    max-width: 100%;
+    font-size: 0.86rem;
+    padding: 7px 14px;
+    gap: 8px;
+    margin-bottom: 22px;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+  .about-graphic-frame {
+    padding: 14px;
+    border-radius: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .about-graphic-badge {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 12px;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+  .about-graphic-badge-text {
+    text-align: center;
+  }
+  .about-graphic-badge-text .badge-title {
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+  .about-graphic-badge-text .badge-sub {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+  .about-badge-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 20px;
+    box-sizing: border-box;
+  }
+  .about-stats-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .about-stat-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 18px;
+  }
+  .about-services-section {
+    padding: 44px 0;
+  }
+  .about-services-header {
+    margin-bottom: 28px;
+  }
   .about-services-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .about-pillar-card {
+    padding: 22px 18px;
+    border-radius: 14px;
   }
   .about-review-card {
     flex: 0 0 100%;
     max-width: 100%;
-    min-width: 260px;
-    padding: 22px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 18px;
   }
   .about-reviews-header-wrap {
     flex-direction: column;
@@ -11306,17 +11412,26 @@ body {
   .about-reviews-header-right {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
   }
   .about-quote-box {
-    padding: 24px 20px;
+    padding: 22px 18px;
+    border-radius: 14px;
   }
   .about-quote-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.55;
   }
-  .about-graphic-frame {
-    padding: 16px;
-  }
-  .about-stats-row {
+  .cta-btns {
     flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .cta-btns .btn-cta-primary,
+  .cta-btns .btn-cta-wa {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
   }
 }

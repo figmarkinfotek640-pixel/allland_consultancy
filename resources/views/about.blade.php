@@ -91,7 +91,7 @@
               <div class="badge-title">Aluva Headquarters • Laxmanas Tower</div>
               <div class="badge-sub">Direct 1-on-1 In-Person &amp; Online Guidance</div>
             </div>
-            <a href="{{ route('contact') }}" class="btn-primary">Visit Us</a>
+            <a href="{{ route('contact') }}" class="about-badge-btn">Visit Us</a>
           </div>
         </div>
       </div>
