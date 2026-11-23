@@ -7,7 +7,7 @@
         <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy Logo" class="footer-logo">
         <p class="footer-tagline">"The future belongs to those who can imagine it, design it and execute it."</p>
         <div class="footer-soc">
-          <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener" class="footer-soc-link">Instagram</a>
+          <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener" class="footer-soc-link">Instagram</a>
           <a href="https://www.facebook.com/profile.php?id=100094266267256" target="_blank" rel="noopener" class="footer-soc-link">Facebook</a>
           <a href="https://www.linkedin.com/in/all-land-consultancy-32287425b/" target="_blank" rel="noopener" class="footer-soc-link">LinkedIn</a>
         </div>

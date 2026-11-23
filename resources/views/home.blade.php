@@ -150,13 +150,13 @@
       </div>
 
       <div class="insta-header-controls">
-        <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-follow-btn">
+        <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-follow-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
           </svg>
-          <span>Follow @figmark_institute</span>
+          <span>Follow @all_land_consultancy</span>
         </a>
 
         <div class="insta-slider-arrows">
@@ -196,7 +196,7 @@
                 <span>48.2K</span>
               </span>
             </div>
-            <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             </a>
           </div>
@@ -210,7 +210,7 @@
               <span class="insta-reel-action-label" data-base-likes="1428">1.4K</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
               <span class="insta-reel-action-label">84</span>
@@ -222,7 +222,7 @@
               <span class="insta-reel-action-label">Sound</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </a>
               <span class="insta-reel-action-label">Share</span>
@@ -279,7 +279,7 @@
                 <span>62.1K</span>
               </span>
             </div>
-            <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             </a>
           </div>
@@ -293,7 +293,7 @@
               <span class="insta-reel-action-label" data-base-likes="2185">2.2K</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
               <span class="insta-reel-action-label">142</span>
@@ -305,7 +305,7 @@
               <span class="insta-reel-action-label">Sound</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </a>
               <span class="insta-reel-action-label">Share</span>
@@ -362,7 +362,7 @@
                 <span>39.7K</span>
               </span>
             </div>
-            <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             </a>
           </div>
@@ -376,7 +376,7 @@
               <span class="insta-reel-action-label" data-base-likes="1894">1.9K</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
               <span class="insta-reel-action-label">96</span>
@@ -388,7 +388,7 @@
               <span class="insta-reel-action-label">Sound</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </a>
               <span class="insta-reel-action-label">Share</span>
@@ -445,7 +445,7 @@
                 <span>35.4K</span>
               </span>
             </div>
-            <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             </a>
           </div>
@@ -459,7 +459,7 @@
               <span class="insta-reel-action-label" data-base-likes="1632">1.6K</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
               <span class="insta-reel-action-label">77</span>
@@ -471,7 +471,7 @@
               <span class="insta-reel-action-label">Sound</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </a>
               <span class="insta-reel-action-label">Share</span>
@@ -528,7 +528,7 @@
                 <span>74.9K</span>
               </span>
             </div>
-            <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             </a>
           </div>
@@ -542,7 +542,7 @@
               <span class="insta-reel-action-label" data-base-likes="2540">2.5K</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
               <span class="insta-reel-action-label">210</span>
@@ -554,7 +554,7 @@
               <span class="insta-reel-action-label">Sound</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </a>
               <span class="insta-reel-action-label">Share</span>
@@ -610,7 +610,7 @@
           <p class="insta-banner-sub">Daily visa approvals, student lifestyle vlogs, free seminar updates &amp; live Q&amp;As.</p>
         </div>
       </div>
-      <a href="https://www.instagram.com/figmark_institute/" target="_blank" rel="noopener noreferrer" class="btn-primary insta-banner-cta">
+      <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="btn-primary insta-banner-cta">
         <span>Visit Instagram Profile</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
       </a>
