@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inquiry;
+use App\Mail\InquiryThankYouMail;
+use App\Mail\AdminInquiryNotificationMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
@@ -26,6 +30,21 @@ class ContactController extends Controller
         ]);
 
         $inquiry = Inquiry::create($validated);
+
+        // Send confirmation to candidate and notification to company
+        try {
+            Mail::to($inquiry->email)->send(new InquiryThankYouMail($inquiry));
+
+            $adminEmail = config('mail.admin_address', 'info@alllandconsultancy.com');
+            if (!empty($adminEmail)) {
+                Mail::to($adminEmail)->send(new AdminInquiryNotificationMail($inquiry));
+            }
+        } catch (\Throwable $e) {
+            Log::error('Inquiry email dispatch failed: ' . $e->getMessage(), [
+                'inquiry_id' => $inquiry->id,
+                'email' => $inquiry->email,
+            ]);
+        }
 
         if ($request->expectsJson()) {
             return response()->json([

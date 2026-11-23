@@ -10,6 +10,9 @@ use App\Models\Event;
 use App\Models\Blog;
 use App\Models\Destination;
 use App\Models\Inquiry;
+use App\Mail\InquiryThankYouMail;
+use App\Mail\AdminInquiryNotificationMail;
+use Illuminate\Support\Facades\Mail;
 
 class AlllandAppTest extends TestCase
 {
@@ -88,6 +91,8 @@ class AlllandAppTest extends TestCase
 
     public function test_student_inquiry_submission_stores_in_mysql(): void
     {
+        Mail::fake();
+
         $response = $this->post('/contact', [
             'name' => 'Kavya Nair',
             'email' => 'kavya.test@gmail.com',
@@ -102,6 +107,14 @@ class AlllandAppTest extends TestCase
             'email' => 'kavya.test@gmail.com',
             'destination' => 'Germany',
         ]);
+
+        Mail::assertSent(InquiryThankYouMail::class, function ($mail) {
+            return $mail->hasTo('kavya.test@gmail.com');
+        });
+
+        Mail::assertSent(AdminInquiryNotificationMail::class, function ($mail) {
+            return $mail->hasTo('info@alllandconsultancy.com');
+        });
 
         // Cleanup
         Inquiry::where('email', 'kavya.test@gmail.com')->delete();
