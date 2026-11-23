@@ -831,57 +831,7 @@
 </section>
 
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     10b. EXCLUSIVE SPOTLIGHT: GERMAN NURSING AUSBILDUNG
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section class="page-section-alt exclusive-spotlight-section">
-  <div class="wrap">
-    <div class="grid-2col exclusive-spotlight-grid">
-      <div>
-        <span class="subpage-badge exclusive-spotlight-badge">Featured Exclusive Program</span>
-        <h2 class="sec-h2 exclusive-spotlight-h2">German Nursing Ausbildung: <span>Study &amp; Earn €1,000–€1,250/Month</span></h2>
-        <p class="sec-p exclusive-spotlight-p">
-          A government-accredited 3-year vocational nursing apprenticeship in top German hospitals. <strong>100% tuition-free</strong> with a guaranteed monthly stipend throughout your training, leading to a permanent nursing license and European PR.
-        </p>
-        
-        <div class="exclusive-spotlight-stats">
-          <div class="exclusive-spotlight-stat-box">
-            <span class="exclusive-spotlight-stat-lbl">Monthly Stipend</span>
-            <span class="exclusive-spotlight-stat-val">€1,000 – €1,250</span>
-          </div>
-          <div class="exclusive-spotlight-stat-box">
-            <span class="exclusive-spotlight-stat-lbl">Tuition Fees</span>
-            <span class="exclusive-spotlight-stat-val accent-orange">€0 (Tuition Free)</span>
-          </div>
-          <div class="exclusive-spotlight-stat-box">
-            <span class="exclusive-spotlight-stat-lbl">Language Requirement</span>
-            <span class="exclusive-spotlight-stat-val">B2 German Level</span>
-          </div>
-          <div class="exclusive-spotlight-stat-box">
-            <span class="exclusive-spotlight-stat-lbl">Career Settlement</span>
-            <span class="exclusive-spotlight-stat-val">Direct PR in 3 Yrs</span>
-          </div>
-        </div>
 
-        <div class="exclusive-spotlight-btns">
-          <a href="{{ route('exclusives') }}" class="btn-primary">Explore Ausbildung Program →</a>
-          <a href="https://wa.me/918590724242?text=Hello%20All%20Land,%20I%20am%20interested%20in%20German%20Nursing%20Ausbildung" target="_blank" rel="noopener" class="btn-ghost">Talk to Healthcare Advisor</a>
-        </div>
-      </div>
-
-      <div class="media-frame">
-        <img src="{{ asset('images/service-placement.jpg') }}" alt="German Nursing Ausbildung Students">
-        <div class="media-frame-badge">
-          <div>
-            <div class="exclusive-spotlight-badge-title">Aluva &amp; Kannur Enrolments Open</div>
-            <div class="exclusive-spotlight-badge-sub">German B1/B2 training, hospital interview &amp; visa guidance</div>
-          </div>
-          <span class="exclusive-spotlight-priority-tag">Priority Intake</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      11. RECENT BLOG & GUIDES (DYNAMIC FROM MYSQL)
