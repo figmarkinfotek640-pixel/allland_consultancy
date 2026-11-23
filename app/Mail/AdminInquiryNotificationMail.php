@@ -26,6 +26,7 @@ class AdminInquiryNotificationMail extends Mailable
         }
 
         return new Envelope(
+            from: new Address(config('mail.from.address', 'alllandtravelsenquiry@gmail.com'), 'All land Consultancy'),
             subject: $subject,
             replyTo: [
                 new Address($this->inquiry->email, $this->inquiry->name),

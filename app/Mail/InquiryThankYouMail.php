@@ -5,6 +5,7 @@ namespace App\Mail;
 use App\Models\Inquiry;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -20,7 +21,8 @@ class InquiryThankYouMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thank You for Your Enquiry | All-Land Consultancy',
+            from: new Address(config('mail.from.address', 'alllandtravelsenquiry@gmail.com'), 'All land Consultancy'),
+            subject: 'Thank You for Your Enquiry | All land Consultancy',
         );
     }
 
