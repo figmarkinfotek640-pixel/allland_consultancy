@@ -35,7 +35,7 @@ class ContactController extends Controller
         try {
             Mail::to($inquiry->email)->send(new InquiryThankYouMail($inquiry));
 
-            $adminEmail = config('mail.admin_address', 'info@alllandconsultancy.com');
+            $adminEmail = config('mail.admin_address', 'alllandtravelsenquiry@gmail.com');
             if (!empty($adminEmail)) {
                 Mail::to($adminEmail)->send(new AdminInquiryNotificationMail($inquiry));
             }

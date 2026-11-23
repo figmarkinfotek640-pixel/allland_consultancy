@@ -111,7 +111,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@alllandconsultancy.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'alllandtravelsenquiry@gmail.com'),
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'All-Land Consultancy')),
     ],
 
@@ -124,7 +124,7 @@ return [
     |
     */
 
-    'admin_address' => env('MAIL_ADMIN_ADDRESS', 'info@alllandconsultancy.com'),
+    'admin_address' => env('MAIL_ADMIN_ADDRESS', 'alllandtravelsenquiry@gmail.com'),
 
 
 ];

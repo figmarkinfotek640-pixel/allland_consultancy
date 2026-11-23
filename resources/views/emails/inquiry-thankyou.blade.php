@@ -86,7 +86,7 @@
             <td style="background-color: #F8FAFC; border-top: 1px solid #E2E8F0; padding: 25px 35px; text-align: center; font-size: 12px; line-height: 1.6; color: #94A3B8;">
               <p style="margin: 0 0 6px; font-weight: 600; color: #64748B;">All-Land Consultancy — Head Office Aluva</p>
               <p style="margin: 0 0 6px;">Laxmanas Tower, 11/56, Pump Junction, Opp. Municipal Office, Periyar Nagar, Aluva, Kerala 683101</p>
-              <p style="margin: 0;">Email: <a href="mailto:info@alllandconsultancy.com" style="color: #0580C1; text-decoration: none;">info@alllandconsultancy.com</a> | Website: <a href="https://alllandconsultancy.com" style="color: #0580C1; text-decoration: none;">alllandconsultancy.com</a></p>
+              <p style="margin: 0;">Email: <a href="mailto:alllandtravelsenquiry@gmail.com" style="color: #0580C1; text-decoration: none;">alllandtravelsenquiry@gmail.com</a> | Website: <a href="https://alllandconsultancy.com" style="color: #0580C1; text-decoration: none;">alllandconsultancy.com</a></p>
             </td>
           </tr>
 

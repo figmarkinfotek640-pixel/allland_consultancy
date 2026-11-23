@@ -113,7 +113,7 @@ class AlllandAppTest extends TestCase
         });
 
         Mail::assertSent(AdminInquiryNotificationMail::class, function ($mail) {
-            return $mail->hasTo('info@alllandconsultancy.com');
+            return $mail->hasTo('alllandtravelsenquiry@gmail.com');
         });
 
         // Cleanup
