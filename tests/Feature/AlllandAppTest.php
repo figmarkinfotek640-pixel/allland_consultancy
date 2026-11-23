@@ -241,27 +241,27 @@ class AlllandAppTest extends TestCase
     public function test_admin_can_create_and_delete_destination(): void
     {
         $destData = [
-            'name' => 'Ireland Test',
-            'slug' => 'ireland-test',
-            'country_code' => 'IE',
-            'flag' => '🇮🇪',
-            'tab_badge' => '2-Yr PSW',
-            'hero_badge' => '2-YEAR POST STUDY WORK',
-            'eyebrow' => 'European Tech Capital',
-            'title' => 'Study in Ireland — Silicon Valley of Europe',
-            'blurb' => 'Test overview for Ireland.',
-            'description' => '<p>Test guide for Ireland higher education.</p>',
-            'order' => 10,
+            'name' => 'Test Destination',
+            'slug' => 'test-destination-unit',
+            'country_code' => 'ZZ',
+            'flag' => '🌐',
+            'tab_badge' => 'Test Badge',
+            'hero_badge' => 'TEST HERO BADGE',
+            'eyebrow' => 'Test Eyebrow',
+            'title' => 'Study in Test Land — High Quality Education',
+            'blurb' => 'Test overview for test destination.',
+            'description' => '<p>Test guide for destination higher education.</p>',
+            'order' => 99,
             'is_active' => '1',
         ];
 
         $response = $this->actingAs($this->adminUser)->post('/admin/destinations', $destData);
         $response->assertRedirect('/admin/destinations');
-        $this->assertDatabaseHas('destinations', ['slug' => 'ireland-test']);
+        $this->assertDatabaseHas('destinations', ['slug' => 'test-destination-unit']);
 
-        $dest = Destination::where('slug', 'ireland-test')->first();
+        $dest = Destination::where('slug', 'test-destination-unit')->first();
         $this->actingAs($this->adminUser)->delete("/admin/destinations/{$dest->id}");
-        $this->assertDatabaseMissing('destinations', ['slug' => 'ireland-test']);
+        $this->assertDatabaseMissing('destinations', ['slug' => 'test-destination-unit']);
     }
 }
 
