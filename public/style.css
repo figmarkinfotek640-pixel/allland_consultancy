@@ -5316,7 +5316,8 @@ address {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #ffffff;
   border: 1.5px solid #0F172A;
   display: block;
 }

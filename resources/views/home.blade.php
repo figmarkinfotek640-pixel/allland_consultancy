@@ -233,14 +233,14 @@
           <div class="insta-reel-bottom">
             <div class="insta-reel-author-row">
               <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/student-1.jpg') }}" alt="Anandhu Krishnan" class="insta-reel-avatar" loading="lazy">
+                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
               </div>
               <div class="insta-reel-author-meta">
                 <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">anandhu.munich</span>
+                  <span class="insta-reel-handle">all_land_consultancy</span>
                   <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
                 </div>
-                <span class="insta-reel-loc">📍 TU Munich • Germany</span>
+                <span class="insta-reel-loc">📍 All Land Consultancy • Germany Desk</span>
               </div>
             </div>
 
@@ -252,7 +252,7 @@
 
             <div class="insta-reel-audio-ticker">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • All Land Student Success</span>
+              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
             </div>
           </div>
         </article>
@@ -316,14 +316,14 @@
           <div class="insta-reel-bottom">
             <div class="insta-reel-author-row">
               <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/student-2.jpg') }}" alt="Sneha George" class="insta-reel-avatar" loading="lazy">
+                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
               </div>
               <div class="insta-reel-author-meta">
                 <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">sneha.in.toronto</span>
+                  <span class="insta-reel-handle">all_land_consultancy</span>
                   <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
                 </div>
-                <span class="insta-reel-loc">📍 Seneca Polytechnic • Toronto, Canada</span>
+                <span class="insta-reel-loc">📍 All Land Consultancy • Canada Desk</span>
               </div>
             </div>
 
@@ -335,7 +335,7 @@
 
             <div class="insta-reel-audio-ticker">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • Student Life in Ontario</span>
+              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
             </div>
           </div>
         </article>
@@ -399,14 +399,14 @@
           <div class="insta-reel-bottom">
             <div class="insta-reel-author-row">
               <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/student-3.jpg') }}" alt="Merin Varghese" class="insta-reel-avatar" loading="lazy">
+                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
               </div>
               <div class="insta-reel-author-meta">
                 <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">merin.v_nurse_uk</span>
+                  <span class="insta-reel-handle">all_land_consultancy</span>
                   <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
                 </div>
-                <span class="insta-reel-loc">📍 Leeds Teaching Hospitals NHS • UK</span>
+                <span class="insta-reel-loc">📍 All Land Consultancy • UK NHS Desk</span>
               </div>
             </div>
 
@@ -418,7 +418,7 @@
 
             <div class="insta-reel-audio-ticker">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • UK NHS Journey</span>
+              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
             </div>
           </div>
         </article>
@@ -482,14 +482,14 @@
           <div class="insta-reel-bottom">
             <div class="insta-reel-author-row">
               <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/student-4.jpg') }}" alt="Kevin Thomas" class="insta-reel-avatar" loading="lazy">
+                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
               </div>
               <div class="insta-reel-author-meta">
                 <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">kevin.thomas_nz</span>
+                  <span class="insta-reel-handle">all_land_consultancy</span>
                   <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
                 </div>
-                <span class="insta-reel-loc">📍 University of Auckland • New Zealand</span>
+                <span class="insta-reel-loc">📍 All Land Consultancy • New Zealand Desk</span>
               </div>
             </div>
 
@@ -501,7 +501,7 @@
 
             <div class="insta-reel-audio-ticker">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • New Zealand Diary</span>
+              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
             </div>
           </div>
         </article>
@@ -565,14 +565,14 @@
           <div class="insta-reel-bottom">
             <div class="insta-reel-author-row">
               <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/gallery-visa-success.jpg') }}" alt="Flying Batch" class="insta-reel-avatar" loading="lazy">
+                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
               </div>
               <div class="insta-reel-author-meta">
                 <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">rahul_abroad_journey</span>
+                  <span class="insta-reel-handle">all_land_consultancy</span>
                   <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
                 </div>
-                <span class="insta-reel-loc">📍 Frankfurt Airport • Germany</span>
+                <span class="insta-reel-loc">📍 All Land Consultancy • Aluva Headquarters</span>
               </div>
             </div>
 
@@ -584,7 +584,7 @@
 
             <div class="insta-reel-audio-ticker">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • 2026 Batch Airport Celebration</span>
+              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
             </div>
           </div>
         </article>
