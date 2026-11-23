@@ -9,13 +9,17 @@
       <a href="{{ route('services.index') }}" class="nav-link {{ request()->routeIs('services.*') ? 'active' : '' }}">Services</a>
       <!-- Study Abroad Dropdown (Loaded dynamically from backend) -->
       <div class="nav-item-dropdown">
-        <a href="{{ route('study-abroad') }}" class="nav-link nav-dropdown-trigger {{ request()->routeIs('study-abroad*') || request()->routeIs('destinations.*') || request()->routeIs('courses.*') ? 'active' : '' }}" aria-expanded="false" aria-haspopup="true">
+        <button type="button" class="nav-link nav-dropdown-trigger {{ request()->is('study-abroad*') || request()->routeIs('destinations.*') ? 'active' : '' }}" aria-expanded="false" aria-haspopup="true">
           <span>Study Abroad</span>
           <svg class="nav-dropdown-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="m6 9 6 6 6-6"/>
           </svg>
-        </a>
-        <div class="nav-dropdown-menu" role="menu">
+        </button>
+        @php
+          $destCount = isset($navDestinations) ? $navDestinations->count() : 7;
+          $colClass = $destCount > 14 ? 'nav-dropdown-mega-col' : ($destCount > 7 ? 'nav-dropdown-multi-col' : '');
+        @endphp
+        <div class="nav-dropdown-menu nav-dropdown-countries {{ $colClass }}" role="menu">
           @if(isset($navDestinations) && $navDestinations->isNotEmpty())
             @foreach($navDestinations as $dest)
               <a href="{{ route('destinations.show', $dest->slug) }}" class="nav-dropdown-item {{ request()->is('study-abroad/' . $dest->slug) ? 'active' : '' }}" role="menuitem">
@@ -26,13 +30,9 @@
                     {{ $dest->flag }}
                   @endif
                 </span>
-                {{ $dest->name }}
+                <span>{{ $dest->name }}</span>
               </a>
             @endforeach
-            <div class="nav-dropdown-divider"></div>
-            <a href="{{ route('study-abroad') }}" class="nav-dropdown-item nav-dropdown-all-link {{ request()->routeIs('study-abroad') ? 'active' : '' }}" role="menuitem">
-              All Destinations &amp; Courses →
-            </a>
           @else
             <a href="{{ route('destinations.show', 'germany') }}" class="nav-dropdown-item" role="menuitem"><img src="https://flagcdn.com/w40/de.png" alt="Germany" class="nav-flag-img" width="18" height="12">Germany</a>
             <a href="{{ route('destinations.show', 'georgia') }}" class="nav-dropdown-item" role="menuitem"><img src="https://flagcdn.com/w40/ge.png" alt="Georgia" class="nav-flag-img" width="18" height="12">Georgia</a>
@@ -41,8 +41,6 @@
             <a href="{{ route('destinations.show', 'tajikistan') }}" class="nav-dropdown-item" role="menuitem"><img src="https://flagcdn.com/w40/tj.png" alt="Tajikistan" class="nav-flag-img" width="18" height="12">Tajikistan</a>
             <a href="{{ route('destinations.show', 'canada') }}" class="nav-dropdown-item" role="menuitem"><img src="https://flagcdn.com/w40/ca.png" alt="Canada" class="nav-flag-img" width="18" height="12">Canada</a>
             <a href="{{ route('destinations.show', 'new-zealand') }}" class="nav-dropdown-item" role="menuitem"><img src="https://flagcdn.com/w40/nz.png" alt="New Zealand" class="nav-flag-img" width="18" height="12">New Zealand</a>
-            <div class="nav-dropdown-divider"></div>
-            <a href="{{ route('study-abroad') }}" class="nav-dropdown-item nav-dropdown-all-link" role="menuitem">All Destinations &amp; Courses →</a>
           @endif
         </div>
       </div>

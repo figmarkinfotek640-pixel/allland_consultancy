@@ -616,6 +616,48 @@ address {
   font-weight: 700;
 }
 
+/* Dynamic Countries Dropdown Adaptability */
+.nav-dropdown-menu.nav-dropdown-countries {
+  min-width: 200px;
+  max-height: min(72vh, 480px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+  padding: 8px 6px;
+}
+
+.nav-dropdown-menu.nav-dropdown-countries::-webkit-scrollbar {
+  width: 5px;
+}
+
+.nav-dropdown-menu.nav-dropdown-countries::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+/* 2-column grid when countries increase (> 7) */
+.nav-dropdown-menu.nav-dropdown-multi-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 3px 8px;
+  min-width: 350px;
+  max-width: 480px;
+  max-height: min(76vh, 460px);
+  padding: 10px;
+}
+
+/* 3-column grid when countries increase further (> 14) */
+.nav-dropdown-menu.nav-dropdown-mega-col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 3px 8px;
+  min-width: 510px;
+  max-width: 640px;
+  max-height: min(76vh, 480px);
+  padding: 12px;
+}
+
 .nav-cta {
   position: relative;
   overflow: hidden;

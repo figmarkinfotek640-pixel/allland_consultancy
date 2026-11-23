@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
             href: '/study-abroad/' + d.slug
           });
         });
-        destChildren.push({ name: 'All Destinations & Courses →', href: '/study-abroad' });
       } else {
         destChildren = [
           { name: '🇩🇪 Germany', href: '/study-abroad/germany' },
@@ -59,8 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
           { name: '🇬🇧 UK', href: '/study-abroad/united-kingdom' },
           { name: '🇹🇯 Tajikistan', href: '/study-abroad/tajikistan' },
           { name: '🇨🇦 Canada', href: '/study-abroad/canada' },
-          { name: '🇳🇿 New Zealand', href: '/study-abroad/new-zealand' },
-          { name: 'All Destinations & Courses →', href: '/study-abroad' }
+          { name: '🇳🇿 New Zealand', href: '/study-abroad/new-zealand' }
         ];
       }
 

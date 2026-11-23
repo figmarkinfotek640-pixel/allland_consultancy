@@ -28,8 +28,11 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
-// Study Abroad & Courses
-Route::get('/study-abroad', [CourseController::class, 'index'])->name('study-abroad');
+// Study Abroad & Destinations
+Route::get('/study-abroad', function () {
+    $first = \App\Models\Destination::active()->first();
+    return $first ? redirect()->route('destinations.show', $first->slug) : redirect()->route('home');
+})->name('study-abroad');
 Route::get('/study-abroad/{slug}', [DestinationController::class, 'show'])->name('destinations.show');
 Route::get('/destinations/{slug}', fn($slug) => redirect()->route('destinations.show', $slug));
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');

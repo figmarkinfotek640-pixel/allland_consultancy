@@ -39,7 +39,7 @@
           <a href="{{ route('home') }}" class="footer-link">Home</a>
           <a href="{{ route('about') }}" class="footer-link">About Us</a>
           <a href="{{ route('services.index') }}" class="footer-link">Our Services</a>
-          <a href="{{ route('study-abroad') }}" class="footer-link">Study Abroad &amp; Courses</a>
+          <a href="{{ route('courses.index') }}" class="footer-link">Courses &amp; Degrees</a>
           <a href="{{ route('exclusives') }}" class="footer-link">Exclusives</a>
           <a href="{{ route('events.index') }}" class="footer-link">Seminars &amp; Events</a>
           <a href="{{ route('blog.index') }}" class="footer-link">Blog &amp; Updates</a>
