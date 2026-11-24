@@ -6142,24 +6142,35 @@ address {
 
 .footer-soc {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-soc-link {
-  font-size: 12px;
-  font-weight: 700;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--ink-border);
   color: var(--t-mute);
-  padding: 5px 12px;
-  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0;
   transition: all var(--trans-fast);
+}
+
+.footer-soc-link svg,
+.footer-soc-icon {
+  display: block;
 }
 
 .footer-soc-link:hover {
   border-color: #0580C1;
-  color: #0580C1;
-  background: rgba(5, 128, 193, 0.12);
-  transform: translateY(-1px);
+  color: #FFFFFF;
+  background: #0580C1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(5, 128, 193, 0.35);
 }
 
 .footer-col-title {
