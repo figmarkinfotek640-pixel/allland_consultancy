@@ -29,10 +29,10 @@
 <!-- COURSE CONTENT & APPLICATION -->
 <section class="page-section">
   <div class="wrap">
-    <div class="grid-2col" style="grid-template-columns: 2fr 1fr; gap: 48px; align-items: start;">
+    <div class="course-detail-layout">
       <div>
         <!-- Quick Stats Cards -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:14px;margin-bottom:36px;">
+        <div class="course-stats-grid">
           <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:16px;">
             <span style="font-size:11px;font-weight:700;color:#0580C1;text-transform:uppercase;display:block;">Country</span>
             <span style="font-size:16px;font-weight:800;color:#1d253a;">{{ $course->country }}</span>
@@ -79,7 +79,7 @@
 
       <!-- Application Sidebar -->
       <aside>
-        <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);position:sticky;top:90px;">
+        <div class="course-sidebar-card" style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);">
           <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1d253a;margin-top:0;margin-bottom:8px;">Free Profile Evaluation</h3>
           <p style="font-size:13px;color:#64748b;margin-bottom:20px;">Find out if you qualify for {{ $course->title }}.</p>
 

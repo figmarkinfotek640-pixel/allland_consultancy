@@ -29,9 +29,9 @@
   <div class="wrap">
     
     <!-- Filter Bar -->
-    <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:18px;padding:20px 24px;margin-bottom:44px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <span style="font-size:12px;font-weight:800;color:#64748b;text-transform:uppercase;margin-right:6px;">Filter By Country:</span>
+    <div class="listing-filter-bar">
+      <div class="listing-filter-pills">
+        <span class="listing-filter-label">Filter By Country:</span>
         <a href="{{ route('courses.index') }}" class="pill-btn {{ empty(request('country')) || request('country') == 'all' ? 'active' : '' }}">All Countries</a>
         <a href="{{ route('courses.index', ['country' => 'DE']) }}" class="pill-btn {{ request('country') == 'DE' ? 'active' : '' }}">🇩🇪 Germany</a>
         <a href="{{ route('courses.index', ['country' => 'CA']) }}" class="pill-btn {{ request('country') == 'CA' ? 'active' : '' }}">🇨🇦 Canada</a>
@@ -39,12 +39,12 @@
         <a href="{{ route('courses.index', ['country' => 'NZ']) }}" class="pill-btn {{ request('country') == 'NZ' ? 'active' : '' }}">🇳🇿 New Zealand</a>
       </div>
 
-      <form action="{{ route('courses.index') }}" method="GET" style="display:flex;gap:8px;">
+      <form action="{{ route('courses.index') }}" method="GET" class="listing-filter-form">
         @if(request('country'))
           <input type="hidden" name="country" value="{{ request('country') }}">
         @endif
-        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search program, degree..." style="padding:8px 14px;border:1px solid #CBD5E1;border-radius:20px;font-size:13px;width:180px;">
-        <button type="submit" class="btn-primary" style="padding:8px 16px;font-size:12.5px;">Search</button>
+        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search program, degree..." class="listing-filter-input">
+        <button type="submit" class="btn-primary listing-filter-submit">Search</button>
       </form>
     </div>
 

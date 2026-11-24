@@ -29,21 +29,21 @@
   <div class="wrap">
     
     <!-- Filter and Search Bar -->
-    <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:18px;padding:20px 24px;margin-bottom:44px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <span style="font-size:12px;font-weight:800;color:#64748b;text-transform:uppercase;margin-right:6px;">Category:</span>
+    <div class="listing-filter-bar">
+      <div class="listing-filter-pills">
+        <span class="listing-filter-label">Category:</span>
         <a href="{{ route('blog.index') }}" class="pill-btn {{ empty(request('category')) ? 'active' : '' }}">All Articles</a>
         @foreach($categories as $cat)
           <a href="{{ route('blog.index', ['category' => $cat]) }}" class="pill-btn {{ request('category') === $cat ? 'active' : '' }}">{{ $cat }}</a>
         @endforeach
       </div>
 
-      <form action="{{ route('blog.index') }}" method="GET" style="display:flex;gap:8px;">
+      <form action="{{ route('blog.index') }}" method="GET" class="listing-filter-form">
         @if(request('category'))
           <input type="hidden" name="category" value="{{ request('category') }}">
         @endif
-        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search articles..." style="padding:8px 14px;border:1px solid #CBD5E1;border-radius:20px;font-size:13px;width:180px;">
-        <button type="submit" class="btn-primary" style="padding:8px 16px;font-size:12.5px;">Search</button>
+        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search articles..." class="listing-filter-input">
+        <button type="submit" class="btn-primary listing-filter-submit">Search</button>
       </form>
     </div>
 
