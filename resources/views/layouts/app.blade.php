@@ -23,7 +23,12 @@
 
   @include('partials.topbar')
   @include('partials.header')
-  @include('partials.flash')
+  
+  @if(session('success') || session('error') || $errors->any())
+    <div class="wrap" style="padding-top:20px;">
+      @include('partials.flash')
+    </div>
+  @endif
 
   <main>
     @yield('content')

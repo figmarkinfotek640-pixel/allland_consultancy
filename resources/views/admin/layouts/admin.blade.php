@@ -365,9 +365,8 @@
       </div>
     </header>
 
-    @include('partials.flash')
-
     <div class="admin-content">
+      @include('partials.flash')
       @yield('content')
     </div>
   </div>
