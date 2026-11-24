@@ -896,11 +896,7 @@
   // Interactive Country Switching
   function switchCountry(code) {
     document.querySelectorAll('.dest-tab-btn').forEach(function(btn) {
-      var isActive = btn.getAttribute('data-code') === code;
-      btn.classList.toggle('active', isActive);
-      if (isActive && typeof btn.scrollIntoView === 'function') {
-        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
+      btn.classList.toggle('active', btn.getAttribute('data-code') === code);
     });
     document.querySelectorAll('.country-panel').forEach(function(panel) {
       if (panel.id === 'panel-' + code) {
