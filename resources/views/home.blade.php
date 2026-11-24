@@ -1147,7 +1147,9 @@
 
     window.slideServices = function(dir) {
       var card = track.querySelector('.service-slide-card');
-      var step = card ? card.offsetWidth + 24 : 340;
+      var style = window.getComputedStyle(track);
+      var gap = parseFloat(style.gap) || 16;
+      var step = card ? card.offsetWidth + gap : track.clientWidth;
       track.scrollBy({ left: dir === 'next' ? step : -step, behavior: 'smooth' });
     };
 

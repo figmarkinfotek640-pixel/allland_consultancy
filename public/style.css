@@ -4732,6 +4732,41 @@ address {
   flex-wrap: wrap;
 }
 
+/* Universal Slider Navigation Buttons */
+.slider-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #1D253A;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.slider-nav-btn:hover:not(:disabled) {
+  background: #0580C1;
+  border-color: #0580C1;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(5, 128, 193, 0.3);
+  transform: translateY(-2px);
+}
+
+.slider-nav-btn:disabled {
+  opacity: 0.35;
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #94A3B8;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .services-view-all-pill {
   display: inline-flex;
   align-items: center;
@@ -5466,7 +5501,12 @@ address {
 
 /* Responsive Media Queries for Services Slider & Instagram Section */
 @media (max-width: 1024px) {
-  .service-slide-card,
+  .service-slide-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+    min-width: 280px;
+    max-width: none;
+    height: auto;
+  }
   .insta-reel-card,
   .insta-card {
     flex: 0 0 calc((100% - 24px) / 2);
@@ -5477,14 +5517,20 @@ address {
 
 @media (max-width: 768px) {
   .services-slider-section {
-    padding: 60px 0 72px;
+    padding: 52px 0 60px;
   }
   .services-slider-header {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .services-slider-controls {
     justify-content: center;
     width: 100%;
+  }
+  .service-slide-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+    min-width: 260px;
+    max-width: none;
+    height: auto;
   }
   .insta-section {
     padding: 64px 0 72px;
@@ -5500,7 +5546,6 @@ address {
     width: 100%;
     justify-content: center;
   }
-  .service-slide-card,
   .insta-reel-card,
   .insta-card {
     flex: 0 0 85%;
@@ -5529,24 +5574,113 @@ address {
 }
 
 @media (max-width: 640px) {
-  .service-slide-card {
-    flex: 0 0 calc(100% - 32px);
-    min-width: 260px;
-    max-width: 340px;
+  .services-slider-section {
+    padding: 44px 0 52px;
+  }
+  .services-slider-header {
+    margin-bottom: 22px;
+    padding: 0 4px;
+  }
+  .services-slider-title-col .sec-h2 {
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 8px auto 10px;
+  }
+  .services-slider-title-col .sec-p {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .services-slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
   .services-slider-track {
+    display: flex;
     gap: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 0 20px;
+    margin: 0;
+    scrollbar-width: none;
+  }
+  .services-slider-track::-webkit-scrollbar {
+    display: none;
+  }
+  .service-slide-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    scroll-snap-align: center;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    box-sizing: border-box;
   }
   .service-slide-media {
-    height: 180px;
+    height: 185px;
+  }
+  .service-slide-badge {
+    top: 12px;
+    left: 12px;
+    font-size: 10.5px;
+    padding: 4px 10px;
   }
   .service-slide-body {
-    padding: 20px 18px;
+    padding: 20px 18px 22px;
+    display: flex;
+    flex-direction: column;
   }
   .service-slide-title {
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 8px;
+  }
+  .service-slide-divider {
+    width: 36px;
+    height: 3px;
+    background: #0580C1;
+    border-radius: 2px;
+    margin: 0 0 12px;
+  }
+  .service-slide-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 16px;
+  }
+  .service-slide-link {
+    margin-top: auto;
+    padding-top: 14px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0580C1;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px dashed #E2E8F0;
+    text-decoration: none;
+  }
+  .services-slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .services-view-all-pill {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+  .services-slider-dots {
+    margin-top: 16px;
   }
 }
 
