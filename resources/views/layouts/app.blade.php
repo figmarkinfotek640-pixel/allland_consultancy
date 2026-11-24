@@ -7,6 +7,12 @@
   <title>@yield('title', 'All Land Consultancy – Study Abroad & Overseas Education')</title>
   <meta name="description" content="@yield('meta_description', 'Study, work and settle in Germany, Canada, the UK and New Zealand. Tuition-free university admissions, nursing ausbildung, and visa guidance from Aluva, Kerala.')">
   
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
