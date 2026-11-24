@@ -44,7 +44,6 @@
           <a href="{{ route('events.index') }}" class="footer-link">Seminars &amp; Events</a>
           <a href="{{ route('blog.index') }}" class="footer-link">Blog &amp; Updates</a>
           <a href="{{ route('contact') }}" class="footer-link">Contact Us</a>
-          <a href="{{ route('admin.login') }}" class="footer-link" style="color:#FBBF24;">Admin Login</a>
         </div>
       </div>
 
