@@ -13,7 +13,7 @@
     </div>
 
     <!-- Filter by Status -->
-    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <div class="admin-filter-bar">
       <a href="{{ route('admin.inquiries.index') }}" class="btn btn-sm {{ empty(request('status')) ? 'btn-primary' : 'btn-outline' }}">All Leads</a>
       <a href="{{ route('admin.inquiries.index', ['status' => 'new']) }}" class="btn btn-sm {{ request('status') == 'new' ? 'btn-primary' : 'btn-outline' }}">New</a>
       <a href="{{ route('admin.inquiries.index', ['status' => 'contacted']) }}" class="btn btn-sm {{ request('status') == 'contacted' ? 'btn-primary' : 'btn-outline' }}">Contacted</a>

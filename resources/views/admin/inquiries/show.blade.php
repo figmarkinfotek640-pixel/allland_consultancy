@@ -32,7 +32,7 @@
     </div>
 
     <!-- Student Info Grid -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;">
+    <div class="form-grid-2" style="margin-bottom:28px;">
       <div style="background:#f8fafc;border-radius:12px;padding:16px;">
         <span style="font-size:11px;font-weight:800;color:#64748b;text-transform:uppercase;display:block;">Phone / WhatsApp</span>
         <strong style="font-size:16px;color:var(--dark);">{{ $inquiry->phone }}</strong>

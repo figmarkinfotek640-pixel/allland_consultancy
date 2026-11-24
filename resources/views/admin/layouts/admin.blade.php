@@ -285,15 +285,233 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
+
+    /* Off-canvas & Responsive Sidebar */
+    .admin-menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--dark);
+      padding: 8px;
+      margin-left: -8px;
+      border-radius: 8px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease;
+    }
+    .admin-menu-toggle:hover {
+      background: #f1f5f9;
+    }
+    .admin-sidebar-close {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      margin-left: auto;
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    .admin-sidebar-close:hover {
+      color: #ffffff;
+      background: rgba(255,255,255,0.1);
+    }
+    .admin-sidebar-backdrop {
+      display: none;
+    }
+
+    .admin-page-title {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--dark);
+    }
+    .admin-topbar-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Utilities */
+    .admin-dashboard-split {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+    .admin-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .admin-quick-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .admin-quick-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .admin-filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .admin-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        width: 280px;
+        max-width: 85vw;
+        height: 100vh;
+        height: 100dvh;
+        transform: translateX(-100%);
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        overflow-y: auto;
+      }
+      body.sidebar-open .admin-sidebar {
+        transform: translateX(0);
+      }
+      .admin-sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        z-index: 1040;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+      }
+      body.sidebar-open .admin-sidebar-backdrop {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      body.sidebar-open {
+        overflow: hidden;
+      }
+      .admin-menu-toggle {
+        display: inline-flex;
+      }
+      .admin-sidebar-close {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .admin-dashboard-split {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .admin-topbar {
+        height: 56px;
+        padding: 0 16px;
+      }
+      .admin-db-status {
+        display: none;
+      }
+      .admin-page-title {
+        font-size: 14.5px;
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .admin-content {
+        padding: 16px 12px;
+      }
+      .card {
+        padding: 16px 14px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+      }
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .card-header .btn,
+      .card-header > div:last-child {
+        width: 100%;
+        justify-content: center;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      table.admin-table {
+        min-width: 620px;
+      }
+      .admin-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .admin-quick-btns {
+        width: 100%;
+      }
+      .admin-quick-btns .btn {
+        flex: 1 1 calc(50% - 10px);
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .admin-filter-bar {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .admin-filter-bar .btn {
+        flex-shrink: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .admin-page-title {
+        max-width: 130px;
+      }
+      .admin-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      .admin-quick-btns .btn {
+        flex: 1 1 100%;
+      }
+    }
   </style>
   @yield('styles')
 </head>
 <body>
 
   <!-- Sidebar -->
-  <aside class="admin-sidebar">
+  <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-brand">
       <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Logo">
+      <button type="button" class="admin-sidebar-close" aria-label="Close navigation" onclick="toggleAdminSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
 
     <nav class="admin-nav">
@@ -347,15 +565,27 @@
     </div>
   </aside>
 
+  <!-- Sidebar Mobile Backdrop -->
+  <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop" onclick="toggleAdminSidebar()"></div>
+
   <!-- Main Area -->
   <div class="admin-main">
     <header class="admin-topbar">
-      <div style="font-weight:800;font-size:16px;color:var(--dark);">
-        @yield('page_title', 'Admin Dashboard')
+      <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+        <button type="button" class="admin-menu-toggle" aria-label="Toggle navigation" onclick="toggleAdminSidebar()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="admin-page-title">
+          @yield('page_title', 'Admin Dashboard')
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:14px;">
-        <span style="font-size:12px;color:#64748b;">MySQL Database: <strong>allland_consultancy</strong></span>
-        <a href="{{ route('home') }}" target="_blank" class="btn btn-outline btn-sm">Website Front</a>
+      <div class="admin-topbar-meta">
+        <span class="admin-db-status" style="font-size:12px;color:#64748b;">MySQL Database: <strong>allland_consultancy</strong></span>
+        <a href="{{ route('home') }}" target="_blank" class="btn btn-outline btn-sm">Website Front ↗</a>
       </div>
     </header>
 
@@ -364,6 +594,30 @@
       @yield('content')
     </div>
   </div>
+
+  <script>
+    function toggleAdminSidebar() {
+      document.body.classList.toggle('sidebar-open');
+    }
+
+    // Dismiss sidebar when pressing ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+        toggleAdminSidebar();
+      }
+    });
+
+    // Automatically close sidebar on click of any nav link on mobile/tablet
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.admin-sidebar .admin-nav-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          if (window.innerWidth <= 991) {
+            document.body.classList.remove('sidebar-open');
+          }
+        });
+      });
+    });
+  </script>
 
   @yield('scripts')
 </body>

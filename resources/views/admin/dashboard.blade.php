@@ -6,7 +6,7 @@
 @section('content')
 
 <!-- Metric Cards Grid -->
-<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px;margin-bottom:30px;">
+<div class="admin-metrics-grid">
   
   <div class="card" style="margin-bottom:0;">
     <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -57,12 +57,12 @@
 
 <!-- Quick Action Shortcuts -->
 <div class="card" style="background:#0f172a;color:#fff;">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;">
+  <div class="admin-quick-actions">
     <div>
       <h3 style="font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;">Quick Actions &amp; Content Management</h3>
       <p style="font-size:13px;color:#94a3b8;margin:0;">Add new entries directly to MySQL database and update website instantly.</p>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <div class="admin-quick-btns">
       <a href="{{ route('admin.services.create') }}" class="btn btn-primary btn-sm">+ Add Service</a>
       <a href="{{ route('admin.courses.create') }}" class="btn btn-primary btn-sm" style="background:#D9561A;">+ Add Course</a>
       <a href="{{ route('admin.events.create') }}" class="btn btn-primary btn-sm" style="background:#14B8A6;">+ Add Event</a>
@@ -72,7 +72,7 @@
 </div>
 
 <!-- Two Columns: Recent Inquiries & Upcoming Events -->
-<div style="display:grid;grid-template-columns: 2fr 1fr; gap: 24px;">
+<div class="admin-dashboard-split">
 
   <!-- Left Column: Recent Student Inquiries -->
   <div class="card">
