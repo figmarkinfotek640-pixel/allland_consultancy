@@ -46,21 +46,16 @@
       min-height: 100vh;
     }
     .admin-brand {
-      padding: 24px 20px;
+      padding: 22px 20px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       display: flex;
       align-items: center;
-      gap: 12px;
     }
     .admin-brand img {
-      height: 32px;
+      height: 38px;
+      max-width: 100%;
       width: auto;
-    }
-    .admin-brand-text {
-      font-weight: 800;
-      color: #ffffff;
-      font-size: 15px;
-      letter-spacing: 0.02em;
+      object-fit: contain;
     }
     .admin-nav {
       padding: 20px 12px;
@@ -299,7 +294,6 @@
   <aside class="admin-sidebar">
     <div class="admin-brand">
       <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Logo">
-      <div class="admin-brand-text">All Land Admin</div>
     </div>
 
     <nav class="admin-nav">
