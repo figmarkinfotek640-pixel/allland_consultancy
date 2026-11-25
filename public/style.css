@@ -1927,15 +1927,28 @@ address {
   box-shadow: 0 8px 24px rgba(5, 128, 193, 0.28);
 }
 
-/* ── Interactive Country Tabs Bar ── */
-.dest-tabs-wrap {
+/* ── Interactive Country Tabs Slider ── */
+.dest-tabs-slider-wrap {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 36px;
+  gap: 12px;
+  max-width: 100%;
+  margin: 0 auto 36px;
+  position: relative;
+}
+
+.dest-tabs-track-wrapper {
+  position: relative;
+  max-width: calc(100% - 96px);
+  overflow: hidden;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
 }
 
 .dest-tabs-nav {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   background: #FFFFFF;
   padding: 6px;
@@ -1945,11 +1958,54 @@ address {
   gap: 6px;
   max-width: 100%;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.dest-tabs-nav:active {
+  cursor: grabbing;
 }
 
 .dest-tabs-nav::-webkit-scrollbar {
   display: none;
+}
+
+.dest-tab-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  color: #1d253a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(17, 23, 38, 0.06);
+  z-index: 3;
+}
+
+.dest-tab-arrow:hover:not(:disabled) {
+  background: #0580C1;
+  border-color: #0580C1;
+  color: #FFFFFF;
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(5, 128, 193, 0.35);
+}
+
+.dest-tab-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #94A3B8;
+  transform: none;
+  box-shadow: none;
 }
 
 .dest-tab-btn {
@@ -2367,12 +2423,34 @@ address {
   .dest-visual-wrap {
     height: 260px;
   }
-  .dest-tabs-wrap {
-    justify-content: flex-start;
+  .dest-tabs-slider-wrap {
+    gap: 8px;
+  }
+  .dest-tabs-track-wrapper {
+    max-width: calc(100% - 76px);
   }
 }
 
 @media (max-width: 640px) {
+  .dest-tabs-slider-wrap {
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .dest-tabs-track-wrapper {
+    max-width: calc(100% - 68px);
+  }
+  .dest-tab-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  .dest-tab-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+  .dest-tab-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
   .dest-quick-stats {
     grid-template-columns: 1fr;
     gap: 8px;

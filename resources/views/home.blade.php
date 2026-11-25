@@ -635,23 +635,33 @@
       </a>
     </div>
 
-    <!-- Country Navigation Tabs -->
-    <div class="dest-tabs-wrap">
-      <div role="tablist" aria-label="Study Abroad Destinations" class="dest-tabs-nav" id="countryTabsNav">
-        @foreach($countries as $cCode => $country)
-          <button type="button" role="tab" class="dest-tab-btn {{ $cCode === $selectedCountry ? 'active' : '' }}" onclick="switchCountry('{{ $cCode }}')" data-code="{{ $cCode }}">
-            <span class="dest-tab-flag">
-              @if(!empty($country['flag_url']))
-                <img src="{{ $country['flag_url'] }}" alt="{{ $country['name'] }}" class="dest-tab-flag-img" width="18" height="12">
-              @else
-                {{ $country['flag'] }}
-              @endif
-            </span>
-            <span class="dest-tab-name">{{ $country['name'] }}</span>
-            <span class="dest-tab-chip">{{ $country['tabBadge'] }}</span>
-          </button>
-        @endforeach
+    <!-- Country Navigation Tabs Slider -->
+    <div class="dest-tabs-slider-wrap">
+      <button type="button" class="dest-tab-arrow dest-tab-arrow-prev" id="destTabPrev" aria-label="Previous Destinations" onclick="slideDestTabs('prev')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="dest-tabs-track-wrapper">
+        <div role="tablist" aria-label="Study Abroad Destinations" class="dest-tabs-nav" id="countryTabsNav">
+          @foreach($countries as $cCode => $country)
+            <button type="button" role="tab" class="dest-tab-btn {{ $cCode === $selectedCountry ? 'active' : '' }}" onclick="switchCountry('{{ $cCode }}')" data-code="{{ $cCode }}">
+              <span class="dest-tab-flag">
+                @if(!empty($country['flag_url']))
+                  <img src="{{ $country['flag_url'] }}" alt="{{ $country['name'] }}" class="dest-tab-flag-img" width="18" height="12">
+                @else
+                  {{ $country['flag'] }}
+                @endif
+              </span>
+              <span class="dest-tab-name">{{ $country['name'] }}</span>
+              <span class="dest-tab-chip">{{ $country['tabBadge'] }}</span>
+            </button>
+          @endforeach
+        </div>
       </div>
+
+      <button type="button" class="dest-tab-arrow dest-tab-arrow-next" id="destTabNext" aria-label="Next Destinations" onclick="slideDestTabs('next')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
 
     <!-- Active Country Showcase Card -->
@@ -893,10 +903,37 @@
 
 @section('scripts')
 <script>
+  // Interactive Country Tabs Slider
+  function slideDestTabs(dir) {
+    var nav = document.getElementById('countryTabsNav');
+    if (!nav) return;
+    var scrollAmount = Math.max(nav.clientWidth * 0.65, 260);
+    nav.scrollBy({
+      left: dir === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth'
+    });
+    setTimeout(updateDestTabArrows, 350);
+  }
+
+  function updateDestTabArrows() {
+    var nav = document.getElementById('countryTabsNav');
+    var prevBtn = document.getElementById('destTabPrev');
+    var nextBtn = document.getElementById('destTabNext');
+    if (!nav) return;
+    var scrollLeft = nav.scrollLeft;
+    var maxScroll = nav.scrollWidth - nav.clientWidth;
+    if (prevBtn) prevBtn.disabled = scrollLeft <= 6;
+    if (nextBtn) nextBtn.disabled = (scrollLeft >= maxScroll - 6) || maxScroll <= 0;
+  }
+
   // Interactive Country Switching
   function switchCountry(code) {
     document.querySelectorAll('.dest-tab-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-code') === code);
+      var isActive = btn.getAttribute('data-code') === code;
+      btn.classList.toggle('active', isActive);
+      if (isActive && typeof btn.scrollIntoView === 'function') {
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     });
     document.querySelectorAll('.country-panel').forEach(function(panel) {
       if (panel.id === 'panel-' + code) {
@@ -905,7 +942,57 @@
         panel.classList.add('hidden');
       }
     });
+    setTimeout(updateDestTabArrows, 350);
   }
+
+  (function initDestTabsSlider() {
+    var nav = document.getElementById('countryTabsNav');
+    if (!nav) return;
+
+    nav.addEventListener('scroll', updateDestTabArrows, { passive: true });
+    window.addEventListener('resize', updateDestTabArrows);
+    setTimeout(updateDestTabArrows, 150);
+
+    // Mouse drag support for smooth sliding
+    var isDown = false;
+    var startX, scrollLeft;
+    var hasDragged = false;
+
+    nav.addEventListener('mousedown', function(e) {
+      isDown = true;
+      hasDragged = false;
+      startX = e.pageX - nav.offsetLeft;
+      scrollLeft = nav.scrollLeft;
+      nav.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mouseup', function() {
+      if (!isDown) return;
+      isDown = false;
+      if (nav) nav.style.cursor = 'grab';
+    });
+
+    nav.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      var x = e.pageX - nav.offsetLeft;
+      var walk = (x - startX) * 1.5;
+      if (Math.abs(walk) > 4) {
+        hasDragged = true;
+        e.preventDefault();
+        nav.scrollLeft = scrollLeft - walk;
+      }
+    });
+
+    // Prevent accidental tab switch if user dragged
+    nav.querySelectorAll('.dest-tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        if (hasDragged) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+    });
+  })();
 
   // Interactive Event Slider with Auto-Slide & Filtering
   (function initEventsSlider() {
