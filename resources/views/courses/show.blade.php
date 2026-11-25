@@ -20,7 +20,7 @@
         </div>
         <div class="subpage-badge">{{ $course->degree_level }}</div>
       </div>
-      <h1 class="subpage-title">{{ $course->title }}</h1>
+      <h1 class="subpage-title">{!! \App\Helpers\TitleHelper::twoTone($course->title) !!}</h1>
       <p class="subpage-subtitle">Offered in top universities across {{ $course->country }}. Direct counselling, eligibility evaluation, and visa guidance by All Land Aluva.</p>
     </div>
   </div>

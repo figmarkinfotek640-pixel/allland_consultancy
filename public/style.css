@@ -6605,6 +6605,10 @@ address {
   color: #D9561A;
 }
 
+.subpage-title .dest-hero-flag-badge {
+  color: initial;
+}
+
 .subpage-subtitle {
   font-size: 16px;
   line-height: 1.65;

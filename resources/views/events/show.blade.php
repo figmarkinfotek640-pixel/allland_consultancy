@@ -20,7 +20,7 @@
         </div>
         <div class="subpage-badge">{{ $event->type_label }}</div>
       </div>
-      <h1 class="subpage-title">{{ $event->title }}</h1>
+      <h1 class="subpage-title">{!! \App\Helpers\TitleHelper::twoTone($event->title) !!}</h1>
       <p class="subpage-subtitle">{{ $event->event_date->format('l, F d, Y') }} · {{ $event->formatted_time }} · {{ $event->location }}</p>
     </div>
   </div>

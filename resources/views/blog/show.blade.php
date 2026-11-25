@@ -20,7 +20,7 @@
         </div>
         <div class="subpage-badge">{{ $blog->category }}</div>
       </div>
-      <h1 class="subpage-title">{{ $blog->title }}</h1>
+      <h1 class="subpage-title">{!! \App\Helpers\TitleHelper::twoTone($blog->title) !!}</h1>
       <p class="subpage-subtitle">Published on {{ $blog->published_at ? $blog->published_at->format('F d, Y') : 'Recent' }} · By {{ $blog->author }} · {{ $blog->read_time }}</p>
     </div>
   </div>

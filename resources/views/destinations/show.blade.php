@@ -30,7 +30,7 @@
             <span class="dest-flag-fallback">{{ $destination->flag }}</span>
           @endif
         </span>
-        <span>Study in {{ $destination->name }}</span>
+        Study in <span>{{ $destination->name }}</span>
       </h1>
       
       <p class="subpage-subtitle">{{ $destination->blurb }}</p>

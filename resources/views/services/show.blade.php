@@ -27,7 +27,7 @@
           @endif
         </div>
       </div>
-      <h1 class="subpage-title">{{ $service->title }}</h1>
+      <h1 class="subpage-title">{!! \App\Helpers\TitleHelper::twoTone($service->title) !!}</h1>
       <p class="subpage-subtitle">{{ $service->excerpt }}</p>
 
       @if($service->slug === 'placement-assistance')
