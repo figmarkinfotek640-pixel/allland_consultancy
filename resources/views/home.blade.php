@@ -93,7 +93,7 @@
       <div class="services-slider-title-col">
         <p class="sec-tag"><span class="sec-tag-dot"></span> Core Advisory &amp; Value-Added Services</p>
         <h2 class="sec-h2">Comprehensive Solutions for Every Milestone.</h2>
-        <p class="sec-p">From course counseling and university application processing to certificate attestation, visa mock interviews, airline ticketing, and post-landing settlement — one trusted advisory handles everything.</p>
+        <p class="sec-p">From university admissions and visa guidance to certificate attestation, flight ticketing, and post-landing settlement — one dedicated team handles every step of your journey.</p>
       </div>
 
       <div class="services-slider-controls">
