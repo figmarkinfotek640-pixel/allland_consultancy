@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Visa Assistance',
                 'slug' => 'visa-assistance',
                 'icon' => '🛂',
-                'image' => 'images/serv6.jpg',
+                'image' => 'images/service-visa-assistance.jpg',
                 'excerpt' => 'Visa documentation is a crucial component of international travel. We assist with initial consultation, document verification, application submission, and embassy interview coaching.',
                 'description' => '<p>Visa documentation is a crucial component of the international travel process. A visa is a document issued by a foreign country that allows an individual to enter, stay, or exit the country for a specific period, purpose, or both. The process of obtaining a visa can be complex and time-consuming with different requirements and regulations varying between countries. Visa assistance and documentation services help individuals and organizations navigate the visa application process and ensure that travelers comply with all relevant rules and regulations.</p>
 
@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Certificate Attestation',
                 'slug' => 'certificate-attestation',
                 'icon' => '📜',
-                'image' => 'images/serv3.jpg',
+                'image' => 'images/service-certificate-attestation.jpg',
                 'excerpt' => 'Authentic document verification through Notary Public, State HRD, MEA Apostille, and Embassies for Hague countries, UAE, Saudi Arabia, Qatar, and Kuwait.',
                 'description' => '<p>Certificate attestation is the process of verifying the authenticity of a document issued in one country so that it can be legally recognized and accepted in another country. This process involves verifying the document with relevant state and national authorities. The purpose of certificate attestation services is to ensure that documents used overseas are genuine and can be trusted. This is essential for immigration, overseas employment, and international higher education.</p>
 
@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Air Ticketing',
                 'slug' => 'flight-ticketing',
                 'icon' => '✈️',
-                'image' => 'images/serv1.jpg',
+                'image' => 'images/service-air-ticketing.jpg',
                 'excerpt' => 'Domestic and international flight ticket bookings at competitive low airfares with dedicated pre-flight guidance, web check-in, and student baggage support.',
                 'description' => '<p>A flight ticket is a document issued by an airline that allows passengers to travel by flight from one location to another, whether on domestic or international routes. Our expert travel desk reviews your requirements and confirms suitable flight tickets tailored to your convenience. We offer great discounts on domestic and international flight tickets with leading global carriers.</p>
 
@@ -143,7 +143,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Placement Assistance',
                 'slug' => 'placement-assistance',
                 'icon' => '💼',
-                'image' => 'images/serv5.jpg',
+                'image' => 'images/service-placement-assistance.jpg',
                 'excerpt' => 'Professional career guidance, resume enhancement, interview preparation, and overseas job placement support across healthcare, caregiving, engineering, and global industries.',
                 'description' => '<p>Placement Assistance is a professional support service designed to help job seekers identify and secure suitable employment opportunities based on their educational qualifications, skills, experience, and career aspirations. Our goal is to bridge the gap between talented candidates and potential employers by providing reliable career guidance and structured job search support.</p>
 
@@ -210,7 +210,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Insurance Service',
                 'slug' => 'travel-health-insurance',
                 'icon' => '🛡️',
-                'image' => 'images/serv7.jpg',
+                'image' => 'images/service-insurance.jpg',
                 'excerpt' => 'Comprehensive international travel and health insurance protecting against medical emergencies, trip cancellations, lost baggage, and unforeseen overseas expenses.',
                 'description' => '<p>Travel insurance is an essential insurance policy that provides financial protection for travelers and international students against unexpected events and emergencies that may occur during their overseas trip or academic tenure. Travel insurance typically covers a wide variety of potential risks, including trip cancellation or interruptions, medical emergencies, lost or stolen luggage, and other unforeseen overseas circumstances.</p>
 
@@ -268,7 +268,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Dataflow Service',
                 'slug' => 'healthcare-dataflow',
                 'icon' => '🏥',
-                'image' => 'images/serv4.jpg',
+                'image' => 'images/service-dataflow.jpg',
                 'excerpt' => 'Primary Source Verification (PSV) for healthcare professionals heading to Dubai (DHA), Abu Dhabi (HAAD), UAE (MOH), Saudi Arabia (KSA), Qatar, Oman, and Bahrain.',
                 'description' => '<p>Dataflow assistance for healthcare workers is a specialized process that helps doctors, nurses, pharmacists, and allied healthcare professionals streamline their credential verification and licensing evaluation. The DataFlow process provides an efficient, globally trusted method to verify the authenticity of a healthcare worker\'s education, registration licenses, and employment experience directly from the issuing source.</p>
 
@@ -305,7 +305,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Pre-Departure & Post-Landing Services',
                 'slug' => 'pre-departure-and-post-landing-service',
                 'icon' => '🏡',
-                'image' => 'images/serv8.jpg',
+                'image' => 'images/service-pre-departure.jpg',
                 'excerpt' => 'End-to-end relocation guidance including travel checklists, flight & baggage rules, forex cards, airport pickup, accommodation bookings, and city registration.',
                 'description' => '<p>Pre-departure and post-landing assistance are two essential services that ensure travelers, students, and workers have a smooth, comfortable international transition. Our pre-departure assistance helps you avoid last-minute panic and prepares you with practical knowledge for travel and border customs.</p>
 
