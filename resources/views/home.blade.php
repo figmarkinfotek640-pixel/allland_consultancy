@@ -93,7 +93,7 @@
       <div class="services-slider-title-col">
         <p class="sec-tag"><span class="sec-tag-dot"></span> Core Advisory &amp; Value-Added Services</p>
         <h2 class="sec-h2">Comprehensive Solutions for Every Milestone.</h2>
-        <p class="sec-p">From university admissions and visa guidance to certificate attestation, flight ticketing, and post-landing settlement — one dedicated team handles every step of your journey.</p>
+        <p class="sec-p">From your first profile evaluation to university enrollment, visa approval, and accommodation support — we guide every milestone with zero paperwork confusion.</p>
       </div>
 
       <div class="services-slider-controls">
