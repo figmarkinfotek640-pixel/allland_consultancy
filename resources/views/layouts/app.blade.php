@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title', 'All Land Consultancy – Study Abroad & Overseas Education')</title>
-  <meta name="description" content="@yield('meta_description', 'Study, work and settle in Germany, Canada, the UK and New Zealand. Tuition-free university admissions, nursing ausbildung, and visa guidance from Aluva, Kerala.')">
+  <meta name="description" content="@yield('meta_description', 'Study, work and settle in top global destinations. University admissions, career pathways, and complete visa guidance from Aluva, Kerala.')">
   
   <!-- Favicon / Tab Icon -->
   <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">

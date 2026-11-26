@@ -25,8 +25,8 @@
       </h1>
 
       <p class="hero-p">
-        Study, work and settle in <strong>Germany, Canada, the UK and New Zealand</strong>.
-        From €0 tuition university admissions to scholarship guidance, visa documentation
+        Study, work and settle in <strong>top global destinations</strong>.
+        From university admissions and scholarship guidance to visa documentation
         and post-landing support — one dedicated team in Aluva guides every milestone.
       </p>
 
