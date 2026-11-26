@@ -240,7 +240,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Application Process',
                 'slug' => 'application-process',
                 'icon' => '🎓',
-                'image' => 'images/serv2.jpg',
+                'image' => 'images/service-university-selection.jpg',
                 'excerpt' => 'Step-by-step guidance for overseas university and employment applications, compelling SOP crafting, documentation review, and mock interview coaching.',
                 'description' => '<p>The application process is an essential step towards obtaining any job or enrolling in an overseas university degree program. It is the primary means through which you showcase your academic capabilities, skills, qualifications, and personal suitability for the chosen role or program. A well-structured application can make you stand out from the pool of global applicants and substantially increase your chances of selection.</p>
 
