@@ -75,7 +75,7 @@
   <div class="ribbon-inner">
     <span class="ribbon-tag">
       <span class="pulse-dot"></span>
-      Upcoming {{ $nextEvent->type_label }}
+      Upcoming Events
     </span>
     <span class="ribbon-title">{{ $nextEvent->title }}</span>
     <span class="ribbon-info">{{ $nextEvent->event_date->format('D, d M') }} · {{ $nextEvent->location }} · {{ $nextEvent->formatted_time }}</span>
