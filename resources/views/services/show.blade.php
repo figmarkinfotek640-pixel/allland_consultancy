@@ -245,22 +245,31 @@
 
             <div class="placement-dest-grid">
               <a href="{{ route('placement.germany') }}" class="placement-dest-card placement-dest-link">
-                <span class="placement-dest-flag">🇩🇪</span>
+                <div class="placement-dest-top">
+                  <span class="placement-dest-flag">🇩🇪</span>
+                  <span class="placement-dest-code">DE</span>
+                </div>
                 <div class="placement-dest-name">Germany</div>
-                <div class="placement-dest-roles">Registered Nursing Adaptation, Hospital Contracts, Opportunity Card &amp; Tech</div>
-                <span class="placement-dest-action">View Placement Details →</span>
+                <div class="placement-dest-roles">Nursing Adaptation</div>
+                <span class="placement-dest-action">Explore →</span>
               </a>
               <a href="{{ route('placement.uk') }}" class="placement-dest-card placement-dest-link">
-                <span class="placement-dest-flag">🇬🇧</span>
+                <div class="placement-dest-top">
+                  <span class="placement-dest-flag">🇬🇧</span>
+                  <span class="placement-dest-code">GB</span>
+                </div>
                 <div class="placement-dest-name">United Kingdom</div>
-                <div class="placement-dest-roles">NHS Trust Hospital Sponsorships, CBT &amp; OSCE Coaching, Skilled Worker Visas</div>
-                <span class="placement-dest-action">View Placement Details →</span>
+                <div class="placement-dest-roles">NHS Hospital Trusts</div>
+                <span class="placement-dest-action">Explore →</span>
               </a>
               <a href="{{ route('placement.saudi-arabia') }}" class="placement-dest-card placement-dest-link">
-                <span class="placement-dest-flag">🇸🇦</span>
+                <div class="placement-dest-top">
+                  <span class="placement-dest-flag">🇸🇦</span>
+                  <span class="placement-dest-code">SA</span>
+                </div>
                 <div class="placement-dest-name">Saudi Arabia &amp; Gulf</div>
-                <div class="placement-dest-roles">Ministry of Health (MOH) Hospitals, DataFlow Verified Medical Technologists</div>
-                <span class="placement-dest-action">View Placement Details →</span>
+                <div class="placement-dest-roles">MOH Hospitals &amp; PSV</div>
+                <span class="placement-dest-action">Explore →</span>
               </a>
             </div>
           </div>

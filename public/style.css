@@ -10651,64 +10651,100 @@ body {
   font-weight: 800;
 }
 
-/* International Placement Network Cards */
+/* International Placement Network Cards - 1 Row Layout */
 .placement-dest-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 20px;
+  gap: 12px;
+  margin-top: 18px;
+}
+.placement-dest-grid.placement-dest-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 18px;
 }
 .placement-dest-card {
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  padding: 22px 18px;
+  border-radius: 12px;
+  padding: 16px 12px;
   text-align: center;
-}
-.placement-dest-card.placement-dest-link {
-  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.placement-dest-card.placement-dest-link {
+  text-decoration: none;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .placement-dest-card.placement-dest-link:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: #034870;
-  box-shadow: 0 10px 24px rgba(3, 72, 112, 0.09);
+  box-shadow: 0 8px 20px rgba(3, 72, 112, 0.08);
 }
 .placement-dest-card.active-dest {
   border-color: #f15a24;
   background: #FFF7ED;
 }
-.placement-dest-action {
-  display: inline-block;
-  margin-top: 14px;
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #034870;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.placement-dest-card.placement-dest-link:hover .placement-dest-action {
-  color: #f15a24;
-  transform: translateX(3px);
-}
-.placement-dest-flag {
-  font-size: 28px;
-  display: block;
-  margin-bottom: 8px;
-}
-.placement-dest-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: #0F172A;
+.placement-dest-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   margin-bottom: 6px;
 }
+.placement-dest-flag {
+  font-size: 22px;
+  line-height: 1;
+}
+.placement-dest-code {
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+.placement-dest-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
 .placement-dest-roles {
-  font-size: 12.5px;
-  color: #64748b;
-  line-height: 1.4;
+  font-size: 12px;
+  color: #64748B;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  flex: 1;
+}
+.placement-dest-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #034870;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  transition: all 0.2s ease;
+}
+.placement-dest-card.placement-dest-link:hover .placement-dest-action {
+  color: #FFFFFF;
+  background: #034870;
+  border-color: #034870;
+}
+.placement-dest-card.active-dest .placement-dest-action {
+  color: #EA580C;
+  background: #FFEDD5;
+  border-color: #FED7AA;
 }
 
 /* Placement Detail Specific Styling */
@@ -11079,8 +11115,14 @@ body {
     width: 100%;
   }
 }
+@media (max-width: 900px) {
+  .placement-dest-grid.placement-dest-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
-  .placement-dest-grid {
+  .placement-dest-grid,
+  .placement-dest-grid.placement-dest-grid-4 {
     grid-template-columns: 1fr;
   }
   .placement-key-stats-grid {

@@ -176,17 +176,20 @@
           <h3 class="service-detail-title">Other International Placement Sectors</h3>
           <p class="service-detail-lead">Discover healthcare and professional placement opportunities across other premier global destinations:</p>
 
-          <div class="placement-dest-grid">
+          <div class="placement-dest-grid placement-dest-grid-4">
             @foreach($allPlacements as $k => $p)
               <a href="{{ route($p['route_name']) }}" class="placement-dest-card placement-dest-link {{ $k === $placement['key'] ? 'active-dest' : '' }}">
-                <span class="placement-dest-flag">{{ $p['flag'] }}</span>
+                <div class="placement-dest-top">
+                  <span class="placement-dest-flag">{{ $p['flag'] }}</span>
+                  <span class="placement-dest-code">{{ $p['country_code'] }}</span>
+                </div>
                 <div class="placement-dest-name">{{ $p['country_name'] }}</div>
-                <div class="placement-dest-roles">{{ $p['badge'] }}</div>
+                <div class="placement-dest-roles">{{ $p['sector_tag'] ?? $p['badge'] }}</div>
                 <span class="placement-dest-action">
                   @if($k === $placement['key'])
-                    Currently Viewing ✓
+                    Current ✓
                   @else
-                    View Placement Details →
+                    Explore →
                   @endif
                 </span>
               </a>
@@ -194,10 +197,13 @@
 
             <!-- Israel Caregiver Pathway Card -->
             <a href="{{ route('services.show', 'placement-assistance') }}#israel-caregiver" class="placement-dest-card placement-dest-link">
-              <span class="placement-dest-flag">🇮🇱</span>
+              <div class="placement-dest-top">
+                <span class="placement-dest-flag">🇮🇱</span>
+                <span class="placement-dest-code">IL</span>
+              </div>
               <div class="placement-dest-name">Israel</div>
-              <div class="placement-dest-roles">Government Caregiver Visa (PIBA) &amp; Geriatric Care</div>
-              <span class="placement-dest-action">View Placement Details →</span>
+              <div class="placement-dest-roles">Caregiver Program (PIBA)</div>
+              <span class="placement-dest-action">Explore →</span>
             </a>
           </div>
         </div>
