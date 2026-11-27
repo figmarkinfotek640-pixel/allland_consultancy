@@ -61,19 +61,6 @@
               <p class="placement-narrative-p">{{ $para }}</p>
             @endforeach
           </div>
-
-          <!-- Key Quick Stats Grid -->
-          <div class="placement-key-stats-grid">
-            @foreach($placement['stats'] as $stat)
-              <div class="placement-key-stat-card">
-                @if(!empty($stat['icon']))
-                  <span class="stat-icon">{{ $stat['icon'] }}</span>
-                @endif
-                <div class="stat-num">{{ $stat['value'] }}</div>
-                <div class="stat-label">{{ $stat['label'] }}</div>
-              </div>
-            @endforeach
-          </div>
         </div>
 
         <!-- 2. Advantages & Benefits for Nurses / Healthcare Workers -->
