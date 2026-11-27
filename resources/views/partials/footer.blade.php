@@ -32,7 +32,7 @@
           <a href="{{ route('events.index') }}" class="footer-link">Events</a>
           <a href="{{ route('services.show', 'visa-assistance') }}" class="footer-link">Visa Assistance</a>
           <a href="{{ route('courses.index') }}" class="footer-link">Courses &amp; Degrees</a>
-          <a href="{{ route('exclusives') }}" class="footer-link">German Nursing Ausbildung</a>
+          <a href="{{ route('placement.germany') }}" class="footer-link">Germany Career Placement</a>
         </div>
       </div>
 

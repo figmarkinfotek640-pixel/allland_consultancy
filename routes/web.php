@@ -51,8 +51,8 @@ Route::get('/destinations/{slug}', fn($slug) => redirect()->route('destinations.
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 
-// Exclusives (Ausbildung, NHS, Chancenkarte)
-Route::get('/exclusives', [PageController::class, 'exclusives'])->name('exclusives');
+// Legacy redirect
+Route::get('/exclusives', fn() => redirect()->route('courses.index'));
 
 // Events & Webinars
 Route::get('/events', [EventController::class, 'index'])->name('events.index');

@@ -46,9 +46,9 @@
       </div>
       <a href="{{ route('events.index') }}" class="nav-link {{ request()->routeIs('events.*') ? 'active' : '' }}">Events</a>
 
-      <!-- Pages Dropdown (Blog, About Us, Exclusives) -->
+      <!-- Pages Dropdown (Blog, About Us) -->
       <div class="nav-item-dropdown">
-        <button type="button" class="nav-link nav-dropdown-trigger {{ request()->routeIs('blog.*') || request()->routeIs('about') || request()->routeIs('exclusives') ? 'active' : '' }}" aria-expanded="false" aria-haspopup="true">
+        <button type="button" class="nav-link nav-dropdown-trigger {{ request()->routeIs('blog.*') || request()->routeIs('about') ? 'active' : '' }}" aria-expanded="false" aria-haspopup="true">
           <span>Pages</span>
           <svg class="nav-dropdown-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="m6 9 6 6 6-6"/>
@@ -57,7 +57,6 @@
         <div class="nav-dropdown-menu" role="menu">
           <a href="{{ route('blog.index') }}" class="nav-dropdown-item {{ request()->routeIs('blog.*') ? 'active' : '' }}" role="menuitem">Blog</a>
           <a href="{{ route('about') }}" class="nav-dropdown-item {{ request()->routeIs('about') ? 'active' : '' }}" role="menuitem">About Us</a>
-          <a href="{{ route('exclusives') }}" class="nav-dropdown-item {{ request()->routeIs('exclusives') ? 'active' : '' }}" role="menuitem">Exclusives</a>
         </div>
       </div>
 

@@ -12573,3 +12573,568 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ==========================================================================
+   CONTACT PAGE REDESIGN & 3 BRANCH OFFICES
+   ========================================================================== */
+
+.contact-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.pill-check {
+  color: #38BDF8;
+  font-weight: 800;
+}
+
+.contact-branches-section {
+  padding: 80px 0 40px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.contact-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.contact-branch-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(17, 23, 38, 0.04);
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal), border-color var(--trans-normal);
+  position: relative;
+}
+
+.contact-branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(17, 23, 38, 0.08);
+  border-color: #0580C1;
+}
+
+.contact-branch-card.featured-branch {
+  border-color: #BAE6FD;
+  background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 30%);
+}
+
+.branch-card-header {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.branch-tag-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.branch-badge {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.head-office-badge {
+  background: #0580C1;
+  color: #FFFFFF;
+}
+
+.branch-office-badge {
+  background: #0284C7;
+  color: #FFFFFF;
+}
+
+.city-office-badge {
+  background: #0D9488;
+  color: #FFFFFF;
+}
+
+.branch-city-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.branch-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px;
+  color: #1D253A;
+  margin: 0 0 6px;
+}
+
+.branch-landmark {
+  font-size: 13px;
+  color: #0580C1;
+  font-weight: 600;
+  margin: 0;
+}
+
+.branch-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.branch-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.branch-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #F0F9FF;
+  color: #0580C1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.branch-icon-box.whatsapp-icon {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.branch-detail-text {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.branch-detail-text strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #1D253A;
+  margin-bottom: 2px;
+}
+
+.branch-detail-text address {
+  font-style: normal;
+}
+
+.branch-link {
+  color: #0580C1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--trans-fast);
+}
+
+.branch-link:hover {
+  text-decoration: underline;
+  color: #0369A1;
+}
+
+.branch-link.whatsapp-link {
+  color: #16A34A;
+}
+
+.branch-link.whatsapp-link:hover {
+  color: #15803D;
+}
+
+.branch-card-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.branch-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--trans-fast);
+  text-align: center;
+}
+
+.btn-directions {
+  background: #F1F5F9;
+  color: #1D253A;
+  border: 1px solid #E2E8F0;
+}
+
+.btn-directions:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+
+.btn-chat {
+  background: #16A34A;
+  color: #FFFFFF;
+}
+
+.btn-chat:hover {
+  background: #15803D;
+  color: #FFFFFF;
+}
+
+/* Contact Main Section */
+.contact-main-section {
+  padding: 80px 0;
+}
+
+.form-box-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E0F2FE;
+  color: #0369A1;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284C7;
+}
+
+.form-box-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 30px;
+  color: #1D253A;
+  margin: 0 0 10px;
+}
+
+.form-box-desc {
+  font-size: 14.5px;
+  color: #64748B;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+.form-field .req {
+  color: #EF4444;
+  margin-left: 2px;
+}
+
+.alert-success-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #ECFDF5;
+  border: 1px solid #10B981;
+  color: #065F46;
+  padding: 16px 20px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.alert-success-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #10B981;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 15px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Sidebar Cards */
+.info-sidebar-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 4px 16px rgba(17, 23, 38, 0.04);
+}
+
+.sidebar-card-badge {
+  display: inline-block;
+  background: #E0F2FE;
+  color: #0284C7;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.sidebar-card-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 20px;
+  color: #1D253A;
+  margin: 0 0 8px;
+}
+
+.sidebar-card-desc {
+  font-size: 13.5px;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0 0 20px;
+}
+
+.sidebar-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background var(--trans-fast);
+}
+
+.sidebar-contact-item:hover {
+  background: #F8FAFC;
+}
+
+.sidebar-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.tel-bg {
+  background: #E0F2FE;
+  color: #0580C1;
+}
+
+.wa-bg {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.mail-bg {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.sidebar-item-label {
+  display: block;
+  font-size: 11.5px;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.sidebar-item-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1D253A;
+}
+
+/* Hours Card */
+.hours-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.clock-icon {
+  font-size: 18px;
+}
+
+.hours-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1D253A;
+  margin: 0;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #E2E8F0;
+}
+
+.hours-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.hours-day {
+  color: #475569;
+  font-weight: 600;
+}
+
+.hours-time {
+  color: #1D253A;
+  font-weight: 700;
+}
+
+.hours-time.note-time {
+  color: #D97706;
+}
+
+.hours-time.active-time {
+  color: #16A34A;
+}
+
+/* Trust Card */
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.trust-stat {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.trust-stat-num {
+  display: block;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px;
+  color: #0580C1;
+  margin-bottom: 4px;
+}
+
+.trust-stat-label {
+  display: block;
+  font-size: 11.5px;
+  color: #64748B;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Map Card */
+.map-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.map-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1D253A;
+  margin: 0 0 2px;
+}
+
+.map-card-sub {
+  font-size: 12px;
+  color: #64748B;
+  margin: 0;
+}
+
+.map-open-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0580C1;
+  text-decoration: none;
+}
+
+.map-open-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact-branches-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .branch-card-footer {
+    grid-template-columns: 1fr;
+  }
+  .contact-form-box {
+    padding: 24px;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
