@@ -50,10 +50,7 @@
         <div class="service-card">
           <div class="service-header-row">
             <span class="sec-tag"><span class="sec-tag-dot"></span> Professional Healthcare Gateway</span>
-            <div class="placement-flag-heading-row">
-              <span class="placement-flag-pill">{{ $placement['flag'] }} {{ $placement['country_code'] }}</span>
-              <h2 class="service-detail-title">{{ $placement['title'] }}</h2>
-            </div>
+            <h2 class="service-detail-title">{{ $placement['title'] }}</h2>
           </div>
 
           <div class="service-detail-body">
@@ -89,7 +86,7 @@
           <div class="criteria-header-wrap">
             <div class="criteria-header-top">
               <span class="sec-tag"><span class="sec-tag-dot"></span> Mandatory Qualifications</span>
-              <span class="criteria-country-pill">{{ $placement['flag'] }} {{ $placement['country_name'] }} Checklist</span>
+              <span class="criteria-country-pill">{{ $placement['country_name'] }} Checklist</span>
             </div>
             <h3 class="service-detail-title">Candidate Eligibility Criteria</h3>
             <p class="service-detail-lead">Applicants must satisfy the following clinical, linguistic, and documentary requirements to qualify for official healthcare placement in {{ $placement['country_name'] }}:</p>
@@ -167,8 +164,7 @@
             @foreach($allPlacements as $k => $p)
               <a href="{{ route($p['route_name']) }}" class="placement-dest-card placement-dest-link {{ $k === $placement['key'] ? 'active-dest' : '' }}">
                 <div class="placement-dest-top">
-                  <span class="placement-dest-flag">{{ $p['flag'] }}</span>
-                  <span class="placement-dest-code">{{ $p['country_code'] }}</span>
+                  <img src="{{ $p['flag_url'] ?? ('https://flagcdn.com/w40/' . strtolower($p['country_code']) . '.png') }}" alt="{{ $p['country_name'] }} Flag" class="placement-flag-img" width="24" height="16">
                 </div>
                 <div class="placement-dest-name">{{ $p['country_name'] }}</div>
                 <div class="placement-dest-roles">{{ $p['sector_tag'] ?? $p['badge'] }}</div>
@@ -185,8 +181,7 @@
             <!-- Israel Caregiver Pathway Card -->
             <a href="{{ route('services.show', 'placement-assistance') }}#israel-caregiver" class="placement-dest-card placement-dest-link">
               <div class="placement-dest-top">
-                <span class="placement-dest-flag">🇮🇱</span>
-                <span class="placement-dest-code">IL</span>
+                <img src="https://flagcdn.com/w40/il.png" alt="Israel Flag" class="placement-flag-img" width="24" height="16">
               </div>
               <div class="placement-dest-name">Israel</div>
               <div class="placement-dest-roles">Caregiver Program (PIBA)</div>
@@ -271,12 +266,18 @@
           <div class="service-other-list">
             @foreach($allPlacements as $k => $p)
               <a href="{{ route($p['route_name']) }}" class="service-other-item {{ $k === $placement['key'] ? 'active' : '' }}">
-                <span>{{ $p['flag'] }} {{ $p['country_name'] }}</span>
+                <span class="service-other-item-label">
+                  <img src="{{ $p['flag_url'] ?? ('https://flagcdn.com/w40/' . strtolower($p['country_code']) . '.png') }}" alt="{{ $p['country_name'] }}" class="sidebar-flag-img" width="18" height="12">
+                  <span>{{ $p['country_name'] }}</span>
+                </span>
                 <span>→</span>
               </a>
             @endforeach
             <a href="{{ route('services.show', 'placement-assistance') }}#israel-caregiver" class="service-other-item">
-              <span>🇮🇱 Israel Caregiver</span>
+              <span class="service-other-item-label">
+                <img src="https://flagcdn.com/w40/il.png" alt="Israel" class="sidebar-flag-img" width="18" height="12">
+                <span>Israel Caregiver</span>
+              </span>
               <span>→</span>
             </a>
           </div>

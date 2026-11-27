@@ -240,8 +240,7 @@
             <div class="placement-dest-grid">
               <a href="{{ route('placement.germany') }}" class="placement-dest-card placement-dest-link">
                 <div class="placement-dest-top">
-                  <span class="placement-dest-flag">🇩🇪</span>
-                  <span class="placement-dest-code">DE</span>
+                  <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" class="placement-flag-img" width="24" height="16">
                 </div>
                 <div class="placement-dest-name">Germany</div>
                 <div class="placement-dest-roles">Nursing Adaptation</div>
@@ -249,8 +248,7 @@
               </a>
               <a href="{{ route('placement.uk') }}" class="placement-dest-card placement-dest-link">
                 <div class="placement-dest-top">
-                  <span class="placement-dest-flag">🇬🇧</span>
-                  <span class="placement-dest-code">GB</span>
+                  <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="placement-flag-img" width="24" height="16">
                 </div>
                 <div class="placement-dest-name">United Kingdom</div>
                 <div class="placement-dest-roles">NHS Hospital Trusts</div>
@@ -258,8 +256,7 @@
               </a>
               <a href="{{ route('placement.saudi-arabia') }}" class="placement-dest-card placement-dest-link">
                 <div class="placement-dest-top">
-                  <span class="placement-dest-flag">🇸🇦</span>
-                  <span class="placement-dest-code">SA</span>
+                  <img src="https://flagcdn.com/w40/sa.png" alt="Saudi Arabia Flag" class="placement-flag-img" width="24" height="16">
                 </div>
                 <div class="placement-dest-name">Saudi Arabia &amp; Gulf</div>
                 <div class="placement-dest-roles">MOH Hospitals &amp; PSV</div>
