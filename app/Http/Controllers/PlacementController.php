@@ -65,12 +65,48 @@ class PlacementController extends Controller
                     ],
                 ],
                 'criteria' => [
-                    'GNM Diploma or BSc / MSc Degree in Nursing from a recognized institution',
-                    'German language proficiency certificate at B2 level (Goethe-Institut, telc, or ÖSD)',
-                    'Minimum six months of verified clinical nursing experience',
-                    'Valid Nursing License / State Nursing Council Registration Certificate',
-                    'Medical fitness certificate from an authorized medical examiner',
-                    'Clean Police Clearance Certificate (PCC) issued by Regional Passport Office'
+                    [
+                        'category' => 'Academic Qualification',
+                        'title' => 'GNM Diploma or BSc / MSc Degree',
+                        'detail' => 'GNM Diploma or BSc / MSc Degree in Nursing from a recognized institution with complete official academic transcripts.',
+                        'icon' => '🎓',
+                        'badge' => 'Essential Degree'
+                    ],
+                    [
+                        'category' => 'Language Benchmark',
+                        'title' => 'German Language Proficiency (B2 Level)',
+                        'detail' => 'German language proficiency certificate at B2 level (Goethe-Institut, telc, or ÖSD) for nursing adaptation (Anerkennung).',
+                        'icon' => '🗣️',
+                        'badge' => 'B2 Certified'
+                    ],
+                    [
+                        'category' => 'Clinical Practice',
+                        'title' => 'Clinical Nursing Experience',
+                        'detail' => 'Minimum six months of verified clinical nursing experience in a recognized inpatient hospital environment.',
+                        'icon' => '🩺',
+                        'badge' => '6+ Months Exp'
+                    ],
+                    [
+                        'category' => 'Council Registration',
+                        'title' => 'Valid Nursing Registration License',
+                        'detail' => 'Valid Nursing License / State Nursing Council Registration Certificate with active standing.',
+                        'icon' => '📜',
+                        'badge' => 'Active License'
+                    ],
+                    [
+                        'category' => 'Medical Clearance',
+                        'title' => 'Medical Fitness Certificate',
+                        'detail' => 'Medical fitness certificate from an authorized medical examiner confirming suitability for hospital ward responsibilities.',
+                        'icon' => '🏥',
+                        'badge' => 'Physically Fit'
+                    ],
+                    [
+                        'category' => 'Background Check',
+                        'title' => 'Police Clearance Certificate (PCC)',
+                        'detail' => 'Clean Police Clearance Certificate (PCC) issued by Regional Passport Office for German employment visa endorsement.',
+                        'icon' => '🛡️',
+                        'badge' => 'RPO Clearance'
+                    ],
                 ],
                 'roadmap' => [
                     [
@@ -159,12 +195,48 @@ class PlacementController extends Controller
                     ],
                 ],
                 'criteria' => [
-                    'GNM Diploma or BSc / MSc Degree in Nursing from an accredited institution',
-                    'Valid registration certificate from State Nursing Council with active status',
-                    'English Language Proficiency: OET with minimum Grade B (or IELTS Academic Overall 7.0)',
-                    'NMC Test of Competence Part 1: CBT (Computer Based Test) clearance',
-                    'Clean Police Clearance Certificate (PCC) from Regional Passport Office',
-                    'Satisfactory occupational health assessment and reference checks'
+                    [
+                        'category' => 'Nursing Degree',
+                        'title' => 'GNM Diploma or BSc / MSc Degree',
+                        'detail' => 'GNM Diploma or BSc/MSc degree in Nursing from an accredited institution with valid degree certificate and mark sheets.',
+                        'icon' => '🎓',
+                        'badge' => 'Accredited Degree'
+                    ],
+                    [
+                        'category' => 'Council Registration',
+                        'title' => 'State Nursing Council License',
+                        'detail' => 'Valid registration certificate from State Nursing Council with active status and good standing record.',
+                        'icon' => '📜',
+                        'badge' => 'Active RN'
+                    ],
+                    [
+                        'category' => 'English Proficiency',
+                        'title' => 'OET Grade B or IELTS 7.0',
+                        'detail' => 'English Language Proficiency: OET with minimum Grade B (or IELTS Academic Overall 7.0) accepted by the NMC UK.',
+                        'icon' => '🇬🇧',
+                        'badge' => 'OET / IELTS'
+                    ],
+                    [
+                        'category' => 'NMC Assessment',
+                        'title' => 'NMC CBT Exam Clearance',
+                        'detail' => 'NMC Test of Competence Part 1: CBT (Computer Based Test) clearance prior to UK Certificate of Sponsorship issuance.',
+                        'icon' => '💻',
+                        'badge' => 'NMC Part 1'
+                    ],
+                    [
+                        'category' => 'Security Verification',
+                        'title' => 'Police Clearance Certificate (PCC)',
+                        'detail' => 'Clean Police Clearance Certificate (PCC) issued by Regional Passport Office for UK Health and Care Worker visa.',
+                        'icon' => '🛡️',
+                        'badge' => 'RPO Clearance'
+                    ],
+                    [
+                        'category' => 'Health & Background',
+                        'title' => 'Occupational Health & References',
+                        'detail' => 'Satisfactory occupational health assessment, immunisation records, and verified clinical references from past employers.',
+                        'icon' => '🏥',
+                        'badge' => 'NHS Approved'
+                    ],
                 ],
                 'roadmap' => [
                     [
@@ -253,12 +325,48 @@ class PlacementController extends Controller
                     ],
                 ],
                 'criteria' => [
-                    'GNM Diploma or BSc / MSc Degree in Nursing / Allied Health Sciences',
-                    'Valid registration license with the State Nursing / Medical Council',
-                    'Minimum two years of documented clinical experience in a 100+ bed hospital',
-                    'DataFlow Primary Source Verification (PSV) report clearance',
-                    'Prometric exam scorecard (SCFHS / DHA / HAAD / OMSB per target country)',
-                    'Medical fitness certificate and clean Police Clearance Certificate (PCC)'
+                    [
+                        'category' => 'Degree Qualification',
+                        'title' => 'GNM Diploma or BSc / MSc Degree',
+                        'detail' => 'GNM Diploma or BSc / MSc Degree in Nursing / Allied Health Sciences from an authorized university.',
+                        'icon' => '🎓',
+                        'badge' => 'Recognized Degree'
+                    ],
+                    [
+                        'category' => 'Council Registration',
+                        'title' => 'Valid State Nursing License',
+                        'detail' => 'Valid registration license with the State Nursing / Medical Council with current active validity.',
+                        'icon' => '📜',
+                        'badge' => 'Active Status'
+                    ],
+                    [
+                        'category' => 'Clinical Experience',
+                        'title' => 'Bedside Hospital Experience',
+                        'detail' => 'Minimum two years of documented clinical experience in a 100+ bed tertiary or multispecialty hospital.',
+                        'icon' => '🩺',
+                        'badge' => '2+ Years Exp'
+                    ],
+                    [
+                        'category' => 'Primary Source Verification',
+                        'title' => 'DataFlow PSV Report Clearance',
+                        'detail' => 'DataFlow Primary Source Verification (PSV) report clearance for degrees, council registrations, and experience credentials.',
+                        'icon' => '🔍',
+                        'badge' => 'DataFlow PSV'
+                    ],
+                    [
+                        'category' => 'Licensing Exam',
+                        'title' => 'Prometric Exam Scorecard',
+                        'detail' => 'Prometric exam scorecard clearance (SCFHS / DHA / HAAD / OMSB per target Gulf healthcare authority).',
+                        'icon' => '📝',
+                        'badge' => 'Prometric Pass'
+                    ],
+                    [
+                        'category' => 'Medical & Legal',
+                        'title' => 'Medical Fitness & Police Clearance',
+                        'detail' => 'GAMCA approved medical fitness certificate and clean Police Clearance Certificate (PCC) for Gulf visa stamping.',
+                        'icon' => '🛡️',
+                        'badge' => 'GAMCA & PCC'
+                    ],
                 ],
                 'roadmap' => [
                     [

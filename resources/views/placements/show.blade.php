@@ -96,22 +96,53 @@
         </div>
 
         <!-- 3. Eligibility Criteria -->
-        <div class="service-card">
-          <div class="israel-requirements-box">
-            <div class="israel-req-header">
-              <span class="israel-badge">ESSENTIAL QUALIFICATION</span>
-              <h3 class="israel-req-title">Candidate Eligibility Criteria</h3>
-              <p class="israel-req-subtitle">Applicants must satisfy the following clinical and documentary requirements for {{ $placement['country_name'] }}:</p>
+        <div class="service-card placement-criteria-section">
+          <div class="criteria-header-wrap">
+            <div class="criteria-header-top">
+              <span class="sec-tag"><span class="sec-tag-dot"></span> Mandatory Qualifications</span>
+              <span class="criteria-country-pill">{{ $placement['flag'] }} {{ $placement['country_name'] }} Checklist</span>
             </div>
+            <h3 class="service-detail-title">Candidate Eligibility Criteria</h3>
+            <p class="service-detail-lead">Applicants must satisfy the following clinical, linguistic, and documentary requirements to qualify for official healthcare placement in {{ $placement['country_name'] }}:</p>
+          </div>
 
-            <div class="israel-eligibility-grid">
-              @foreach($placement['criteria'] as $item)
-                <div class="israel-eligibility-item">
-                  <span class="israel-eligibility-check">✓</span>
-                  <span>{{ $item }}</span>
+          <div class="placement-criteria-grid">
+            @foreach($placement['criteria'] as $item)
+              <div class="placement-criteria-card">
+                <div class="criteria-card-top">
+                  <div class="criteria-icon-box">
+                    <span>{{ is_array($item) ? ($item['icon'] ?? '✓') : '✓' }}</span>
+                  </div>
+                  <span class="criteria-badge-tag">{{ is_array($item) ? ($item['category'] ?? 'Credential') : 'Requirement' }}</span>
                 </div>
-              @endforeach
+                <div class="criteria-card-body">
+                  <h4 class="criteria-item-title">{{ is_array($item) ? ($item['title'] ?? '') : $item }}</h4>
+                  @if(is_array($item) && !empty($item['detail']))
+                    <p class="criteria-item-desc">{{ $item['detail'] }}</p>
+                  @endif
+                </div>
+                <div class="criteria-card-status">
+                  <span class="criteria-status-check">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="criteria-status-label">{{ is_array($item) ? ($item['badge'] ?? 'Mandatory Requirement') : 'Mandatory Requirement' }}</span>
+                </div>
+              </div>
+            @endforeach
+          </div>
+
+          <!-- Bottom Advisory Banner -->
+          <div class="criteria-advisory-box">
+            <div class="criteria-advisory-content">
+              <span class="criteria-advisory-icon">💡</span>
+              <div class="criteria-advisory-texts">
+                <h5 class="criteria-advisory-title">Need guidance on qualifications or document verification?</h5>
+                <p class="criteria-advisory-text">All Land Consultancy in Aluva provides complete one-on-one assessment, language coaching, certificate attestation, and embassy verification for {{ $placement['country_name'] }}.</p>
+              </div>
             </div>
+            <a href="#placement-apply" class="criteria-advisory-btn">Check Your Eligibility →</a>
           </div>
         </div>
 
