@@ -27,10 +27,10 @@ class PlacementController extends Controller
                 'badge' => 'European Healthcare Pathways',
                 'lead' => 'Advance your healthcare career with registered nursing adaptation, prestigious hospital contracts, and comprehensive settlement support in Germany.',
                 'stats' => [
-                    ['label' => 'Average Salary', 'value' => '€44,000 / yr', 'note' => 'Plus overtime & night allowances'],
-                    ['label' => 'Standard Work Week', 'value' => 'Max 48 Hours', 'note' => 'Strict labor law protections'],
-                    ['label' => 'Paid Annual Leave', 'value' => '20 - 30 Days', 'note' => 'Plus statutory public holidays'],
-                    ['label' => 'Language Benchmark', 'value' => 'B2 German', 'note' => 'Goethe / telc certification'],
+                    ['icon' => '💶', 'label' => 'Average Salary', 'value' => '€44,000 / yr'],
+                    ['icon' => '⏱️', 'label' => 'Work Week', 'value' => 'Max 48 Hours'],
+                    ['icon' => '🏖️', 'label' => 'Annual Leave', 'value' => '20 – 30 Days'],
+                    ['icon' => '🗣️', 'label' => 'Language Level', 'value' => 'B2 German'],
                 ],
                 'intro_paragraphs' => [
                     'Germany is located in central Europe and is globally renowned for its advanced, well-funded healthcare system. As a nurse in Germany, understanding local nursing practices and hospital systems is essential. The healthcare system operates on a solid social health insurance model where individuals contribute via statutory employment, ensuring universal healthcare coverage funded through combined public and private funding.',
@@ -152,10 +152,10 @@ class PlacementController extends Controller
                 'badge' => 'NHS Trust Sponsorship Pathways',
                 'lead' => 'Secure permanent nursing roles in the UK National Health Service (NHS) and leading private healthcare groups with full visa sponsorship, CBT coaching, and OSCE guidance.',
                 'stats' => [
-                    ['label' => 'Starting Band 5 Salary', 'value' => '£24,910 - £30,615', 'note' => 'Band 6 & 7 roles reach £45,000+'],
-                    ['label' => 'English Benchmark', 'value' => 'OET B / IELTS 7.0', 'note' => 'Clubbed scores accepted per NMC rules'],
-                    ['label' => 'Annual Leave Entitlement', 'value' => '27 Days + 8 Holidays', 'note' => 'Increases to 33 days after 10 years'],
-                    ['label' => 'Visa Category', 'value' => 'Health & Care Visa', 'note' => 'Direct 5-year pathway to UK ILR / PR'],
+                    ['icon' => '💷', 'label' => 'Starting Salary', 'value' => '£24,910 – £30,615'],
+                    ['icon' => '🇬🇧', 'label' => 'Language Benchmark', 'value' => 'OET B / IELTS 7.0'],
+                    ['icon' => '🏖️', 'label' => 'Annual Leave', 'value' => '27 Days + Holidays'],
+                    ['icon' => '📋', 'label' => 'Visa Route', 'value' => 'Health & Care Visa'],
                 ],
                 'intro_paragraphs' => [
                     'The United Kingdom (UK) is situated in northwestern Europe and comprises four nations: England, Scotland, Wales, and Northern Ireland. The National Health Service (NHS) is the world-renowned publicly funded healthcare system providing comprehensive medical care free at the point of delivery to all residents. Nurses form the backbone of the NHS, delivering compassionate care across emergency wards, specialized surgical units, clinics, and community health networks.',
@@ -282,10 +282,10 @@ class PlacementController extends Controller
                 'badge' => 'MOH & GCC Accredited Placements',
                 'lead' => 'Secure lucrative tax-free hospital positions across Saudi Arabia and the GCC with full accommodation, annual return flight tickets, DataFlow verification, and Prometric exam support.',
                 'stats' => [
-                    ['label' => 'Income Tax Rate', 'value' => '0% Tax-Free', 'note' => 'Take home 100% of your earnings'],
-                    ['label' => 'Housing & Transport', 'value' => '100% Provided', 'note' => 'Furnished living quarters or allowance'],
-                    ['label' => 'Annual Leave Flights', 'value' => 'Free Return Tickets', 'note' => 'Annual paid leave to India'],
-                    ['label' => 'Credential Check', 'value' => 'DataFlow PSV', 'note' => 'End-to-end document verification'],
+                    ['icon' => '💰', 'label' => 'Salary Structure', 'value' => '0% Tax-Free'],
+                    ['icon' => '🏢', 'label' => 'Accommodation', 'value' => '100% Provided'],
+                    ['icon' => '✈️', 'label' => 'Annual Vacation', 'value' => 'Free Return Flight'],
+                    ['icon' => '🔍', 'label' => 'Credential Check', 'value' => 'DataFlow PSV'],
                 ],
                 'intro_paragraphs' => [
                     'The Kingdom of Saudi Arabia and the broader Gulf Cooperation Council (GCC) countries — including UAE, Qatar, Kuwait, and Oman — maintain some of the most dynamic, state-of-the-art healthcare infrastructures in the Middle East. With visionary initiatives like Saudi Vision 2030, government Ministry of Health (MOH) medical clusters, military hospitals, and top private healthcare chains are continuously expanding their clinical teams.',

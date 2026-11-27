@@ -66,9 +66,11 @@
           <div class="placement-key-stats-grid">
             @foreach($placement['stats'] as $stat)
               <div class="placement-key-stat-card">
+                @if(!empty($stat['icon']))
+                  <span class="stat-icon">{{ $stat['icon'] }}</span>
+                @endif
                 <div class="stat-num">{{ $stat['value'] }}</div>
                 <div class="stat-label">{{ $stat['label'] }}</div>
-                <div class="stat-note">{{ $stat['note'] }}</div>
               </div>
             @endforeach
           </div>
