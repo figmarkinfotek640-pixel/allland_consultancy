@@ -145,13 +145,7 @@ class DatabaseSeeder extends Seeder
                 'icon' => '💼',
                 'image' => 'images/service-placement-assistance.jpg',
                 'excerpt' => 'Professional career guidance, resume enhancement, interview preparation, and overseas job placement support across healthcare, caregiving, engineering, and global industries.',
-                'description' => '<p>Placement Assistance is a professional support service designed to help job seekers identify and secure suitable employment opportunities based on their educational qualifications, skills, experience, and career aspirations. Our goal is to bridge the gap between talented candidates and potential employers by providing reliable career guidance and structured job search support.</p>
-
-<p>We assist candidates throughout their job search journey, including resume preparation, CV enhancement, interview preparation, career counselling, job application guidance, and access to relevant employment opportunities. Through our established connections with various companies, recruitment agencies, institutions, and professional networks, we help candidates connect with potential employers and explore suitable career opportunities across different industries.</p>
-
-<p>Our placement assistance service focuses on understanding each candidate\'s profile and preferences to identify opportunities that match their qualifications and professional goals. We also guide candidates on interview techniques, workplace expectations, and essential skills required to improve their employability.</p>
-
-<p>Whether you are a fresher seeking your first job or an experienced professional looking for better career opportunities, our placement assistance services aim to make your job search more organised and effective.</p>
+                'description' => '<p>Our Placement Assistance service bridges the gap between talented candidates and leading employers by providing reliable, structured career guidance tailored to your qualifications, experience, and goals. From professional resume enhancement and interview coaching to workplace readiness and job application support, we guide both freshers and experienced job seekers at every stage—leveraging our established employer and institutional networks to connect you with rewarding career opportunities across diverse global industries.</p>
 
 <div class="placement-notice-box">
   <h4>Please Note:</h4>
