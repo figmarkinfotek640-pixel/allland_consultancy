@@ -28,11 +28,11 @@
       <div>
         <h3 class="footer-col-title">Useful Links</h3>
         <div class="footer-links">
+          <a href="{{ route('blog.index') }}" class="footer-link">Blog</a>
+          <a href="{{ route('events.index') }}" class="footer-link">Events</a>
+          <a href="{{ route('services.show', 'visa-assistance') }}" class="footer-link">Visa Assistance</a>
           <a href="{{ route('courses.index') }}" class="footer-link">Courses &amp; Degrees</a>
           <a href="{{ route('exclusives') }}" class="footer-link">German Nursing Ausbildung</a>
-          <a href="{{ route('events.index') }}" class="footer-link">Seminars &amp; Events</a>
-          <a href="{{ route('services.show', 'visa-assistance') }}" class="footer-link">Visa Assistance</a>
-          <a href="{{ route('blog.index') }}" class="footer-link">Blog &amp; Updates</a>
         </div>
       </div>
 
