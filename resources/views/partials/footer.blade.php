@@ -29,18 +29,14 @@
         <h3 class="footer-col-title">Study Abroad</h3>
         <div class="footer-links">
           @if(isset($navDestinations) && $navDestinations->isNotEmpty())
-            @foreach($navDestinations as $dest)
+            @foreach($navDestinations->take(4) as $dest)
               <a href="{{ route('destinations.show', $dest->slug) }}" class="footer-link">Study in {{ $dest->name }}</a>
             @endforeach
-            <a href="{{ route('exclusives') }}" class="footer-link">German Nursing Ausbildung</a>
           @else
             <a href="{{ route('destinations.show', 'germany') }}" class="footer-link">Study in Germany</a>
+            <a href="{{ route('destinations.show', 'united-kingdom') }}" class="footer-link">Study in UK</a>
             <a href="{{ route('destinations.show', 'georgia') }}" class="footer-link">Study in Georgia</a>
             <a href="{{ route('destinations.show', 'austria') }}" class="footer-link">Study in Austria</a>
-            <a href="{{ route('destinations.show', 'united-kingdom') }}" class="footer-link">Study in UK</a>
-            <a href="{{ route('destinations.show', 'tajikistan') }}" class="footer-link">Study in Tajikistan</a>
-            <a href="{{ route('destinations.show', 'canada') }}" class="footer-link">Study in Canada</a>
-            <a href="{{ route('destinations.show', 'new-zealand') }}" class="footer-link">Study in New Zealand</a>
           @endif
         </div>
       </div>
@@ -51,10 +47,7 @@
           <a href="{{ route('home') }}" class="footer-link">Home</a>
           <a href="{{ route('about') }}" class="footer-link">About Us</a>
           <a href="{{ route('services.index') }}" class="footer-link">Our Services</a>
-          <a href="{{ route('courses.index') }}" class="footer-link">Courses &amp; Degrees</a>
-          <a href="{{ route('exclusives') }}" class="footer-link">Exclusives</a>
-          <a href="{{ route('events.index') }}" class="footer-link">Seminars &amp; Events</a>
-          <a href="{{ route('blog.index') }}" class="footer-link">Blog &amp; Updates</a>
+          <a href="{{ route('services.show', 'placement-assistance') }}" class="footer-link">Placement Assistance</a>
           <a href="{{ route('contact') }}" class="footer-link">Contact Us</a>
         </div>
       </div>
@@ -64,7 +57,7 @@
         <address class="footer-address">
           Laxmanas Tower, 11/56, Pump Junction,<br>
           Opp. Municipal Office, Periyar Nagar,<br>
-          Aluva, Ernakulam, Kerala 683101
+          Aluva, Kerala 683101
         </address>
         <div class="footer-contact">
           <a href="tel:+919074024242" class="footer-contact-link">+91 9074 024 242</a>

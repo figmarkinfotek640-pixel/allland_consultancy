@@ -5977,49 +5977,91 @@ address {
 }
 
 .footer-top {
-  padding: 64px 0 40px;
+  padding: 36px 0 24px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 280px 1fr 1fr 260px;
-  gap: 40px;
+  gap: 32px;
 }
 
 .footer-logo {
-  height: 44px;
+  height: 38px;
   width: auto;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .footer-tagline {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--t-mute);
-  line-height: 1.7;
+  line-height: 1.6;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .footer-soc {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-soc-link {
-  font-size: 12px;
-  font-weight: 700;
-  border: 1px solid var(--ink-border);
-  color: var(--t-mute);
-  padding: 5px 12px;
-  border-radius: var(--r-full);
-  transition: all var(--trans-fast);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-soc-link svg,
+.footer-soc-icon {
+  width: 15px;
+  height: 15px;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .footer-soc-link:hover {
-  border-color: #0580C1;
-  color: #0580C1;
-  background: rgba(5, 128, 193, 0.12);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+
+.footer-soc-link:hover svg,
+.footer-soc-link:hover .footer-soc-icon {
+  transform: scale(1.12);
+}
+
+/* Instagram: Radiant Sunset Gradient + Magenta Glow */
+.footer-soc-link.soc-instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(220, 39, 67, 0.5), 0 0 14px rgba(188, 24, 136, 0.35);
+}
+
+/* Facebook: Official Deep Blue + Blue Glow */
+.footer-soc-link.soc-facebook:hover {
+  background: #1877F2;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(24, 119, 242, 0.5);
+}
+
+/* LinkedIn: Official Cyan/Blue + Glow */
+.footer-soc-link.soc-linkedin:hover {
+  background: #0A66C2;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.5);
 }
 
 .footer-col-title {
@@ -6028,17 +6070,17 @@ address {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--t-mute);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .footer-link {
-  font-size: 13.5px;
+  font-size: 13px;
   color: #94A3B8;
   line-height: 1.4;
   transition: color var(--trans-fast), transform var(--trans-fast);
@@ -6050,20 +6092,20 @@ address {
 }
 
 .footer-address {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--t-mute);
-  line-height: 1.85;
+  line-height: 1.65;
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 12px;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .footer-contact-link {
-  font-size: 13px;
+  font-size: 12.5px;
   color: #94A3B8;
   transition: color var(--trans-fast);
 }
@@ -6074,7 +6116,7 @@ address {
 
 .footer-bottom {
   border-top: 1px solid var(--ink-border);
-  padding: 20px 0;
+  padding: 14px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

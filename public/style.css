@@ -6195,38 +6195,38 @@ address {
 }
 
 .footer-top {
-  padding: 64px 0 40px;
+  padding: 36px 0 24px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 280px 1fr 1fr 260px;
-  gap: 40px;
+  gap: 32px;
 }
 
 .footer-logo {
-  height: 44px;
+  height: 38px;
   width: auto;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .footer-tagline {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--t-mute);
-  line-height: 1.7;
+  line-height: 1.6;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .footer-soc {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .footer-soc-link {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -6245,8 +6245,8 @@ address {
 
 .footer-soc-link svg,
 .footer-soc-icon {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   display: block;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -6288,17 +6288,17 @@ address {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--t-mute);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .footer-link {
-  font-size: 13.5px;
+  font-size: 13px;
   color: #94A3B8;
   line-height: 1.4;
   transition: color var(--trans-fast), transform var(--trans-fast);
@@ -6310,20 +6310,20 @@ address {
 }
 
 .footer-address {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--t-mute);
-  line-height: 1.85;
+  line-height: 1.65;
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 12px;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .footer-contact-link {
-  font-size: 13px;
+  font-size: 12.5px;
   color: #94A3B8;
   transition: color var(--trans-fast);
 }
@@ -6334,11 +6334,11 @@ address {
 
 .footer-bottom {
   border-top: 1px solid var(--ink-border);
-  padding: 20px 0;
+  padding: 14px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--t-mute);
   flex-wrap: wrap;
   gap: 10px;
