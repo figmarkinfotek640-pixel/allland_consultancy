@@ -26,18 +26,13 @@
       </div>
 
       <div>
-        <h3 class="footer-col-title">Study Abroad</h3>
+        <h3 class="footer-col-title">Useful Links</h3>
         <div class="footer-links">
-          @if(isset($navDestinations) && $navDestinations->isNotEmpty())
-            @foreach($navDestinations->take(4) as $dest)
-              <a href="{{ route('destinations.show', $dest->slug) }}" class="footer-link">Study in {{ $dest->name }}</a>
-            @endforeach
-          @else
-            <a href="{{ route('destinations.show', 'germany') }}" class="footer-link">Study in Germany</a>
-            <a href="{{ route('destinations.show', 'united-kingdom') }}" class="footer-link">Study in UK</a>
-            <a href="{{ route('destinations.show', 'georgia') }}" class="footer-link">Study in Georgia</a>
-            <a href="{{ route('destinations.show', 'austria') }}" class="footer-link">Study in Austria</a>
-          @endif
+          <a href="{{ route('courses.index') }}" class="footer-link">Courses &amp; Degrees</a>
+          <a href="{{ route('exclusives') }}" class="footer-link">German Nursing Ausbildung</a>
+          <a href="{{ route('events.index') }}" class="footer-link">Seminars &amp; Events</a>
+          <a href="{{ route('services.show', 'visa-assistance') }}" class="footer-link">Visa Assistance</a>
+          <a href="{{ route('blog.index') }}" class="footer-link">Blog &amp; Updates</a>
         </div>
       </div>
 
