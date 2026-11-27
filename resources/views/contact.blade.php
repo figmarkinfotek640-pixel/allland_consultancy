@@ -33,10 +33,10 @@
 <!-- 3 BRANCH OFFICES SECTION -->
 <section class="contact-branches-section">
   <div class="wrap">
-    <div class="sec-head-center">
-      <p class="sec-tag"><span class="sec-tag-dot"></span> Official Branches</p>
-      <h2 class="sec-title">Visit Our <span>Offices Across Kerala</span></h2>
-      <p class="sec-desc">Walk into our fully-equipped branch offices for face-to-face academic counselling, eligibility verification, blocked account support, and visa file preparation.</p>
+    <div class="sec-head-center" style="text-align:center; max-width:720px; margin:0 auto 42px;">
+      <p class="sec-tag" style="justify-content:center; margin-bottom:12px;"><span class="sec-tag-dot"></span> Official Branches</p>
+      <h2 class="sec-title" style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(28px, 3.5vw, 40px); color:#1D253A; margin:0 0 14px; line-height:1.25;">Visit Our <span style="color:#0580C1;">Offices Across Kerala</span></h2>
+      <p class="sec-desc" style="font-size:15.5px; color:#475569; line-height:1.65; margin:0 auto; max-width:620px;">Walk into our fully-equipped branch offices for face-to-face academic counselling, eligibility verification, blocked account support, and visa file preparation.</p>
     </div>
 
     <div class="contact-branches-grid">
