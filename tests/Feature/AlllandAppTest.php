@@ -57,6 +57,45 @@ class AlllandAppTest extends TestCase
         $responsePlacement->assertSee('Caregiver Jobs in Israel');
         $responsePlacement->assertSee('Competitive Salary');
         $responsePlacement->assertSee('Police Clearance Certificate');
+        // Ensure country cards are clickable links to destination placement pages
+        $responsePlacement->assertSee(route('placement.germany'));
+        $responsePlacement->assertSee(route('placement.uk'));
+        $responsePlacement->assertSee(route('placement.saudi-arabia'));
+    }
+
+    public function test_international_placement_destination_pages(): void
+    {
+        // 1. Germany Placement Detail Page
+        $resGermany = $this->get('/germany-placement');
+        $resGermany->assertStatus(200);
+        $resGermany->assertSee('Placement in Germany');
+        $resGermany->assertSee('Deutscher Pflegerat');
+        $resGermany->assertSee('44,000');
+        $resGermany->assertSee('German language proficiency');
+        $resGermany->assertSee('GNM Diploma or BSc / MSc Degree');
+
+        // 2. UK Placement Detail Page
+        $resUk = $this->get('/uk-placement');
+        $resUk->assertStatus(200);
+        $resUk->assertSee('Placement in United Kingdom');
+        $resUk->assertSee('Nursing and Midwifery Council');
+        $resUk->assertSee('CBT');
+        $resUk->assertSee('24,910');
+        $resUk->assertSee('OET');
+
+        // 3. Saudi Arabia & Gulf Placement Detail Page
+        $resSaudi = $this->get('/saudi-arabia-placement');
+        $resSaudi->assertStatus(200);
+        $resSaudi->assertSee('Placement in Saudi Arabia & Gulf');
+        $resSaudi->assertSee('DataFlow');
+        $resSaudi->assertSee('Tax-Free');
+        $resSaudi->assertSee('Prometric');
+
+        // 4. Aliases and redirects
+        $this->get('/placement/germany')->assertRedirect(route('placement.germany'));
+        $this->get('/placement/uk')->assertRedirect(route('placement.uk'));
+        $this->get('/placement/saudi-arabia')->assertRedirect(route('placement.saudi-arabia'));
+        $this->get('/gulf-placement')->assertRedirect(route('placement.saudi-arabia'));
     }
 
     public function test_courses_index_and_detail(): void

@@ -244,21 +244,24 @@
             <p class="service-detail-lead">In addition to caregiver opportunities in Israel, we support healthcare and skilled professionals with placements across leading international hubs:</p>
 
             <div class="placement-dest-grid">
-              <div class="placement-dest-card">
+              <a href="{{ route('placement.germany') }}" class="placement-dest-card placement-dest-link">
                 <span class="placement-dest-flag">🇩🇪</span>
                 <div class="placement-dest-name">Germany</div>
                 <div class="placement-dest-roles">Registered Nursing Adaptation, Hospital Contracts, Opportunity Card &amp; Tech</div>
-              </div>
-              <div class="placement-dest-card">
+                <span class="placement-dest-action">View Placement Details →</span>
+              </a>
+              <a href="{{ route('placement.uk') }}" class="placement-dest-card placement-dest-link">
                 <span class="placement-dest-flag">🇬🇧</span>
                 <div class="placement-dest-name">United Kingdom</div>
                 <div class="placement-dest-roles">NHS Trust Hospital Sponsorships, CBT &amp; OSCE Coaching, Skilled Worker Visas</div>
-              </div>
-              <div class="placement-dest-card">
+                <span class="placement-dest-action">View Placement Details →</span>
+              </a>
+              <a href="{{ route('placement.saudi-arabia') }}" class="placement-dest-card placement-dest-link">
                 <span class="placement-dest-flag">🇸🇦</span>
                 <div class="placement-dest-name">Saudi Arabia &amp; Gulf</div>
                 <div class="placement-dest-roles">Ministry of Health (MOH) Hospitals, DataFlow Verified Medical Technologists</div>
-              </div>
+                <span class="placement-dest-action">View Placement Details →</span>
+              </a>
             </div>
           </div>
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PlacementController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\EventController;
@@ -27,6 +28,18 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+
+// International Career Placements (Germany, UK, Saudi Arabia & Gulf)
+Route::get('/germany-placement', [PlacementController::class, 'germany'])->name('placement.germany');
+Route::get('/uk-placement', [PlacementController::class, 'uk'])->name('placement.uk');
+Route::get('/saudi-arabia-placement', [PlacementController::class, 'saudiArabia'])->name('placement.saudi-arabia');
+Route::get('/gulf-placement', fn() => redirect()->route('placement.saudi-arabia'));
+Route::get('/placement/germany', fn() => redirect()->route('placement.germany'));
+Route::get('/placement/uk', fn() => redirect()->route('placement.uk'));
+Route::get('/placement/saudi-arabia', fn() => redirect()->route('placement.saudi-arabia'));
+Route::get('/services/placement-assistance/germany', fn() => redirect()->route('placement.germany'));
+Route::get('/services/placement-assistance/uk', fn() => redirect()->route('placement.uk'));
+Route::get('/services/placement-assistance/saudi-arabia', fn() => redirect()->route('placement.saudi-arabia'));
 
 // Study Abroad & Destinations
 Route::get('/study-abroad', function () {
