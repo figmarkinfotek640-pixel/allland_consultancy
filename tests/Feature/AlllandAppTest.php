@@ -38,6 +38,10 @@ class AlllandAppTest extends TestCase
         $response->assertSee('https://www.instagram.com/reel/Df9CngDR0FN/');
         $response->assertSee('https://www.instagram.com/reel/Df3s_r2RfD4/');
         $response->assertSee('https://www.instagram.com/reel/Dfg51NdRihS/');
+        $response->assertSee('https://www.instagram.com/reel/De_gMK8RwVM/');
+        $response->assertSee('https://www.instagram.com/reel/DdN0ZedRCV_/');
+        $response->assertSee('https://www.instagram.com/reel/DdI8AAyxCjv/');
+        $response->assertSee('https://www.instagram.com/reel/DdG3QxKR1dH/');
     }
 
     public function test_about_page_loads(): void

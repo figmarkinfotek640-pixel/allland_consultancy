@@ -5194,6 +5194,16 @@ address {
   background: #0B0F19;
 }
 
+/* Suppress native browser video play overlay icons */
+.insta-reel-video::-webkit-media-controls,
+.insta-reel-video::-webkit-media-controls-start-playback-button,
+.insta-reel-video::-webkit-media-controls-play-button,
+.insta-reel-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+}
+
 /* Top & Bottom gradient overlays */
 .insta-reel-media::before {
   content: "";
