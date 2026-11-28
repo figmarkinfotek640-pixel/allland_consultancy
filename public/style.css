@@ -12884,6 +12884,22 @@ body {
   font-size: 13px;
 }
 
+.branch-card-map-embed {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(17, 23, 38, 0.04);
+}
+
+.branch-card-map-embed iframe {
+  width: 100%;
+  height: 160px;
+  border: 0;
+  display: block;
+}
+
 .branch-card-actions {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
