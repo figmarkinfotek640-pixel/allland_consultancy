@@ -94,7 +94,7 @@
 
         <div class="branch-title-block">
           <h3 class="branch-city-name">Pala Branch</h3>
-          <p class="branch-company-name">All Land Tourism Pvt.Ltd</p>
+          <p class="branch-company-name">All Land Consultancy</p>
         </div>
 
         <div class="branch-address-box">
@@ -129,24 +129,23 @@
       </div>
 
       <!-- BRANCH 2: ALUVA (HEAD OFFICE) -->
-      <div class="contact-branch-card featured-card">
-        <div class="featured-ribbon">Head Office</div>
+      <div class="contact-branch-card">
         <div class="branch-card-top">
-          <div class="branch-icon-badge head-badge">
+          <div class="branch-icon-badge">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14"/>
               <path d="M9 9h1M9 13h1M9 17h1M17 9h1M17 13h1M17 17h1"/>
             </svg>
           </div>
           <div class="branch-meta-wrap">
-            <span class="branch-pill-badge head-office-pill">Head Office</span>
+            <span class="branch-pill-badge">Head Office</span>
             <span class="branch-city-tag">Aluva, Ernakulam</span>
           </div>
         </div>
 
         <div class="branch-title-block">
           <h3 class="branch-city-name">Aluva Head Office</h3>
-          <p class="branch-company-name">All Land Tourism Pvt.Ltd</p>
+          <p class="branch-company-name">All Land Consultancy</p>
         </div>
 
         <div class="branch-address-box">
@@ -197,7 +196,7 @@
 
         <div class="branch-title-block">
           <h3 class="branch-city-name">Adoor Branch</h3>
-          <p class="branch-company-name">All Land Tourism Pvt.Ltd</p>
+          <p class="branch-company-name">All Land Consultancy</p>
         </div>
 
         <div class="branch-address-box">
