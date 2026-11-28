@@ -98,9 +98,6 @@
               @if($reel->description)
                 <div style="font-size:12px;color:#64748B;line-height:1.4;">{{ Str::limit($reel->description, 75) }}</div>
               @endif
-              <div style="font-size:11px;color:#94A3B8;margin-top:4px;">
-                ❤️ {{ $reel->likes_count ?? '1.2K' }} &nbsp;•&nbsp; 💬 {{ $reel->comments_count ?? '40' }}
-              </div>
             </td>
             <td>
               @if($reel->location_tag)

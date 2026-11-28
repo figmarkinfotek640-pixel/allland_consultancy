@@ -60,18 +60,6 @@
 
     <div class="form-grid-2">
       <div class="form-group">
-        <label class="form-label" for="likes_count">Display Likes Count</label>
-        <input type="text" name="likes_count" id="likes_count" class="form-control" value="{{ old('likes_count', '1.4K') }}" placeholder="e.g. 1.4K, 850">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="comments_count">Display Comments Count</label>
-        <input type="text" name="comments_count" id="comments_count" class="form-control" value="{{ old('comments_count', '48') }}" placeholder="e.g. 48, 120">
-      </div>
-    </div>
-
-    <div class="form-grid-2">
-      <div class="form-group">
         <label class="form-label" for="thumbnail">Thumbnail Image Path or URL</label>
         <input type="text" name="thumbnail" id="thumbnail" class="form-control" value="{{ old('thumbnail', 'images/student-1.jpg') }}" placeholder="images/student-1.jpg or https://...">
         <div style="font-size:11.5px;color:#94a3b8;margin-top:4px;">Existing asset path or external image URL</div>

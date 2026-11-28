@@ -54,8 +54,6 @@ class InstagramReelController extends Controller
             'video_file' => 'nullable|mimes:mp4,mov,webm|max:25600',
             'video_url' => 'nullable|string|max:255',
             'location_tag' => 'nullable|string|max:150',
-            'likes_count' => 'nullable|string|max:50',
-            'comments_count' => 'nullable|string|max:50',
             'display_order' => 'nullable|integer',
             'status' => 'nullable',
         ]);
@@ -72,8 +70,6 @@ class InstagramReelController extends Controller
 
         $validated['display_order'] = $request->filled('display_order') ? (int)$request->display_order : 0;
         $validated['status'] = $request->has('status') && (string)$request->status !== '0';
-        $validated['likes_count'] = $validated['likes_count'] ?? '1.2K';
-        $validated['comments_count'] = $validated['comments_count'] ?? '45';
 
         InstagramReel::create($validated);
 
@@ -96,8 +92,6 @@ class InstagramReelController extends Controller
             'video_file' => 'nullable|mimes:mp4,mov,webm|max:25600',
             'video_url' => 'nullable|string|max:255',
             'location_tag' => 'nullable|string|max:150',
-            'likes_count' => 'nullable|string|max:50',
-            'comments_count' => 'nullable|string|max:50',
             'display_order' => 'nullable|integer',
             'status' => 'nullable',
         ]);

@@ -56,18 +56,6 @@
       </div>
     </div>
 
-    <div class="form-grid-2">
-      <div class="form-group">
-        <label class="form-label" for="likes_count">Display Likes Count</label>
-        <input type="text" name="likes_count" id="likes_count" class="form-control" value="{{ old('likes_count', $reel->likes_count) }}">
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="comments_count">Display Comments Count</label>
-        <input type="text" name="comments_count" id="comments_count" class="form-control" value="{{ old('comments_count', $reel->comments_count) }}">
-      </div>
-    </div>
-
     <div style="display:flex;gap:18px;align-items:flex-start;margin-bottom:18px;padding:14px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;">
       <div style="width:70px;height:100px;border-radius:8px;overflow:hidden;background:#0F172A;flex-shrink:0;">
         <img src="{{ $reel->thumbnail_url }}" alt="Current cover" style="width:100%;height:100%;object-fit:cover;">

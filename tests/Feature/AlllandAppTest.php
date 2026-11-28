@@ -325,8 +325,6 @@ class AlllandAppTest extends TestCase
             'reel_url' => 'https://www.instagram.com/reel/Ctest12345/',
             'description' => 'Test description for unit testing reel module.',
             'location_tag' => 'Germany • Munich Desk',
-            'likes_count' => '999',
-            'comments_count' => '42',
             'display_order' => 15,
             'status' => '1',
         ];
