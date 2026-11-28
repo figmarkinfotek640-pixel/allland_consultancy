@@ -31,6 +31,13 @@ class AlllandAppTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('All Land Consultancy');
         $response->assertSee('Germany');
+        // Verify official Instagram reels load
+        $response->assertSee('Choosing the Right Course is the First Step Towards the Right Future!');
+        $response->assertSee('https://www.instagram.com/reel/DgNJX2bR5oy/');
+        $response->assertSee('images/reels/reel-1-choosing-course.jpg');
+        $response->assertSee('https://www.instagram.com/reel/Df9CngDR0FN/');
+        $response->assertSee('https://www.instagram.com/reel/Df3s_r2RfD4/');
+        $response->assertSee('https://www.instagram.com/reel/Dfg51NdRihS/');
     }
 
     public function test_about_page_loads(): void
