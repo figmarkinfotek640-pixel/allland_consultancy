@@ -117,21 +117,8 @@
           </a>
         </div>
 
-        <!-- Embedded Google Map -->
-        <div class="branch-card-map-embed">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d503137.7463000782!2d76.187182!3d9.8701865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cded63b41f29%3A0x37f5166d2616e0e9!2sAll-Land%20Tours%20%26%20Travels%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1795853713448!5m2!1sen!2sin" 
-            width="100%" 
-            height="160" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="strict-origin-when-cross-origin">
-          </iframe>
-        </div>
-
         <div class="branch-card-actions">
-          <a href="https://www.google.com/maps?cid=4032148123288494313" target="_blank" rel="noopener" class="btn-branch-directions">
+          <a href="https://www.google.com/maps?cid=4032153699426427113" target="_blank" rel="noopener" class="btn-branch-directions">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
             Get Directions
           </a>
@@ -427,22 +414,22 @@
           </div>
         </div>
 
-        <!-- Interactive Map Embed (Pump Junction, Aluva Head Office) -->
+        <!-- Interactive Map Embed -->
         <div class="info-sidebar-card map-card">
           <div class="map-card-header">
             <div>
-              <h4 class="map-card-title">Aluva Head Office Map</h4>
-              <p class="map-card-sub">Laxmanas Tower, Pump Junction, Aluva</p>
+              <h4 class="map-card-title">All-Land Official Location</h4>
+              <p class="map-card-sub">All-Land Tours &amp; Travels Pvt Ltd</p>
             </div>
-            <a href="https://maps.google.com/?q=All+Land+Consultancy+Laxmanas+Tower+Pump+Junction+Aluva+Kerala+683101" target="_blank" rel="noopener" class="map-open-link">Open in Maps ↗</a>
+            <a href="https://www.google.com/maps?cid=4032153699426427113" target="_blank" rel="noopener" class="map-open-link">Open in Maps ↗</a>
           </div>
           <div class="map-frame">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.349666068832!2d76.35334867576595!3d10.111003489998188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0805c8680d2875%3A0xc3b83f3e97022802!2sPump%20Jn%2C%20Aluva%2C%20Kerala%20683101!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d503137.7463000782!2d76.187182!3d9.8701865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cded63b41f29%3A0x37f5166d2616e0e9!2sAll-Land%20Tours%20%26%20Travels%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1795853713448!5m2!1sen!2sin" 
               style="border:0; width:100%; height:100%;" 
               allowfullscreen="" 
               loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
+              referrerpolicy="strict-origin-when-cross-origin">
             </iframe>
           </div>
         </div>
