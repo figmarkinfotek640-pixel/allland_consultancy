@@ -540,6 +540,9 @@
       <a href="{{ route('admin.blogs.index') }}" class="admin-nav-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
         <span>✍️</span> Blogs &amp; Articles
       </a>
+      <a href="{{ route('admin.reels.index') }}" class="admin-nav-item {{ request()->routeIs('admin.reels.*') ? 'active' : '' }}">
+        <span>📱</span> Instagram Reels
+      </a>
       
       <div style="height: 1px; background: rgba(255,255,255,0.08); margin: 12px 0;"></div>
 

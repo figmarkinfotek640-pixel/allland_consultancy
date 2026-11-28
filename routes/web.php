@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\InquiryController as AdminInquiryController;
+use App\Http\Controllers\Admin\InstagramReelController as AdminInstagramReelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +101,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Blogs CRUD
     Route::resource('blogs', AdminBlogController::class);
+
+    // Instagram Reels Management
+    Route::patch('reels/{reel}/toggle', [AdminInstagramReelController::class, 'toggleStatus'])->name('reels.toggle');
+    Route::resource('reels', AdminInstagramReelController::class);
 
     // Inquiries Management
     Route::get('inquiries', [AdminInquiryController::class, 'index'])->name('inquiries.index');

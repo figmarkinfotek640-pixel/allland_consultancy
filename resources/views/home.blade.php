@@ -173,11 +173,10 @@
     <!-- Instagram Slider Track -->
     <div class="insta-slider-wrapper">
       <div class="insta-slider-track" id="instaSliderTrack">
-        
-        <!-- Reel 1: Germany -->
-        <article class="insta-reel-card" data-index="0">
+        @forelse($reels as $idx => $reel)
+        <article class="insta-reel-card" data-index="{{ $idx }}">
           <div class="insta-reel-media" onclick="toggleReelPlay(this)">
-            <video class="insta-reel-video" src="{{ asset('videos/banner-video.mp4') }}" poster="{{ asset('images/student-1.jpg') }}" playsinline loop muted preload="metadata"></video>
+            <video class="insta-reel-video" src="{{ $reel->video_url }}" poster="{{ $reel->thumbnail_url }}" playsinline loop muted preload="metadata"></video>
             
             <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
@@ -193,10 +192,10 @@
               </span>
               <span class="insta-reel-pill">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>48.2K</span>
+                <span>{{ $reel->likes_count ?? '1.2K' }}</span>
               </span>
             </div>
-            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
+            <a href="{{ $reel->reel_url }}" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
             </a>
           </div>
@@ -207,13 +206,13 @@
               <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
               </button>
-              <span class="insta-reel-action-label" data-base-likes="1428">1.4K</span>
+              <span class="insta-reel-action-label" data-base-likes="1428">{{ $reel->likes_count ?? '1.4K' }}</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
+              <a href="{{ $reel->reel_url }}" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
-              <span class="insta-reel-action-label">84</span>
+              <span class="insta-reel-action-label">{{ $reel->comments_count ?? '84' }}</span>
             </div>
             <div class="insta-reel-action-item">
               <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
@@ -222,8 +221,8 @@
               <span class="insta-reel-action-label">Sound</span>
             </div>
             <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <a href="{{ $reel->reel_url }}" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
               </a>
               <span class="insta-reel-action-label">Share</span>
             </div>
@@ -240,15 +239,19 @@
                   <span class="insta-reel-handle">all_land_consultancy</span>
                   <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
                 </div>
-                <span class="insta-reel-loc">📍 All Land Consultancy • Germany Desk</span>
+                @if($reel->location_tag)
+                  <span class="insta-reel-loc">📍 {{ $reel->location_tag }}</span>
+                @endif
               </div>
             </div>
 
-            <span class="insta-reel-outcome-tag">🇩🇪 €0 Tuition Visa Granted</span>
+            <span class="insta-reel-outcome-tag">{{ $reel->title }}</span>
 
-            <p class="insta-reel-caption">
-              Landing at Munich airport was unreal! Handled everything from APS to zero-tuition admission.
-            </p>
+            @if($reel->description)
+              <p class="insta-reel-caption">
+                {{ $reel->description }}
+              </p>
+            @endif
 
             <div class="insta-reel-audio-ticker">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
@@ -256,340 +259,12 @@
             </div>
           </div>
         </article>
-
-        <!-- Reel 2: Canada -->
-        <article class="insta-reel-card" data-index="1">
-          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
-            <video class="insta-reel-video" src="{{ asset('videos/LATEST MIX.mp4') }}" poster="{{ asset('images/student-2.jpg') }}" playsinline loop muted preload="metadata"></video>
-            
-            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-            </button>
-          </div>
-
-          <!-- Top Bar -->
-          <div class="insta-reel-top-bar">
-            <div class="insta-reel-badge-group">
-              <span class="insta-reel-pill">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
-                <span>Reels</span>
-              </span>
-              <span class="insta-reel-pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>62.1K</span>
-              </span>
-            </div>
-            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-          </div>
-
-          <!-- Right Action Stack -->
-          <div class="insta-reel-actions-stack">
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
-              </button>
-              <span class="insta-reel-action-label" data-base-likes="2185">2.2K</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </a>
-              <span class="insta-reel-action-label">142</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-              </button>
-              <span class="insta-reel-action-label">Sound</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </a>
-              <span class="insta-reel-action-label">Share</span>
-            </div>
-          </div>
-
-          <!-- Bottom Content Overlay -->
-          <div class="insta-reel-bottom">
-            <div class="insta-reel-author-row">
-              <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
-              </div>
-              <div class="insta-reel-author-meta">
-                <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">all_land_consultancy</span>
-                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
-                </div>
-                <span class="insta-reel-loc">📍 All Land Consultancy • Canada Desk</span>
-              </div>
-            </div>
-
-            <span class="insta-reel-outcome-tag">🇨🇦 3-Year PGWP Approved</span>
-
-            <p class="insta-reel-caption">
-              From backlogs in Kerala to Canada visa approved in just 3 weeks! Living my dream in Ontario.
-            </p>
-
-            <div class="insta-reel-audio-ticker">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Reel 3: UK Nursing -->
-        <article class="insta-reel-card" data-index="2">
-          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
-            <video class="insta-reel-video" src="{{ asset('videos/banner-video.mp4') }}" poster="{{ asset('images/student-3.jpg') }}" playsinline loop muted preload="metadata"></video>
-            
-            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-            </button>
-          </div>
-
-          <!-- Top Bar -->
-          <div class="insta-reel-top-bar">
-            <div class="insta-reel-badge-group">
-              <span class="insta-reel-pill">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
-                <span>Reels</span>
-              </span>
-              <span class="insta-reel-pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>39.7K</span>
-              </span>
-            </div>
-            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-          </div>
-
-          <!-- Right Action Stack -->
-          <div class="insta-reel-actions-stack">
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
-              </button>
-              <span class="insta-reel-action-label" data-base-likes="1894">1.9K</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </a>
-              <span class="insta-reel-action-label">96</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-              </button>
-              <span class="insta-reel-action-label">Sound</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </a>
-              <span class="insta-reel-action-label">Share</span>
-            </div>
-          </div>
-
-          <!-- Bottom Content Overlay -->
-          <div class="insta-reel-bottom">
-            <div class="insta-reel-author-row">
-              <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
-              </div>
-              <div class="insta-reel-author-meta">
-                <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">all_land_consultancy</span>
-                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
-                </div>
-                <span class="insta-reel-loc">📍 All Land Consultancy • UK NHS Desk</span>
-              </div>
-            </div>
-
-            <span class="insta-reel-outcome-tag">🇬🇧 Band 5 NHS Sponsorship</span>
-
-            <p class="insta-reel-caption">
-              From staff nurse in Kochi to NHS Leeds. CBT, NMC registration & visa mock interviews coached step-by-step!
-            </p>
-
-            <div class="insta-reel-audio-ticker">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Reel 4: New Zealand -->
-        <article class="insta-reel-card" data-index="3">
-          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
-            <video class="insta-reel-video" src="{{ asset('videos/LATEST MIX.mp4') }}" poster="{{ asset('images/student-4.jpg') }}" playsinline loop muted preload="metadata"></video>
-            
-            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-            </button>
-          </div>
-
-          <!-- Top Bar -->
-          <div class="insta-reel-top-bar">
-            <div class="insta-reel-badge-group">
-              <span class="insta-reel-pill">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
-                <span>Reels</span>
-              </span>
-              <span class="insta-reel-pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>35.4K</span>
-              </span>
-            </div>
-            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-          </div>
-
-          <!-- Right Action Stack -->
-          <div class="insta-reel-actions-stack">
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
-              </button>
-              <span class="insta-reel-action-label" data-base-likes="1632">1.6K</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </a>
-              <span class="insta-reel-action-label">77</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-              </button>
-              <span class="insta-reel-action-label">Sound</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </a>
-              <span class="insta-reel-action-label">Share</span>
-            </div>
-          </div>
-
-          <!-- Bottom Content Overlay -->
-          <div class="insta-reel-bottom">
-            <div class="insta-reel-author-row">
-              <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
-              </div>
-              <div class="insta-reel-author-meta">
-                <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">all_land_consultancy</span>
-                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
-                </div>
-                <span class="insta-reel-loc">📍 All Land Consultancy • New Zealand Desk</span>
-              </div>
-            </div>
-
-            <span class="insta-reel-outcome-tag">🇳🇿 Green List Fast-Track PR</span>
-
-            <p class="insta-reel-caption">
-              Master of IT in Auckland with Green List PR pathway mapped upfront. Clean documentation, zero hidden fees!
-            </p>
-
-            <div class="insta-reel-audio-ticker">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Reel 5: Visa Success Cohort -->
-        <article class="insta-reel-card" data-index="4">
-          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
-            <video class="insta-reel-video" src="{{ asset('videos/banner-video.mp4') }}" poster="{{ asset('images/gallery-visa-success.jpg') }}" playsinline loop muted preload="metadata"></video>
-            
-            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-            </button>
-          </div>
-
-          <!-- Top Bar -->
-          <div class="insta-reel-top-bar">
-            <div class="insta-reel-badge-group">
-              <span class="insta-reel-pill">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="m9 8 7 4-7 4Z"></path></svg>
-                <span>Reels</span>
-              </span>
-              <span class="insta-reel-pill">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>74.9K</span>
-              </span>
-            </div>
-            <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-top-link" aria-label="View on Instagram">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-            </a>
-          </div>
-
-          <!-- Right Action Stack -->
-          <div class="insta-reel-actions-stack">
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn" aria-label="Like Video" onclick="toggleReelLike(this, event)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
-              </button>
-              <span class="insta-reel-action-label" data-base-likes="2540">2.5K</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Comments">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </a>
-              <span class="insta-reel-action-label">210</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <button type="button" class="insta-reel-action-btn is-muted" aria-label="Toggle Sound" onclick="toggleReelMute(this, event)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-              </button>
-              <span class="insta-reel-action-label">Sound</span>
-            </div>
-            <div class="insta-reel-action-item">
-              <a href="https://www.instagram.com/all_land_consultancy/" target="_blank" rel="noopener noreferrer" class="insta-reel-action-btn" aria-label="Share Reel">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </a>
-              <span class="insta-reel-action-label">Share</span>
-            </div>
-          </div>
-
-          <!-- Bottom Content Overlay -->
-          <div class="insta-reel-bottom">
-            <div class="insta-reel-author-row">
-              <div class="insta-reel-avatar-ring">
-                <img src="{{ asset('images/all-land-logo.png') }}" alt="All Land Consultancy" class="insta-reel-avatar" loading="lazy">
-              </div>
-              <div class="insta-reel-author-meta">
-                <div class="insta-reel-handle-row">
-                  <span class="insta-reel-handle">all_land_consultancy</span>
-                  <svg class="insta-reel-verified" width="13" height="13" viewBox="0 0 24 24" fill="#0095F6" aria-label="Verified"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.5l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"></path></svg>
-                </div>
-                <span class="insta-reel-loc">📍 All Land Consultancy • Aluva Headquarters</span>
-              </div>
-            </div>
-
-            <span class="insta-reel-outcome-tag">✈️ Winter Intake Flying Batch</span>
-
-            <p class="insta-reel-caption">
-              Pre-departure briefing done, visa stamped, and all 6 of us safely landed! Thank you All Land Aluva team!
-            </p>
-
-            <div class="insta-reel-audio-ticker">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-              <span class="insta-reel-audio-text">Original Audio • all_land_consultancy</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
+        @empty
+        <div style="padding:40px;text-align:center;color:#64748B;width:100%;">
+          No reels active at the moment.
+        </div>
+        @endforelse
+ </div>
 
       <!-- Pagination Dots -->
       <div role="tablist" aria-label="Instagram reels slider pagination" class="insta-slider-dots" id="instaSliderDots"></div>

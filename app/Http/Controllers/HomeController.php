@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\Event;
 use App\Models\Blog;
 use App\Models\Destination;
+use App\Models\InstagramReel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,6 +18,7 @@ class HomeController extends Controller
         $events = Event::active()->take(6)->get();
         $blogs = Blog::published()->take(3)->get();
         $featuredCourses = Course::featured()->take(4)->get();
+        $reels = InstagramReel::active()->ordered()->get();
 
         // Dynamic country destination data from MySQL
         $destinations = Destination::active()->get();
@@ -47,7 +49,7 @@ class HomeController extends Controller
         }
         $activeCountry = $countries[$selectedCountry] ?? null;
 
-        return view('home', compact('services', 'events', 'blogs', 'featuredCourses', 'destinations', 'countries', 'activeCountry', 'selectedCountry'));
+        return view('home', compact('services', 'events', 'blogs', 'featuredCourses', 'destinations', 'countries', 'activeCountry', 'selectedCountry', 'reels'));
     }
 }
 

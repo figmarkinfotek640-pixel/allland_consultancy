@@ -336,39 +336,6 @@
       <!-- Contact Info & Support Column -->
       <div class="contact-info-panel">
         
-        <!-- Central Support Card -->
-        <div class="info-sidebar-card">
-          <div class="sidebar-card-badge">Instant Support</div>
-          <h3 class="sidebar-card-title">Central Helpline &amp; WhatsApp</h3>
-          <p class="sidebar-card-desc">Have urgent questions regarding admission deadlines, visa slots, or document attestation? Connect immediately with our support desk.</p>
-          
-          <div class="sidebar-contact-list">
-            <a href="tel:+919074024242" class="sidebar-contact-item">
-              <div class="sidebar-icon-circle tel-bg">📞</div>
-              <div>
-                <span class="sidebar-item-label">Main Helpline</span>
-                <span class="sidebar-item-value">+91 9074 024 242</span>
-              </div>
-            </a>
-
-            <a href="https://wa.me/918590724242" target="_blank" rel="noopener" class="sidebar-contact-item">
-              <div class="sidebar-icon-circle wa-bg">💬</div>
-              <div>
-                <span class="sidebar-item-label">WhatsApp Fast Response</span>
-                <span class="sidebar-item-value">+91 8590 724 242</span>
-              </div>
-            </a>
-
-            <a href="mailto:info@alllandconsultancy.com" class="sidebar-contact-item">
-              <div class="sidebar-icon-circle mail-bg">✉️</div>
-              <div>
-                <span class="sidebar-item-label">General Enquiries</span>
-                <span class="sidebar-item-value">info@alllandconsultancy.com</span>
-              </div>
-            </a>
-          </div>
-        </div>
-
         <!-- Working Hours Card -->
         <div class="info-sidebar-card hours-card">
           <div class="hours-header">

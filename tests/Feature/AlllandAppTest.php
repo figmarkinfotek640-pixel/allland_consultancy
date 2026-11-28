@@ -10,6 +10,7 @@ use App\Models\Event;
 use App\Models\Blog;
 use App\Models\Destination;
 use App\Models\Inquiry;
+use App\Models\InstagramReel;
 use App\Mail\InquiryThankYouMail;
 use App\Mail\AdminInquiryNotificationMail;
 use Illuminate\Support\Facades\Mail;
@@ -301,6 +302,62 @@ class AlllandAppTest extends TestCase
         $dest = Destination::where('slug', 'test-destination-unit')->first();
         $this->actingAs($this->adminUser)->delete("/admin/destinations/{$dest->id}");
         $this->assertDatabaseMissing('destinations', ['slug' => 'test-destination-unit']);
+    }
+
+    public function test_contact_page_loads_without_helpline_card(): void
+    {
+        $response = $this->get('/contact');
+        $response->assertStatus(200);
+        $response->assertDontSee('Central Helpline &amp; WhatsApp', false);
+        $response->assertDontSee('Have urgent questions regarding admission deadlines', false);
+    }
+
+    public function test_admin_can_manage_instagram_reels(): void
+    {
+        // 1. Admin can access reels index
+        $indexResp = $this->actingAs($this->adminUser)->get('/admin/reels');
+        $indexResp->assertStatus(200);
+        $indexResp->assertSee('Instagram Reels');
+
+        // 2. Admin can create a reel
+        $reelData = [
+            'title' => 'Test Reel Munich Departure',
+            'reel_url' => 'https://www.instagram.com/reel/Ctest12345/',
+            'description' => 'Test description for unit testing reel module.',
+            'location_tag' => 'Germany • Munich Desk',
+            'likes_count' => '999',
+            'comments_count' => '42',
+            'display_order' => 15,
+            'status' => '1',
+        ];
+
+        $postResp = $this->actingAs($this->adminUser)->post('/admin/reels', $reelData);
+        $postResp->assertRedirect('/admin/reels');
+        $this->assertDatabaseHas('instagram_reels', ['title' => 'Test Reel Munich Departure']);
+
+        $reel = InstagramReel::where('title', 'Test Reel Munich Departure')->first();
+        $this->assertNotNull($reel);
+
+        // 3. Admin can toggle status
+        $toggleResp = $this->actingAs($this->adminUser)->patch("/admin/reels/{$reel->id}/toggle");
+        $toggleResp->assertRedirect('/admin/reels');
+        $this->assertDatabaseHas('instagram_reels', [
+            'id' => $reel->id,
+            'status' => false,
+        ]);
+
+        // 4. Admin can update reel
+        $updateResp = $this->actingAs($this->adminUser)->put("/admin/reels/{$reel->id}", array_merge($reelData, [
+            'title' => 'Test Reel Munich Departure Updated',
+            'status' => '1',
+        ]));
+        $updateResp->assertRedirect('/admin/reels');
+        $this->assertDatabaseHas('instagram_reels', ['title' => 'Test Reel Munich Departure Updated']);
+
+        // 5. Admin can delete reel
+        $deleteResp = $this->actingAs($this->adminUser)->delete("/admin/reels/{$reel->id}");
+        $deleteResp->assertRedirect('/admin/reels');
+        $this->assertDatabaseMissing('instagram_reels', ['id' => $reel->id]);
     }
 }
 
