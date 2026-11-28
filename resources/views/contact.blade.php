@@ -41,202 +41,91 @@
 
     <div class="contact-branches-grid">
       
-      <!-- BRANCH 1: ALUVA HEAD OFFICE -->
-      <div class="contact-branch-card featured-branch">
-        <div class="branch-card-header">
-          <div class="branch-tag-wrap">
-            <span class="branch-badge head-office-badge">Head Office</span>
-            <span class="branch-city-pill">Aluva, Ernakulam</span>
-          </div>
-          <h3 class="branch-title">Aluva Head Office</h3>
-          <p class="branch-landmark">Opposite Municipal Office, Pump Junction</p>
+      <!-- BRANCH 1: PALA -->
+      <div class="contact-branch-card">
+        <div class="branch-circle-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+            <path d="M9 22v-4h6v4"/>
+            <path d="M8 6h.01"/>
+            <path d="M16 6h.01"/>
+            <path d="M12 6h.01"/>
+            <path d="M12 10h.01"/>
+            <path d="M12 14h.01"/>
+            <path d="M16 10h.01"/>
+            <path d="M16 14h.01"/>
+            <path d="M8 10h.01"/>
+            <path d="M8 14h.01"/>
+          </svg>
         </div>
-        <div class="branch-card-body">
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">📍</div>
-            <div class="branch-detail-text">
-              <strong>Office Address:</strong>
-              <address>
-                Laxmanas Tower, 11/56, Pump Junction,<br>
-                Opposite Municipal Office, Periyar Nagar,<br>
-                Aluva, Ernakulam, Kerala – 683101
-              </address>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">📞</div>
-            <div class="branch-detail-text">
-              <strong>Direct Call:</strong>
-              <a href="tel:+919074024242" class="branch-link">+91 9074 024 242</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box whatsapp-icon">💬</div>
-            <div class="branch-detail-text">
-              <strong>WhatsApp Helpline:</strong>
-              <a href="https://wa.me/918590724242" target="_blank" rel="noopener" class="branch-link whatsapp-link">+91 8590 724 242</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">✉️</div>
-            <div class="branch-detail-text">
-              <strong>Official Email:</strong>
-              <a href="mailto:info@alllandconsultancy.com" class="branch-link">info@alllandconsultancy.com</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">🕒</div>
-            <div class="branch-detail-text">
-              <strong>Working Hours:</strong>
-              <span>Mon – Sat: 9:30 AM – 6:00 PM</span>
-            </div>
-          </div>
-        </div>
-        <div class="branch-card-footer">
-          <a href="https://maps.google.com/?q=All+Land+Consultancy+Laxmanas+Tower+Pump+Junction+Aluva+Kerala+683101" target="_blank" rel="noopener" class="branch-action-btn btn-directions">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Get Directions
-          </a>
-          <a href="https://wa.me/918590724242?text=Hello%20All%20Land%20Consultancy%2C%20I%20would%20like%20to%20visit%20your%20Aluva%20Head%20Office" target="_blank" rel="noopener" class="branch-action-btn btn-chat">
-            Chat on WhatsApp
-          </a>
-        </div>
+        <span class="branch-pill-badge">Branch Office</span>
+        <h3 class="branch-title">All Land Tourism Pvt.Ltd</h3>
+        <address class="branch-card-address">
+          First Floor, Vettukallel Arcade,<br>
+          Near SBI Bank Bharananganam, Pala,<br>
+          Kerala, 686578
+        </address>
+        <a href="https://maps.google.com/?q=Vettukallel+Arcade+Bharananganam+Pala+Kerala+686578" target="_blank" rel="noopener" class="branch-directions-btn">
+          Get Directions
+        </a>
       </div>
 
-      <!-- BRANCH 2: PALA BRANCH OFFICE -->
+      <!-- BRANCH 2: ALUVA -->
       <div class="contact-branch-card">
-        <div class="branch-card-header">
-          <div class="branch-tag-wrap">
-            <span class="branch-badge branch-office-badge">Branch Office</span>
-            <span class="branch-city-pill">Pala, Kottayam</span>
-          </div>
-          <h3 class="branch-title">Pala Branch Office</h3>
-          <p class="branch-landmark">Near SBI Bank, St. Alphonsa Shrine Road</p>
+        <div class="branch-circle-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+            <path d="M9 22v-4h6v4"/>
+            <path d="M8 6h.01"/>
+            <path d="M16 6h.01"/>
+            <path d="M12 6h.01"/>
+            <path d="M12 10h.01"/>
+            <path d="M12 14h.01"/>
+            <path d="M16 10h.01"/>
+            <path d="M16 14h.01"/>
+            <path d="M8 10h.01"/>
+            <path d="M8 14h.01"/>
+          </svg>
         </div>
-        <div class="branch-card-body">
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">📍</div>
-            <div class="branch-detail-text">
-              <strong>Office Address:</strong>
-              <address>
-                1st Floor, Vettukallel Arcade, Near SBI Bank,<br>
-                St. Alphonsa Shrine Road, Bharananganam,<br>
-                Pala, Kottayam, Kerala – 686578
-              </address>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">📞</div>
-            <div class="branch-detail-text">
-              <strong>Direct Call:</strong>
-              <a href="tel:+919074124242" class="branch-link">+91 9074 124 242</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box whatsapp-icon">💬</div>
-            <div class="branch-detail-text">
-              <strong>WhatsApp Helpline:</strong>
-              <a href="https://wa.me/918590444242" target="_blank" rel="noopener" class="branch-link whatsapp-link">+91 8590 444 242</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">✉️</div>
-            <div class="branch-detail-text">
-              <strong>Branch Email:</strong>
-              <a href="mailto:pala@alllandconsultancy.com" class="branch-link">pala@alllandconsultancy.com</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">🕒</div>
-            <div class="branch-detail-text">
-              <strong>Working Hours:</strong>
-              <span>Mon – Sat: 9:30 AM – 6:00 PM</span>
-            </div>
-          </div>
-        </div>
-        <div class="branch-card-footer">
-          <a href="https://maps.google.com/?q=Vettukallel+Arcade+Bharananganam+Pala+Kerala+686578" target="_blank" rel="noopener" class="branch-action-btn btn-directions">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Get Directions
-          </a>
-          <a href="https://wa.me/918590444242?text=Hello%20All%20Land%20Consultancy%2C%20I%20would%20like%20to%20visit%20your%20Pala%20Branch%20Office" target="_blank" rel="noopener" class="branch-action-btn btn-chat">
-            Chat on WhatsApp
-          </a>
-        </div>
+        <span class="branch-pill-badge">Branch Office</span>
+        <h3 class="branch-title">All Land Tourism Pvt.Ltd</h3>
+        <address class="branch-card-address">
+          Laxmanas Tower, 11/56, Pump Junction<br>
+          Opposite Municipal Office, Periyar Nagar Aluva,<br>
+          Ernakulam, Kerala, 683101
+        </address>
+        <a href="https://maps.google.com/?q=All+Land+Consultancy+Laxmanas+Tower+Pump+Junction+Aluva+Kerala+683101" target="_blank" rel="noopener" class="branch-directions-btn">
+          Get Directions
+        </a>
       </div>
 
-      <!-- BRANCH 3: ALUVA CITY OFFICE -->
+      <!-- BRANCH 3: ADOOR -->
       <div class="contact-branch-card">
-        <div class="branch-card-header">
-          <div class="branch-tag-wrap">
-            <span class="branch-badge city-office-badge">City Office</span>
-            <span class="branch-city-pill">Aluva Town</span>
-          </div>
-          <h3 class="branch-title">Aluva City Office</h3>
-          <p class="branch-landmark">Market Road, Near Bank Junction</p>
+        <div class="branch-circle-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+            <path d="M9 22v-4h6v4"/>
+            <path d="M8 6h.01"/>
+            <path d="M16 6h.01"/>
+            <path d="M12 6h.01"/>
+            <path d="M12 10h.01"/>
+            <path d="M12 14h.01"/>
+            <path d="M16 10h.01"/>
+            <path d="M16 14h.01"/>
+            <path d="M8 10h.01"/>
+            <path d="M8 14h.01"/>
+          </svg>
         </div>
-        <div class="branch-card-body">
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">📍</div>
-            <div class="branch-detail-text">
-              <strong>Office Address:</strong>
-              <address>
-                8/1183, City Towers, Market Road,<br>
-                Near Bank Junction,<br>
-                Aluva, Ernakulam, Kerala – 683101
-              </address>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">📞</div>
-            <div class="branch-detail-text">
-              <strong>Direct Call:</strong>
-              <a href="tel:+919037037373" class="branch-link">+91 9037 037 373</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box whatsapp-icon">💬</div>
-            <div class="branch-detail-text">
-              <strong>WhatsApp Helpline:</strong>
-              <a href="https://wa.me/918590724242" target="_blank" rel="noopener" class="branch-link whatsapp-link">+91 8590 724 242</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">✉️</div>
-            <div class="branch-detail-text">
-              <strong>Support Email:</strong>
-              <a href="mailto:support@alllandconsultancy.com" class="branch-link">support@alllandconsultancy.com</a>
-            </div>
-          </div>
-
-          <div class="branch-detail-row">
-            <div class="branch-icon-box">🕒</div>
-            <div class="branch-detail-text">
-              <strong>Working Hours:</strong>
-              <span>Mon – Sat: 9:30 AM – 6:00 PM</span>
-            </div>
-          </div>
-        </div>
-        <div class="branch-card-footer">
-          <a href="https://maps.google.com/?q=City+Towers+Market+Road+Aluva+Kerala+683101" target="_blank" rel="noopener" class="branch-action-btn btn-directions">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Get Directions
-          </a>
-          <a href="https://wa.me/918590724242?text=Hello%20All%20Land%20Consultancy%2C%20I%20would%20like%20to%20visit%20your%20Aluva%20City%20Office" target="_blank" rel="noopener" class="branch-action-btn btn-chat">
-            Chat on WhatsApp
-          </a>
-        </div>
+        <span class="branch-pill-badge">Branch Office</span>
+        <h3 class="branch-title">All Land Tourism Pvt.Ltd</h3>
+        <address class="branch-card-address">
+          Prasan Plaza, Vaidyarupadi,<br>
+          Pannivizha, Adoor,<br>
+          Pathanamthitta, Kerala, 691523
+        </address>
+        <a href="https://maps.google.com/?q=Prasan+Plaza+Vaidyarupadi+Pannivizha+Adoor+Pathanamthitta+Kerala+691523" target="_blank" rel="noopener" class="branch-directions-btn">
+          Get Directions
+        </a>
       </div>
 
     </div>
@@ -288,7 +177,7 @@
               <select name="preferred_intake" id="preferredOffice">
                 <option value="Aluva Head Office (Pump Junction)">Aluva Head Office (Pump Junction)</option>
                 <option value="Pala Branch Office (Bharananganam)">Pala Branch Office (Bharananganam)</option>
-                <option value="Aluva City Office (Market Road)">Aluva City Office (Market Road)</option>
+                <option value="Adoor Branch Office (Pathanamthitta)">Adoor Branch Office (Pathanamthitta)</option>
                 <option value="Online / Video Consultation">Online / WhatsApp Video Consultation</option>
               </select>
             </div>
