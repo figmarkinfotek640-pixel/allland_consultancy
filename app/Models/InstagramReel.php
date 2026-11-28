@@ -55,7 +55,7 @@ class InstagramReel extends Model
     public function getVideoUrlAttribute(): ?string
     {
         if (empty($this->attributes['video_url'])) {
-            return asset('videos/banner-video.mp4');
+            return null;
         }
 
         if (str_starts_with($this->attributes['video_url'], 'http://') || str_starts_with($this->attributes['video_url'], 'https://')) {

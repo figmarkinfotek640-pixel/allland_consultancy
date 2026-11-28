@@ -175,13 +175,23 @@
       <div class="insta-slider-track" id="instaSliderTrack">
         @forelse($reels as $idx => $reel)
         <article class="insta-reel-card" data-index="{{ $idx }}">
-          <div class="insta-reel-media" onclick="toggleReelPlay(this)">
-            <video class="insta-reel-video" src="{{ $reel->video_url }}" poster="{{ $reel->thumbnail_url }}" playsinline loop muted preload="metadata"></video>
-            
-            <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-            </button>
-          </div>
+          @if(!empty($reel->video_url) && !str_contains($reel->video_url, 'banner-video.mp4'))
+            <div class="insta-reel-media" onclick="toggleReelPlay(this)">
+              <video class="insta-reel-video" src="{{ $reel->video_url }}" poster="{{ $reel->thumbnail_url }}" playsinline loop muted preload="metadata"></video>
+              
+              <button type="button" class="insta-reel-play-btn" aria-label="Play Reel" onclick="event.stopPropagation(); toggleReelPlay(this);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+              </button>
+            </div>
+          @else
+            <a href="{{ $reel->reel_url }}" target="_blank" rel="noopener noreferrer" class="insta-reel-media" aria-label="Watch {{ $reel->title }} on Instagram">
+              <img class="insta-reel-video" src="{{ $reel->thumbnail_url }}" alt="{{ $reel->title }}" loading="lazy">
+              
+              <div class="insta-reel-play-btn" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+              </div>
+            </a>
+          @endif
 
           <!-- Top Bar -->
           <div class="insta-reel-top-bar">
