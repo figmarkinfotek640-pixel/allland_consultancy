@@ -58,7 +58,7 @@
 
     <div style="display:flex;gap:18px;align-items:flex-start;margin-bottom:18px;padding:14px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;">
       <div style="width:70px;height:100px;border-radius:8px;overflow:hidden;background:#0F172A;flex-shrink:0;">
-        <img src="{{ $reel->thumbnail_url }}" alt="Current cover" style="width:100%;height:100%;object-fit:cover;">
+        <img src="{{ $reel->thumbnail_url }}" alt="Current cover" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='{{ asset('images/student-1.jpg') }}';">
       </div>
       <div style="flex:1;">
         <div style="font-weight:700;font-size:13px;color:#1E293B;margin-bottom:3px;">Current Thumbnail</div>

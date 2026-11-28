@@ -87,7 +87,7 @@
           <tr>
             <td>
               <div style="width:52px;height:72px;border-radius:8px;overflow:hidden;background:#0F172A;position:relative;box-shadow:0 2px 6px rgba(0,0,0,0.12);flex-shrink:0;">
-                <img src="{{ $reel->thumbnail_url }}" alt="{{ $reel->title }}" style="width:100%;height:100%;object-fit:cover;">
+                <img src="{{ $reel->thumbnail_url }}" alt="{{ $reel->title }}" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='{{ asset('images/student-1.jpg') }}';">
                 <div style="position:absolute;bottom:3px;right:3px;background:rgba(0,0,0,0.6);border-radius:4px;padding:1px 3px;font-size:9px;color:#fff;line-height:1;">
                   ▶
                 </div>
