@@ -39,93 +39,196 @@
       <p class="sec-desc" style="font-size:15.5px; color:#475569; line-height:1.65; margin:0 auto; max-width:620px;">Walk into our fully-equipped branch offices for face-to-face academic counselling, eligibility verification, blocked account support, and visa file preparation.</p>
     </div>
 
+    <!-- COMMON CENTRAL CONTACT STRIP -->
+    <div class="common-contact-strip">
+      <a href="tel:+919074024242" class="strip-item">
+        <span class="strip-icon-circle tel-circle">📞</span>
+        <div class="strip-item-content">
+          <span class="strip-label">Central Helpline</span>
+          <span class="strip-value">+91 9074 024 242</span>
+        </div>
+      </a>
+
+      <a href="https://wa.me/918590724242" target="_blank" rel="noopener" class="strip-item">
+        <span class="strip-icon-circle wa-circle">💬</span>
+        <div class="strip-item-content">
+          <span class="strip-label">WhatsApp Support</span>
+          <span class="strip-value">+91 8590 724 242</span>
+        </div>
+      </a>
+
+      <a href="mailto:info@alllandconsultancy.com" class="strip-item">
+        <span class="strip-icon-circle mail-circle">✉️</span>
+        <div class="strip-item-content">
+          <span class="strip-label">Official Email</span>
+          <span class="strip-value">info@alllandconsultancy.com</span>
+        </div>
+      </a>
+
+      <div class="strip-item hours-item">
+        <span class="strip-icon-circle time-circle">🕒</span>
+        <div class="strip-item-content">
+          <span class="strip-label">Working Hours</span>
+          <span class="strip-value">Mon – Sat: 9:30 AM – 6:00 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 BRANCH CARDS GRID -->
     <div class="contact-branches-grid">
       
       <!-- BRANCH 1: PALA -->
       <div class="contact-branch-card">
-        <div class="branch-circle-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-            <path d="M9 22v-4h6v4"/>
-            <path d="M8 6h.01"/>
-            <path d="M16 6h.01"/>
-            <path d="M12 6h.01"/>
-            <path d="M12 10h.01"/>
-            <path d="M12 14h.01"/>
-            <path d="M16 10h.01"/>
-            <path d="M16 14h.01"/>
-            <path d="M8 10h.01"/>
-            <path d="M8 14h.01"/>
-          </svg>
+        <div class="branch-card-top">
+          <div class="branch-icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14"/>
+              <path d="M9 9h1M9 13h1M9 17h1M17 9h1M17 13h1M17 17h1"/>
+            </svg>
+          </div>
+          <div class="branch-meta-wrap">
+            <span class="branch-badge branch-office-badge">Branch Office</span>
+            <span class="branch-city-tag">Pala, Kottayam</span>
+          </div>
         </div>
-        <span class="branch-pill-badge">Branch Office</span>
-        <h3 class="branch-title">All Land Tourism Pvt.Ltd</h3>
-        <address class="branch-card-address">
-          First Floor, Vettukallel Arcade,<br>
-          Near SBI Bank Bharananganam, Pala,<br>
-          Kerala, 686578
-        </address>
-        <a href="https://maps.google.com/?q=Vettukallel+Arcade+Bharananganam+Pala+Kerala+686578" target="_blank" rel="noopener" class="branch-directions-btn">
-          Get Directions
-        </a>
+
+        <div class="branch-title-block">
+          <h3 class="branch-city-name">Pala Branch</h3>
+          <p class="branch-company-name">All Land Tourism Pvt.Ltd</p>
+        </div>
+
+        <div class="branch-address-box">
+          <div class="address-icon">📍</div>
+          <address class="branch-address-text">
+            <strong>First Floor, Vettukallel Arcade</strong><br>
+            Near SBI Bank, Bharananganam, Pala,<br>
+            Kerala – 686578
+          </address>
+        </div>
+
+        <div class="branch-common-contacts">
+          <a href="tel:+919074024242" class="common-contact-link">
+            <span class="icon">📞</span>
+            <span>+91 9074 024 242</span>
+          </a>
+          <a href="mailto:info@alllandconsultancy.com" class="common-contact-link">
+            <span class="icon">✉️</span>
+            <span>info@alllandconsultancy.com</span>
+          </a>
+        </div>
+
+        <div class="branch-card-actions">
+          <a href="https://maps.google.com/?q=Vettukallel+Arcade+Bharananganam+Pala+Kerala+686578" target="_blank" rel="noopener" class="btn-branch-directions">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Get Directions
+          </a>
+          <a href="https://wa.me/918590724242?text=Hello%20All%20Land%20Consultancy%2C%20I%20would%20like%20to%20visit%20your%20Pala%20Branch" target="_blank" rel="noopener" class="btn-branch-chat">
+            WhatsApp
+          </a>
+        </div>
       </div>
 
-      <!-- BRANCH 2: ALUVA -->
-      <div class="contact-branch-card">
-        <div class="branch-circle-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-            <path d="M9 22v-4h6v4"/>
-            <path d="M8 6h.01"/>
-            <path d="M16 6h.01"/>
-            <path d="M12 6h.01"/>
-            <path d="M12 10h.01"/>
-            <path d="M12 14h.01"/>
-            <path d="M16 10h.01"/>
-            <path d="M16 14h.01"/>
-            <path d="M8 10h.01"/>
-            <path d="M8 14h.01"/>
-          </svg>
+      <!-- BRANCH 2: ALUVA (HEAD OFFICE) -->
+      <div class="contact-branch-card featured-card">
+        <div class="featured-ribbon">Head Office</div>
+        <div class="branch-card-top">
+          <div class="branch-icon-badge head-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14"/>
+              <path d="M9 9h1M9 13h1M9 17h1M17 9h1M17 13h1M17 17h1"/>
+            </svg>
+          </div>
+          <div class="branch-meta-wrap">
+            <span class="branch-badge head-office-badge">Head Office</span>
+            <span class="branch-city-tag">Aluva, Ernakulam</span>
+          </div>
         </div>
-        <span class="branch-pill-badge">Branch Office</span>
-        <h3 class="branch-title">All Land Tourism Pvt.Ltd</h3>
-        <address class="branch-card-address">
-          Laxmanas Tower, 11/56, Pump Junction<br>
-          Opposite Municipal Office, Periyar Nagar Aluva,<br>
-          Ernakulam, Kerala, 683101
-        </address>
-        <a href="https://maps.google.com/?q=All+Land+Consultancy+Laxmanas+Tower+Pump+Junction+Aluva+Kerala+683101" target="_blank" rel="noopener" class="branch-directions-btn">
-          Get Directions
-        </a>
+
+        <div class="branch-title-block">
+          <h3 class="branch-city-name">Aluva Head Office</h3>
+          <p class="branch-company-name">All Land Tourism Pvt.Ltd</p>
+        </div>
+
+        <div class="branch-address-box">
+          <div class="address-icon">📍</div>
+          <address class="branch-address-text">
+            <strong>Laxmanas Tower, 11/56, Pump Junction</strong><br>
+            Opposite Municipal Office, Periyar Nagar, Aluva,<br>
+            Ernakulam, Kerala – 683101
+          </address>
+        </div>
+
+        <div class="branch-common-contacts">
+          <a href="tel:+919074024242" class="common-contact-link">
+            <span class="icon">📞</span>
+            <span>+91 9074 024 242</span>
+          </a>
+          <a href="mailto:info@alllandconsultancy.com" class="common-contact-link">
+            <span class="icon">✉️</span>
+            <span>info@alllandconsultancy.com</span>
+          </a>
+        </div>
+
+        <div class="branch-card-actions">
+          <a href="https://maps.google.com/?q=All+Land+Consultancy+Laxmanas+Tower+Pump+Junction+Aluva+Kerala+683101" target="_blank" rel="noopener" class="btn-branch-directions">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Get Directions
+          </a>
+          <a href="https://wa.me/918590724242?text=Hello%20All%20Land%20Consultancy%2C%20I%20would%20like%20to%20visit%20your%20Aluva%20Head%20Office" target="_blank" rel="noopener" class="btn-branch-chat">
+            WhatsApp
+          </a>
+        </div>
       </div>
 
       <!-- BRANCH 3: ADOOR -->
       <div class="contact-branch-card">
-        <div class="branch-circle-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-            <path d="M9 22v-4h6v4"/>
-            <path d="M8 6h.01"/>
-            <path d="M16 6h.01"/>
-            <path d="M12 6h.01"/>
-            <path d="M12 10h.01"/>
-            <path d="M12 14h.01"/>
-            <path d="M16 10h.01"/>
-            <path d="M16 14h.01"/>
-            <path d="M8 10h.01"/>
-            <path d="M8 14h.01"/>
-          </svg>
+        <div class="branch-card-top">
+          <div class="branch-icon-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14"/>
+              <path d="M9 9h1M9 13h1M9 17h1M17 9h1M17 13h1M17 17h1"/>
+            </svg>
+          </div>
+          <div class="branch-meta-wrap">
+            <span class="branch-badge branch-office-badge">Branch Office</span>
+            <span class="branch-city-tag">Adoor, Pathanamthitta</span>
+          </div>
         </div>
-        <span class="branch-pill-badge">Branch Office</span>
-        <h3 class="branch-title">All Land Tourism Pvt.Ltd</h3>
-        <address class="branch-card-address">
-          Prasan Plaza, Vaidyarupadi,<br>
-          Pannivizha, Adoor,<br>
-          Pathanamthitta, Kerala, 691523
-        </address>
-        <a href="https://maps.google.com/?q=Prasan+Plaza+Vaidyarupadi+Pannivizha+Adoor+Pathanamthitta+Kerala+691523" target="_blank" rel="noopener" class="branch-directions-btn">
-          Get Directions
-        </a>
+
+        <div class="branch-title-block">
+          <h3 class="branch-city-name">Adoor Branch</h3>
+          <p class="branch-company-name">All Land Tourism Pvt.Ltd</p>
+        </div>
+
+        <div class="branch-address-box">
+          <div class="address-icon">📍</div>
+          <address class="branch-address-text">
+            <strong>Prasan Plaza, Vaidyarupadi</strong><br>
+            Pannivizha, Adoor,<br>
+            Pathanamthitta, Kerala – 691523
+          </address>
+        </div>
+
+        <div class="branch-common-contacts">
+          <a href="tel:+919074024242" class="common-contact-link">
+            <span class="icon">📞</span>
+            <span>+91 9074 024 242</span>
+          </a>
+          <a href="mailto:info@alllandconsultancy.com" class="common-contact-link">
+            <span class="icon">✉️</span>
+            <span>info@alllandconsultancy.com</span>
+          </a>
+        </div>
+
+        <div class="branch-card-actions">
+          <a href="https://maps.google.com/?q=Prasan+Plaza+Vaidyarupadi+Pannivizha+Adoor+Pathanamthitta+Kerala+691523" target="_blank" rel="noopener" class="btn-branch-directions">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Get Directions
+          </a>
+          <a href="https://wa.me/918590724242?text=Hello%20All%20Land%20Consultancy%2C%20I%20would%20like%20to%20visit%20your%20Adoor%20Branch" target="_blank" rel="noopener" class="btn-branch-chat">
+            WhatsApp
+          </a>
+        </div>
       </div>
 
     </div>
