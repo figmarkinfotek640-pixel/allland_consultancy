@@ -87,7 +87,7 @@
             </svg>
           </div>
           <div class="branch-meta-wrap">
-            <span class="branch-badge branch-office-badge">Branch Office</span>
+            <span class="branch-pill-badge">Branch Office</span>
             <span class="branch-city-tag">Pala, Kottayam</span>
           </div>
         </div>
@@ -139,7 +139,7 @@
             </svg>
           </div>
           <div class="branch-meta-wrap">
-            <span class="branch-badge head-office-badge">Head Office</span>
+            <span class="branch-pill-badge head-office-pill">Head Office</span>
             <span class="branch-city-tag">Aluva, Ernakulam</span>
           </div>
         </div>
@@ -190,7 +190,7 @@
             </svg>
           </div>
           <div class="branch-meta-wrap">
-            <span class="branch-badge branch-office-badge">Branch Office</span>
+            <span class="branch-pill-badge">Branch Office</span>
             <span class="branch-city-tag">Adoor, Pathanamthitta</span>
           </div>
         </div>
